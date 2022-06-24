@@ -1,0 +1,35 @@
+* { 
+    box-sizing:border-box;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #E7CD01;
+    color: black;
+    padding: 1rem 1.5rem;
+}
+
+#home {
+    height: 90vh;
+    width: 100%;
+    background-image: url('../img/fondo.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-color: #E7CD01;
+}
+
+h1 {
+    margin: 0;
+}
+
+.portada {
+    color: white;
+}
