@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 * { 
     box-sizing:border-box;
 }
@@ -15,15 +19,24 @@ header {
     background-color: #E7CD01;
     color: black;
     padding: 1rem 1.5rem;
+    /* border-radius: 10px 10px 0 0; */
+}
+
+.topnav a {
+    text-decoration: none;
+    color: black;
+}
+
+.topnav a:hover {
+    color: white;
 }
 
 #home {
     height: 90vh;
     width: 100%;
-    background-image: url('../img/fondo.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/fondo.jpg');
     background-position: center center;
     background-size: cover;
-    background-color: #E7CD01;
 }
 
 h1 {
@@ -31,5 +44,29 @@ h1 {
 }
 
 .portada {
+    float: left;
     color: white;
+    position:absolute;
+    top: 50%;
+    left: 25%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; 
+    margin-left: -15em;
+}
+
+footer {
+    background-color: #E7CD01;
+    color: black;
+    padding: 1rem 1.5rem;
+    /* border-radius: 0 0 10px 10px; */
+}
+
+.centro {
+    text-align: center;
+}
+
+footer a {
+
+    text-decoration: none;
 }
