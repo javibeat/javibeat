@@ -32,7 +32,15 @@ header {
 }
 
 #home {
-    height: 90vh;
+    height: 95vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/fondo.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+#gallery {
+    height: 95vh;
     width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/fondo.jpg');
     background-position: center center;
