@@ -63,14 +63,12 @@ h1 {
 .portada {
     float: left;
     color: white;
-    position: relative;
     top: 50%;
     left: 25%;
-    width:30em;
+    width:25em;
     height:18em;
-    margin: auto;
-    margin-top: -9em; 
-    margin-left: -15em;
+    margin-top: 15%; 
+    margin-left: 10%;
 }
 
 footer {
