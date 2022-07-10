@@ -2,6 +2,18 @@ body {
     margin: 0;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #E7CD01;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
 * { 
     box-sizing:border-box;
 }
