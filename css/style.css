@@ -52,17 +52,21 @@ nav a:hover {
 }
 
 #home {
-    height: 100vh;
-    width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/fondo.jpg');
+    height: 100vh;
+    width: auto;
     background-position: center top;
     background-size: cover;
-    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
 }
 
 #gallery {
     height: 100vh;
-    width: 100%;
+    width: auto;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/fondo.jpg');
     background-position: center top;
     background-size: cover;
@@ -73,17 +77,17 @@ h1 {
 }
 
 .portada {
+    margin: 10%;
     float: left;
     color: white;
-    top: 50%;
-    left: 25%;
-    width:25em;
-    height:18em;
-    margin-top: 15%; 
-    margin-left: 10%;
-    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: justify;
+}
+
+.logo {
+    width: 45%;
 }
 
 /* ------------FOOTTER------------ */
@@ -102,4 +106,13 @@ footer {
 footer a {
 
     text-decoration: none;
+}
+
+
+/* ----------RESPONSIVE----------- */
+
+@media screen and (max-width: 780px) {
+    .logo {
+        width: 100%;
+    }
 }
