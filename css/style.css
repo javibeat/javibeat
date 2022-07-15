@@ -22,33 +22,29 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
-.flex {
+header {
     display: flex;
     justify-content: space-between;
-}
-
-header {
     background-color: #E7CD01;
     color: black;
     padding: 1rem 1.5rem;
     position: fixed;
     width: 100%;
     z-index: 1;
-    /* border-radius: 10px 10px 0 0; */
 }
 
-.topnav {
+nav {
     min-width: 30%;
     display: flex;
     justify-content: space-between;
 }
 
-.topnav a {
+nav a {
     text-decoration: none;
     color: black;
 }
 
-.topnav a:hover {
+nav a:hover {
     color: white;
 }
 
