@@ -83,6 +83,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     align-items: center;
 }
 
@@ -114,5 +115,9 @@ footer a {
 @media screen and (max-width: 780px) {
     .logo {
         width: 100%;
+    }
+
+    .portada {
+        margin: 15%;
     }
 }
