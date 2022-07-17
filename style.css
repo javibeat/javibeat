@@ -185,7 +185,6 @@ input[type=checkbox]:checked ~ .menu{
 
 .portada {
     margin: 10%;
-    float: left;
     color: white;
     display: flex;
     flex-direction: column;
@@ -224,6 +223,7 @@ footer a {
     #home {
         width: auto;
         height: 100vh;
+        background-attachment: fixed;
     }
 
     .logo2 {
@@ -231,7 +231,12 @@ footer a {
     }
 
     .portada {
-        margin: 35% 5% 45% 5%;
+        margin-top: 35%;
         text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
     }
 }
