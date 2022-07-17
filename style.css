@@ -22,11 +22,6 @@
     font-family: sans-serif;
 }
 
-header {
-    position: fixed;
-    width: 100%;
-}
-
 a {
     text-decoration: none;
 }
@@ -217,6 +212,13 @@ footer a {
 
 
 /* ----------RESPONSIVE----------- */
+
+@media screen and (min-width: 600px) {
+    header {
+        position: fixed;
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 600px) {
 
