@@ -5,34 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javibeat.com</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <!-- <script src="script.js"></script> -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+    <!-- <style>
+        .navbar{
+            background-color: yellow;
+        }
+    </style> -->
 </head>
 <body>
     <header>
-        <div>
-            <a href="#home"><img src="img/favicon.png" alt="logo" width="50%"/></a>
-        </div>
-            <nav>
-                <a href="#gallery" class="nav-link">GALLERY</a>
-                <a href="#gigs" class="nav-link">GIGS</a>
-                <a href="#video" class="nav-link">VIDEO</a>
-                <a href="#mixtapes" class="nav-link">MIXTAPES</a>
-                <a href="#presskit" class="nav-link">PRESSKIT</a>   
-            </nav>
-            <div class="social">Social</div>
+        <nav class="navbar">
+            <!-- LOGO -->
+            <div class="logo"><a href="#top"><img src="favicon.png" alt="logo" width="60%"></a></div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+              <!-- USING CHECKBOX HACK -->
+              <input type="checkbox" id="checkbox_toggle" />
+              <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+              <!-- NAVIGATION MENUS -->
+              <div class="menu">
+                <li><a href="#gal">GALLERY</a></li>
+                <li><a href="#gig">GIGS</a></li>
+                <li class="#mix">MIXTAPES</li>
+                <li><a href="#vid">VIDEO</a></li>
+                <li><a href="#press">PRESS KIT</a></li>
+              </div>
+            </ul>
+          </nav>
     </header>
     <section id="home">
-        <div class="portada">
-            <img class="logo" src="img/logo.png" alt="logo"/>
-            <p>PALMA DE MALLORCA, SPAIN</p>
-            <p>CURRENTLY IN DUBAI – UAE</p>
-            <p>(+34) 678 255 497 · bookings@javibeat.com</p>
-            <p>DJ with more than 20 years of experience in the sector. He has shared dj booth with the most prestigious DJs in the world at Provocateur Dubai such as Solomun, Roger Sánchez, Black Coffee, Martinez Brothers, Kiko Navarro ….</p>
-        </div>
-    </section>
-    <section id="gallery">
-    </section>
+      <div class="portada">
+          <img class="logo2" src="logo.png" alt="logo"/>
+          <p>PALMA DE MALLORCA, SPAIN</p>
+          <p>CURRENTLY IN DUBAI – UAE</p>
+          <p>(+34) 678 255 497 · bookings@javibeat.com</p>
+          <p>DJ with more than 20 years of experience in the sector. He has shared dj booth with the most prestigious DJs in the world at Provocateur Dubai such as Solomun, Roger Sánchez, Black Coffee, Martinez Brothers, Kiko Navarro ….</p>
+      </div>
+  </section>
+  <section id="gallery"></section>
     <section id="gigs"></section>
     <section id="video"></section>
     <section id="mixtapes"></section>
@@ -43,6 +54,6 @@
             <a href="https://truelovecreative.es" target="_blank" rel="noopener"><i class="fa fa-heart" style="color: red;"></i><span style="color: #000000;"> True Love Creative</span></a>
         </div>
     </footer>
-
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
 </body>
 </html>
