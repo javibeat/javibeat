@@ -220,6 +220,12 @@ footer a {
 /* ----------RESPONSIVE----------- */
 
 @media screen and (max-width: 780px) {
+
+    #home {
+        width: auto;
+        height: 100vh;
+    }
+
     .logo2 {
         width: 100%;
     }
