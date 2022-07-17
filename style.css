@@ -239,4 +239,8 @@ footer a {
         text-align: center;
         align-items: center;
     }
+
+    a {
+        color: white;
+    }
 }
