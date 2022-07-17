@@ -37,9 +37,9 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
     background-color: #E7CD01;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
    
 .nav-links a {
@@ -62,8 +62,8 @@ li {
 }
    
 .menu li:hover {
-    background-color: #f6e68b;
-    border-radius: 5px;
+    background-color: #efd850;
+    border-radius: 15px;
     transition: 0.3s ease;
 }
    
@@ -98,7 +98,7 @@ li {
 }
    
 .dropdown li:hover {
-    background-color: #E7CD01;
+    background-color: #f1de48;
 }
 
 .services:hover .dropdown {
@@ -179,7 +179,7 @@ input[type=checkbox]:checked ~ .menu{
 }
 
 .portada {
-    margin: 10%;
+    margin: 20%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -213,14 +213,14 @@ footer a {
 
 /* ----------RESPONSIVE----------- */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 720px) {
     header {
         position: fixed;
         width: 100%;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
 
     #home {
         width: auto;
@@ -229,11 +229,11 @@ footer a {
     }
 
     .logo2 {
-        width: 45%;
+        width: 60%;
     }
 
     .portada {
-        margin-top: 35%;
+        margin-top: 150px;
         text-decoration: none;
         display: flex;
         flex-direction: column;
