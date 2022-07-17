@@ -48,7 +48,7 @@ li {
 }
    
 .nav-links a {
-    color: #fff;
+    color: rgb(1, 1, 1);
 }
 
 
@@ -67,7 +67,7 @@ li {
 }
    
 .menu li:hover {
-    background-color: #E7CD01;
+    background-color: #f6e68b;
     border-radius: 5px;
     transition: 0.3s ease;
 }
@@ -227,10 +227,11 @@ footer a {
     }
 
     .logo2 {
-        width: 100%;
+        width: 60%;
     }
 
     .portada {
-        margin: 45% 5% 45% 5%;
+        margin: 35% 5% 45% 5%;
+        text-decoration: none;
     }
 }
