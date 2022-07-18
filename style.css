@@ -173,7 +173,7 @@ input[type=checkbox]:checked ~ .menu{
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -213,7 +213,7 @@ footer a {
 
 /* ----------RESPONSIVE----------- */
 
-@media screen and (min-width: 722px) {
+@media screen and (min-width: 720px) {
     header {
         position: fixed;
         width: 100%;
