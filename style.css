@@ -192,6 +192,18 @@ input[type=checkbox]:checked ~ .menu{
     width: 45%;
 }
 
+#gallery {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
+    height: 100vh;
+    width: auto;
+    background-position: center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 /* ------------FOOTTER------------ */
 
 footer {
@@ -249,3 +261,6 @@ footer a {
         color: white;
     }
 }
+
+/* ----------GALLERY----------- */
+
