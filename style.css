@@ -171,6 +171,7 @@ input[type=checkbox]:checked ~ .menu{
     width: auto;
     background-position: center top;
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -193,7 +194,7 @@ input[type=checkbox]:checked ~ .menu{
 }
 
 #gallery {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg'); */
     height: 100vh;
     width: auto;
     background-position: center top;
