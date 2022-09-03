@@ -162,7 +162,9 @@ input[type=checkbox]:checked ~ .menu{
     background-color: #E7CD01;
    
 }
-   
+
+/* RESPONSIVE MENU END */
+
 }
 
 #home {
@@ -185,12 +187,12 @@ input[type=checkbox]:checked ~ .menu{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
 }
 
 .logo2 {
-    width: 45%;
+    width: 35%;
 }
 
 #gallery {
