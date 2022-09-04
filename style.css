@@ -227,7 +227,11 @@ input[type=checkbox]:checked ~ .menu{
 .social {
     display: flex;
     justify-content: left;
-    font-size: 45px;
+    font-size: 35px;
+}
+
+.bx:hover {
+    transform:  scale(1.10);
 }
 
 .social a {
