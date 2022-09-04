@@ -40,6 +40,7 @@ li {
     padding: 10px;
     background-color: #E7CD01;
     color: rgb(0, 0, 0);
+    z-index: 20;
 }
    
 .nav-links a {
@@ -186,7 +187,6 @@ input[type=checkbox]:checked ~ .menu{
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: left;
     align-items: flex-start;
 }
@@ -197,25 +197,74 @@ input[type=checkbox]:checked ~ .menu{
 
 #gallery {
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg'); */
-    height: 100vh;
-    width: auto;
+/*     height: 100vh; */
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: #f4f7f8;
     background-position: center top;
     background-size: cover;
+    padding: 5%;
     justify-content: center;
     align-items: center;
 }
 
-.box {
+.titulo {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.container {
     display: flex;
     justify-content: space-between;
-    padding: 50px;
-  }
+}
+
+.social {
+    display: flex;
+    justify-content: left;
+    font-size: 45px;
+}
+
+.social a {
+    color: white;
+}
+
+.card {
+    width: min-content;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    transition: .4s ease;
+}
+
+.card:hover {
+    transform:  scale(1.05);
+    z-index: 1;
+}
+
+.card .card-img img {
+    width: 100%;
+}
+.img1 {
+    width: 250px;
+    border-radius: 10px;
+    /* padding-bottom: 10px; */
+    margin-bottom: 15px;
+}
+
 /* ------------FOOTTER------------ */
 
 footer {
     background-color: #E7CD01;
     color: black;
     padding: 1rem 1.5rem;
+    position: relative;
     /* border-radius: 0 0 10px 10px; */
 }
 
@@ -240,6 +289,7 @@ footer a {
     .portada {
         margin: 10%;
     }
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -269,3 +319,19 @@ footer a {
 }
 
 /* ----------GALLERY----------- */
+
+@media (max-width: 1280px) {
+    .gallery {
+        height: unset;
+        padding: 30px 0;
+    }
+
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container .card {
+        margin: 20px;
+    }
+}
