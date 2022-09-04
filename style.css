@@ -331,13 +331,13 @@ footer a {
         text-decoration: none;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        text-align: center;
         align-items: center;
+        text-align: justify;
     }
 
     .social {
         justify-content: center;
+        
     }
 
     a {
