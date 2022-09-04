@@ -175,6 +175,12 @@ input[type=checkbox]:checked ~ .menu{
     background-position: center top;
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+            -webkit-background-size:cover;
+            -moz-background-size:cover;
+            -o-background-size:cover;
+            background-size: cover;
+            background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -300,11 +306,15 @@ footer a {
 
     #home {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
-        height: 100vh;
-        width: auto;
-        background-position: center top;
-        background-size: cover;
-        background-attachment: fixed;
+        background-repeat: no-repeat;
+            -webkit-background-size:cover;
+            -moz-background-size:cover;
+            -o-background-size:cover;
+            background-size: cover;
+            background-attachment: fixed;
+            width: auto;
+            height: auto;
+            background-position: center center;
         display: flex;
         flex-direction: column;
         justify-content: center;
