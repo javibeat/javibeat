@@ -317,6 +317,10 @@ footer a {
         align-items: center;
     }
 
+    .social {
+        justify-content: center;
+    }
+
     a {
         color: white;
     }
