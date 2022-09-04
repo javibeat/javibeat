@@ -183,7 +183,7 @@ input[type=checkbox]:checked ~ .menu{
 }
 
 .portada {
-    margin: 20%;
+    margin: 15%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -299,8 +299,17 @@ footer a {
 @media screen and (max-width: 719px) {
 
     #home {
-        width: 100%;
-        height: auto;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
+        height: 100vh;
+        width: auto;
+        background-position: center top;
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .logo2 {
