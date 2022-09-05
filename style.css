@@ -172,8 +172,6 @@ input[type=checkbox]:checked ~ .menu{
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
-    background-size: cover;
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -280,8 +278,6 @@ input[type=checkbox]:checked ~ .menu{
         -webkit-background-size:cover;
         -moz-background-size:cover;
         -o-background-size:cover;
-        background-size: cover;
-        background-attachment: fixed;
     }
 
     .home {
