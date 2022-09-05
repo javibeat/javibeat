@@ -268,7 +268,7 @@ input[type=checkbox]:checked ~ .menu{
 @media screen and (max-width: 926px) {
 
     #top {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondom.jpg');
         height: 100%;
         width: auto;
         background-position: center top;
