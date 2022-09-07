@@ -267,18 +267,6 @@ input[type=checkbox]:checked ~ .menu{
 
 @media screen and (max-width: 926px) {
 
-    #top {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondom.jpg');
-        /* height: auto; */
-        background-position: center center;
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        -webkit-background-size:cover;
-        -moz-background-size:cover;
-        -o-background-size:cover;
-    }
-
     .home {
         color: white;
         display: flex;
