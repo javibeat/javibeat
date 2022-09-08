@@ -339,14 +339,14 @@ input[type=checkbox]:checked ~ .menu{
     bottom: 20px;
     right: 30px;
     z-index: 99;
-    font-size: 18px;
+    font-size: 20px;
     border: none;
     outline: none;
     background-color: #E7CD01;
-    color: black;
+    color: white;
     cursor: pointer;
-    padding: 10px;
-    border-radius: 35px;
+    padding: 15px;
+    border-radius: 10px;
   }
   
   #myBtn:hover {
