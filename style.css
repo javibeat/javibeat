@@ -235,12 +235,15 @@ input[type=checkbox]:checked ~ .menu{
     outline: none;
     background: black;
     background-position: center top;
-    background-size: cover;
-    padding: 5%;
+    background-size: cover
+}
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-/*     align-items: center; */
+    padding: 4%;
+    align-items: center;
 }
 
 .box {
