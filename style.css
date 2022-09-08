@@ -352,3 +352,12 @@ input[type=checkbox]:checked ~ .menu{
   #myBtn:hover {
     background-color: #ceb702;
   }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #E7CD01;
+  }
