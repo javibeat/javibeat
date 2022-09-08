@@ -228,6 +228,31 @@ input[type=checkbox]:checked ~ .menu{
     justify-content: left;
 }
 
+.titulog {
+    color: white;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+#gigs {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: black;
+    background-position: center top;
+    background-size: cover;
+    padding: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
