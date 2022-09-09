@@ -319,10 +319,22 @@ input[type=checkbox]:checked ~ .menu{
 }
 
 .press {
-    width: auto;
+    background-color: black;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.pie {
+    padding: 25px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+
+.pie a {
+    text-decoration: none;
+    color: white;
 }
 
 .button {
