@@ -418,10 +418,7 @@ input[type=checkbox]:checked ~ .menu{
 @media screen and (max-width: 780px) {
 
     #home {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fond.jpg');
-        background-position: center top;
-        background-repeat: no-repeat;
-        width: contain;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondom.jpg');
     }
 
     .video {
