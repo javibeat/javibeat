@@ -271,15 +271,10 @@ input[type=checkbox]:checked ~ .menu{
 }
 
 .video {
+    background-color: white;
     display: flex;
-    flex-direction: column;
+    flex-direction: space-between;
     align-items: center;
-}
-
-.v1 {
-    display: flex;
-    flex-direction: space-between;width: auto;
-
 }
 
 .vt {
@@ -421,6 +416,16 @@ input[type=checkbox]:checked ~ .menu{
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: contain;
+    }
+
+    .video {;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .v1 {
+        width: auto;
     }
 
     .mix {
