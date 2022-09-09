@@ -163,8 +163,8 @@ input[type=checkbox]:checked ~ .menu{
 
 #home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
-    height: 100%;
     width: auto;
+    height: 100%;
     background-position: center top;
     background-size: cover;
     background-attachment: fixed;
@@ -418,11 +418,12 @@ input[type=checkbox]:checked ~ .menu{
 @media screen and (max-width: 780px) {
 
     #home {
+        margin: 0;
+        padding: 0;
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondom.jpg');
-        background-position: center top;
+        background-position: center center;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: contain;
+        width: auto;
     }
 
     .video {
