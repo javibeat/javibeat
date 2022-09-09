@@ -277,6 +277,11 @@ input[type=checkbox]:checked ~ .menu{
     align-items: center;
 }
 
+.size {
+    width: 560px;
+    height: 315px;
+}
+
 .vt {
     padding: 30px;
     background-color: white;
@@ -424,8 +429,8 @@ input[type=checkbox]:checked ~ .menu{
         align-items: center;
     }
 
-    .v1 {
-        width: auto;
+    .size {
+        width: fit-content;
     }
 
     .mix {
