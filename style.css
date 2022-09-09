@@ -206,6 +206,10 @@ input[type=checkbox]:checked ~ .menu{
     padding: 0 10px;
 }
 
+.bx:hover {
+    transform: scale(1.2);
+}
+
 /* GALLERY */
 
 #gallery {
@@ -224,7 +228,7 @@ input[type=checkbox]:checked ~ .menu{
 .titulo {
     font-family: 'montserrat', sans-serif;
     font-weight: 400;
-    margin-left: 50px;
+    margin: 0 0 50px 0;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -242,7 +246,19 @@ input[type=checkbox]:checked ~ .menu{
     background-size: cover
 }
 
-#mixtapes {
+.titulog {
+    padding: 5%;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+#video {
     margin: 0;
     padding: 0;
     border: none;
@@ -254,10 +270,46 @@ input[type=checkbox]:checked ~ .menu{
     align-items: center;
 }
 
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.v1 {
+    display: flex;
+    flex-direction: space-between;width: auto;
+
+}
+
+.vt {
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.op {
+    color: rgb(209, 209, 209);
+}
+
+#mixtapes {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: black;
+    background-position: center top;
+    background-size: cover;
+    padding: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
 .button {
-    background-color: black;
-    border: 2px;
-    border-color: #ceb702;
+    background-color: #ceb702;
+    border: #ceb702;
     border-radius: 5px;
     padding: 15px;
     margin-top: 10px;
@@ -270,7 +322,11 @@ input[type=checkbox]:checked ~ .menu{
 
 .button a {
     text-decoration: none;
-    color: white;
+    color: black;
+}
+
+.button:hover {
+    transform: scale(1.1);
 }
 
 .container {
