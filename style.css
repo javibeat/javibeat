@@ -220,7 +220,7 @@ input[type=checkbox]:checked ~ .menu{
 .titulo {
     font-family: 'montserrat', sans-serif;
     font-weight: 400;
-    margin: 0 0 50px 0;
+    margin-left: 50px;
     display: flex;
     flex-direction: column;
     text-align: left;
