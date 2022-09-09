@@ -362,6 +362,24 @@ input[type=checkbox]:checked ~ .menu{
         background-attachment: fixed;
         background-size: contain;
     }
+
+    .mix {
+        margin: 15px;
+    }
+
+    .button {
+        background-color: black;
+        border: 2px;
+        border-color: #ceb702;
+        border-radius: 5px;
+        padding: 15px;
+        margin-top: 10px;
+    }
+    
+    .but {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 #myBtn {
