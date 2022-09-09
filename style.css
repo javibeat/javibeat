@@ -464,7 +464,7 @@ input[type=checkbox]:checked ~ .menu{
     }
 
     .button {
-        background-color: black;
+        background-color: #ceb702
         border: 2px;
         border-color: #ceb702;
         border-radius: 5px;
