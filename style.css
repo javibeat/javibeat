@@ -302,10 +302,26 @@ input[type=checkbox]:checked ~ .menu{
     padding: 0;
     border: none;
     background: black;
-    background-position: center top;
+    padding: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+#press {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: #f4f7f8;
     background-size: cover;
     padding: 5%;
     justify-content: center;
+    align-items: center;
+}
+
+.press {
+    width: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -419,8 +435,7 @@ input[type=checkbox]:checked ~ .menu{
 
     #home {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondom.jpg');
-        width: auto;
-        height: 100%;
+        width: 100%;
         background-position: center center;
         background-size: contain;
         background-attachment: fixed;
@@ -428,7 +443,10 @@ input[type=checkbox]:checked ~ .menu{
         -webkit-background-size:cover;
         -moz-background-size:cover;
         -o-background-size:cover;
+    }
 
+    .press img {
+        max-width: 100%;
     }
 
     .video {
