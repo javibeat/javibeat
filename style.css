@@ -423,6 +423,7 @@ input[type=checkbox]:checked ~ .menu{
     #home {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
         background-position: center top;
+        width: 100%;
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
