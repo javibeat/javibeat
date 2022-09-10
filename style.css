@@ -426,6 +426,10 @@ input[type=checkbox]:checked ~ .menu{
         flex-direction: column;
         align-items: center;
     }
+
+    .brand {
+        width: auto;
+    }
     
     .texto {
         text-align: justify;
