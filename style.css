@@ -428,7 +428,8 @@ input[type=checkbox]:checked ~ .menu{
     }
 
     .brand {
-        width: auto;
+        width: 50%;
+        margin-bottom: 15px;
     }
     
     .texto {
