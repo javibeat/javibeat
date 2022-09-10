@@ -161,7 +161,7 @@ input[type=checkbox]:checked ~ .menu{
 
 /* RESPONSIVE MENU END */
 
-#home {
+body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
     width: auto;
     height: 100%;
@@ -172,6 +172,9 @@ input[type=checkbox]:checked ~ .menu{
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
+}
+
+#home {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -422,7 +425,7 @@ input[type=checkbox]:checked ~ .menu{
 
 @media screen and (max-width: 926px) {
 
-    #home {
+    body {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondoL.jpg');
         width: auto;
         height: 100%;
@@ -467,7 +470,7 @@ input[type=checkbox]:checked ~ .menu{
 
 @media screen and (max-width: 780px) {
 
-    #home {
+    body {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondom.jpg');
         background-position: center top;
         background-size: contain;
