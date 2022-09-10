@@ -474,6 +474,10 @@ input[type=checkbox]:checked ~ .menu{
         -o-background-size:contain;
     }
 
+    .brand {
+        width: 75%;
+    }
+
     .press img {
         max-width: 100%;
     }
