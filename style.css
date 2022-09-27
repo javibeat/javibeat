@@ -278,8 +278,8 @@ body {
 .video {
     background-color: white;
     display: flex;
-    flex-direction: space-between;
     align-items: center;
+    max-width: 1080px;
 }
 
 .size {
