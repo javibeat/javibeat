@@ -499,7 +499,7 @@ body {
     }
 
     .size {
-        width: auto;
+        min-width: 460px;
     }
 
     .mix {
