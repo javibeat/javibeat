@@ -245,7 +245,7 @@ body {
     border: none;
     outline: none;
     background: black;
-    background-position: center top;
+    background-position: center center;
     background-size: cover
 }
 
@@ -376,13 +376,15 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #E7CD01;
     border-radius: 10px;
     background-color: rgb(44, 44, 44);
     padding: 40px;
     margin: 40px;
-    width: auto;
+    width: 500px;
+    max-width: 500px;
     
 }
 
