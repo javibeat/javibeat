@@ -283,6 +283,7 @@ body {
 }
 
 .size {
+    min-width: 500px;
     width: 560px;
     height: 315px;
 }
