@@ -384,8 +384,8 @@ body {
     background-color: rgb(44, 44, 44);
     padding: 40px;
     margin: 40px;
-    width: 350px;
-    max-width: 400px;
+    min-width: 350px;
+    
     
 }
 
