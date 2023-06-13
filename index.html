@@ -91,33 +91,55 @@
     </section>
 
     <section id="gallery">
-        <div>
-            <h1 class="titulo">GALLERY</h1>
+      <div>
+          <h1 class="titulo">GALLERY</h1>
+      </div>
+      <div class="gallery-container">
+          <div class="gallery-row">
+              <div class="gallery-column">
+                  <img src="drift.jpg" alt="drift">
+              </div>
+              <div class="gallery-column">
+                  <img src="yula.jpg" alt="yula">
+              </div>
+              <div class="gallery-column">
+                  <img src="cielo2.jpg" alt="cielo2">
+              </div>
+              <div class="gallery-column">
+                  <img src="cielo.jpg" alt="cielo">
+              </div>
+          </div>
+          <div class="gallery-row">
+              <div class="gallery-column">
+                  <img src="folie.jpg" alt="folie">
+              </div>
+              <div class="gallery-column">
+                  <img src="cielo3.jpg" alt="cielo3">
+              </div>
+              <div class="gallery-column">
+                  <img src="flyer.jpg" alt="flyer">
+              </div>
+              <div class="gallery-column">
+                  <img src="nikki.jpg" alt="nikki">
+              </div>
+          </div>
+          <div class="gallery-row">
+              <div class="gallery-column">
+                  <img src="cipri.jpg" alt="cipri">
+              </div>
+              <div class="gallery-column">
+                  <img src="varadero.jpg" alt="varadero">
+              </div>
+              <div class="gallery-column">
+                  <img src="varadero2.jpg" alt="varadero2">
+              </div>
+              <div class="gallery-column">
+                  <img src="cdt.jpg" alt="cdt">
+              </div>
+          </div>
         </div>
-        <div class="row"> 
-          <div class="column">
-            <img src="drift.jpg" alt="drift">
-            <img src="yula.jpg" alt="yula">
-            <img src="cielo2.jpg" alt="cielo2">
-          </div>
-          <div class="column">
-            <img src="cielo.jpg" alt="cielo">
-            <img src="folie.jpg" alt="folie">
-            <img src="cielo3.jpg" alt="cielo3">
-          </div>
-          <div class="column">
-            <img src="flyer.jpg" alt="flyer">
-            <img src="nikki.jpg" alt="nikki">
-            <img src="cipri.jpg" alt="cipri">
-          </div> 
-          <div class="column">
-            <img src="varadero.jpg" alt="varadero">
-            <img src="varadero2.jpg" alt="varadero2">
-            <img src="cdt.jpg" alt="cdt">
-          </div>
-</div>
-
     </section>
+  
 
     <section id="gigs">
         <div class="container">
@@ -238,6 +260,22 @@
         }
 
      </script>
+
+     <!-- Agrega esto al final de tu archivo HTML -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+      <script>
+          $(document).ready(function() {
+              $('.gallery-column img').on('click', function() {
+                  $.fancybox.open($('.gallery-column img'), {
+                      loop: true
+                  });
+              });
+          });
+      </script>
+
 
 </body>
 
