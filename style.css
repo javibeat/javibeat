@@ -1,10 +1,22 @@
-/* Estilos globales */
+/* Estilos generales */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E7CD01;
 }
 
 a {
@@ -30,13 +42,11 @@ li {
     color: rgb(1, 1, 1);
 }
 
-/* Estilos del logotipo */
+/* Estilos del logo y el menú de navegación */
 
 #top {
     font-size: 32px;
 }
-
-/* Estilos del menú de navegación */
 
 .menu {
     display: flex;
@@ -54,7 +64,7 @@ li {
     padding: 5px 14px;
 }
 
-/* Menú desplegable */
+/* Estilos del menú desplegable */
 
 .services {
     position: relative;
@@ -87,59 +97,7 @@ li {
     display: block;
 }
 
-/* Menú de hamburguesa responsive */
-
-input[type=checkbox] {
-    display: none;
-}
-
-.hamburger {
-    display: none;
-    font-size: 24px;
-    user-select: none;
-}
-
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-        position: absolute;
-        background-color: #E7CD01;
-        right: 0;
-        left: 0;
-        text-align: center;
-        padding: 16px 0;
-    }
-
-    .menu li:hover {
-        display: inline-block;
-        background-color: #E7CD01;
-        transition: 0.3s ease;
-    }
-
-    .menu li + li {
-        margin-top: 12px;
-    }
-
-    input[type=checkbox]:checked ~ .menu {
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .dropdown {
-        left: 50%;
-        top: 30px;
-        transform: translateX(35%);
-    }
-
-    .dropdown li:hover {
-        background-color: #E7CD01;
-    }
-}
-
-/* Estilos del cuerpo y la sección principal */
+/* Estilos de la barra de desplazamiento */
 
 body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
@@ -153,6 +111,8 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+
+/* Estilos de la sección principal */
 
 #home {
     display: flex;
@@ -193,7 +153,7 @@ body {
     transform: scale(1.2);
 }
 
-/* Estilos de la galería */
+/* Estilos de la galería de fotos */
 
 #gallery {
     margin: 0;
@@ -219,13 +179,44 @@ body {
     justify-content: left;
 }
 
-/* Estilos de los conciertos */
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.gallery-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.gallery-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .gallery-column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .gallery-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Estilos de la sección de eventos */
 
 #gigs {
     margin: 0;
     padding: 0;
     border: none;
-    outline: none;
     background: black;
     background-position: center center;
     background-size: cover;
@@ -266,7 +257,7 @@ body {
     min-width: 350px;
 }
 
-/* Estilos de los videos */
+/* Estilos de la sección de videos */
 
 #video {
     margin: 0;
@@ -289,13 +280,13 @@ body {
     max-width: 1080px;
 }
 
-.size {
+.video-iframe {
     min-width: 360px;
     width: 560px;
     height: 315px;
 }
 
-.vt {
+.video-info {
     padding: 30px;
     background-color: white;
     display: flex;
@@ -308,7 +299,7 @@ body {
     color: rgb(209, 209, 209);
 }
 
-/* Estilos de las mezclas de audio */
+/* Estilos de la sección de mixtapes */
 
 #mixtapes {
     margin: 0;
@@ -320,143 +311,258 @@ body {
     align-items: center;
 }
 
-.mix {
-    margin: 15px;
+.titulom {
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: left;
+    color: white;
 }
 
-.button {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #E7CD01;
-    border: none;
-    color: #000;
-    text-align: center;
-    font-size: 18px;
-    padding: 10px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
+.mixtapes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
 }
 
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+.mixtape-iframe {
+    width: 100%;
+    height: 120px;
 }
 
-.button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
+.mixtapes-button {
+    background-color: #ceb702;
+    border: #ceb702;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 10px;
 }
 
-.button:hover span {
-    padding-right: 25px;
+.mixtapes-button a {
+    text-decoration: none;
+    color: black;
 }
 
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
+.mixtapes-button:hover {
+    transform: scale(1.1);
 }
 
-/* Estilos del kit de prensa */
+/* Estilos de la sección de press kit */
 
 #press {
     margin: 0;
     padding: 0;
     border: none;
     background: #f4f7f8;
-    background-position: center top;
-    background-size: cover;
     padding: 5%;
     justify-content: center;
     align-items: center;
 }
 
-.titulop {
-    padding: 5%;
-    font-family: 'montserrat', sans-serif;
-    font-weight: 400;
-    margin: 0 0 50px 0;
+.press {
+    background-color: black;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    align-items: flex-start;
-    justify-content: left;
 }
 
-.contenido {
-    background-color: white;
+.press-image {
+    width: 100%;
+}
+
+.press-info {
+    padding: 25px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: left;
-    padding: 40px;
-    margin: 40px;
-    min-width: 350px;
-    border: 2px solid #E7CD01;
+    flex-direction: column;
+}
+
+.press-link {
+    text-decoration: none;
+    color: white;
+}
+
+.press-button {
+    background-color: #ceb702;
+    border: #ceb702;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.press-button:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos del footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #E7CD01;
+}
+
+/* Estilos del botón de ir arriba */
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: #E7CD01;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
     border-radius: 10px;
 }
 
-.dlink {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    padding: 20px 0;
+#myBtn:hover {
+    background-color: #ceb702;
 }
 
-/* Estilos del pie de página */
+/* Estilos responsivos */
 
-footer {
-    background-color: black;
-    padding: 2% 5%;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
+@media screen and (max-width: 926px) {
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondoL.jpg');
+        width: auto;
+        height: 100%;
+        background-position: center top;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    .home {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .brand {
+        width: 50%;
+        margin-bottom: 15px;
+    }
+
+    .texto {
+        text-align: justify;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .titulo {
+        font-family: 'montserrat', sans-serif;
+        font-weight: 400;
+        margin: 25px 0 30px 0;
+    }
 }
 
-.footer-left {
-    display: flex;
-    align-items: center;
+@media screen and (max-width: 780px) {
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondoM.jpg');
+        width: auto;
+        height: 100%;
+        background-position: center top;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    .home {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .brand {
+        width: 70%;
+        margin-bottom: 15px;
+    }
+
+    .texto {
+        text-align: justify;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .titulo {
+        font-family: 'montserrat', sans-serif;
+        font-weight: 400;
+        margin: 25px 0 30px 0;
+    }
 }
 
-.footer-right {
-    display: flex;
+@media screen and (max-width: 600px) {
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondoS.jpg');
+        width: auto;
+        height: 100%;
+        background-position: center top;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    .home {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .brand {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .texto {
+        text-align: justify;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .titulo {
+        font-family: 'montserrat', sans-serif;
+        font-weight: 400;
+        margin: 25px 0 30px 0;
+    }
 }
 
-.footer-links {
-    margin-left: 20px;
-    display: flex;
+@media screen and (max-width: 480px) {
+    .gallery-column {
+        flex: 100%;
+        max-width: 100%;
+    }
 }
-
-.footer-links a {
-    margin-right: 10px;
-    color: white;
-}
-
-.footer-links a:hover {
-    color: #E7CD01;
-}
-
-.footer-social {
-    display: flex;
-    margin-left: 20px;
-}
-
-.footer-social a {
-    margin-right: 10px;
-    color: white;
-}
-
-.footer-social a:hover {
-    color: #E7CD01;
-}
-
