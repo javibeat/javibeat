@@ -1,19 +1,26 @@
-// Get the button
-let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+// Wait for the DOMContentLoaded event before executing the JavaScript code
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+  
+    // Add scroll event listener to the window
+    window.addEventListener("scroll", scrollFunction);
+  
+    function scrollFunction() {
+      if (window.scrollY > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+  
+    // Add click event listener to the button
+    mybutton.addEventListener("click", topFunction);
+  
+    function topFunction() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  });  
