@@ -20,7 +20,7 @@
 a {
     text-decoration: none;
 }
-   
+
 li {
     list-style: none;
 }
@@ -35,7 +35,7 @@ li {
     background-color: #E7CD01;
     color: rgb(0, 0, 0);
 }
-   
+
 .nav-links a {
     color: rgb(1, 1, 1);
 }
@@ -47,38 +47,38 @@ li {
 }
 
 /* NAVBAR MENU */
-   
+
 .menu {
     display: flex;
     gap: 1em;
     font-size: 18px;
 }
-   
+
 .menu li:hover {
     background-color: #efd850;
     border-radius: 15px;
     transition: 0.3s ease;
 }
-   
+
 .menu li {
     padding: 5px 14px;
 }
 
 /* DROPDOWN MENU */
-   
+
 .services {
-    position: relative; 
+    position: relative;
 }
-   
+
 .dropdown {
     background-color: #E7CD01;
     padding: 1em 0;
-    position: absolute; /*WITH RESPECT TO PARENT*/
+    position: absolute;
     display: none;
     border-radius: 8px;
     top: 35px;
 }
-   
+
 .dropdown li + li {
     margin-top: 10px;
 }
@@ -88,7 +88,7 @@ li {
     width: 8em;
     text-align: center;
 }
-   
+
 .dropdown li:hover {
     background-color: #f1de48;
 }
@@ -103,20 +103,20 @@ li {
 
 input[type=checkbox] {
     display: none;
-} 
-   
+}
+
 /* HAMBURGER MENU */
-   
+
 .hamburger {
     display: none;
     font-size: 24px;
     user-select: none;
 }
-   
+
 /* APPLYING MEDIA QUERIES */
-   
+
 @media (max-width: 768px) {
-    .menu { 
+    .menu {
         display: none;
         position: absolute;
         background-color: #E7CD01;
@@ -125,31 +125,31 @@ input[type=checkbox] {
         text-align: center;
         padding: 16px 0;
     }
-   
+
     .menu li:hover {
         display: inline-block;
         background-color: #E7CD01;
         transition: 0.3s ease;
     }
-   
+
     .menu li + li {
         margin-top: 12px;
     }
-   
-    input[type=checkbox]:checked ~ .menu{
+
+    input[type=checkbox]:checked~.menu {
         display: block;
     }
-   
+
     .hamburger {
         display: block;
     }
-   
+
     .dropdown {
         left: 50%;
         top: 30px;
         transform: translateX(35%);
     }
-   
+
     .dropdown li:hover {
         background-color: #E7CD01;
     }
@@ -159,30 +159,30 @@ input[type=checkbox] {
         display: none;
     }
 
-    .menu-icon:checked ~ .navbar .menu {
+    .menu-icon:checked~.navbar .menu {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .menu-icon:checked ~ .navbar .menu li {
+    .menu-icon:checked~.navbar .menu li {
         opacity: 1;
         transform: translateY(0);
     }
 
-    .menu-icon:checked ~ .navbar .menu li:nth-child(1) {
+    .menu-icon:checked~.navbar .menu li:nth-child(1) {
         transition-delay: 0.2s;
     }
 
-    .menu-icon:checked ~ .navbar .menu li:nth-child(2) {
+    .menu-icon:checked~.navbar .menu li:nth-child(2) {
         transition-delay: 0.4s;
     }
 
-    .menu-icon:checked ~ .navbar .menu li:nth-child(3) {
+    .menu-icon:checked~.navbar .menu li:nth-child(3) {
         transition-delay: 0.6s;
     }
 
-    .menu-icon:checked ~ .navbar .menu li:nth-child(4) {
+    .menu-icon:checked~.navbar .menu li:nth-child(4) {
         transition-delay: 0.8s;
     }
 }
@@ -190,7 +190,7 @@ input[type=checkbox] {
 /* RESPONSIVE MENU END */
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondo.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.jpg');
     width: auto;
     height: 100%;
     background-position: center top;
@@ -420,54 +420,52 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
-  }
-  
-  /* Create four equal columns that sits next to each other */
-  .column {
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
-  }
-  
-  .column img {
+}
+
+.column img {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
-  }
-  
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 800px) {
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
     .column {
-      flex: 50%;
-      max-width: 50%;
+        flex: 50%;
+        max-width: 50%;
     }
-  }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
     .column {
-      flex: 100%;
-      max-width: 100%;
+        flex: 100%;
+        max-width: 100%;
     }
-  }
+}
 
 /* RESPONSIVE */
 
 @media screen and (max-width: 926px) {
-
     body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondoL.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.jpg');
         width: auto;
         height: 100%;
         background-position: center top;
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        -webkit-background-size:cover;
-        -moz-background-size:cover;
-        -o-background-size:cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
     }
-
 
     .home {
         color: white;
@@ -481,7 +479,7 @@ body {
         width: 50%;
         margin-bottom: 15px;
     }
-    
+
     .texto {
         text-align: justify;
     }
@@ -494,21 +492,19 @@ body {
         font-family: 'montserrat', sans-serif;
         font-weight: 400;
         margin: 25px 0 30px 0;
-
     }
 }
 
 @media screen and (max-width: 780px) {
-
     body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondom.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.jpg');
         background-position: center top;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        -webkit-background-size:contain;
-        -moz-background-size:contain;
-        -o-background-size:contain;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
     }
 
     .brand {
@@ -535,9 +531,9 @@ body {
     }
 
     .button {
-        background-color: #ceb702
+        background-color: #ceb702;
     }
-    
+
     .but {
         display: flex;
         justify-content: center;
@@ -558,17 +554,17 @@ body {
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
-  }
-  
-  #myBtn:hover {
-    background-color: #ceb702;
-  }
+}
 
-  footer {
+#myBtn:hover {
+    background-color: #ceb702;
+}
+
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 10px;
     background-color: #E7CD01;
-  }
+}
