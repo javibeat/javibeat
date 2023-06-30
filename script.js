@@ -1,8 +1,10 @@
+// Función para alternar el menú en dispositivos móviles
 function toggleMenu() {
   const menu = document.querySelector('.menu');
   menu.classList.toggle('active');
 }
 
+// Mostrar u ocultar el botón "ToTop" según el desplazamiento de la página
 const toTopLink = document.getElementById('toTop');
 window.addEventListener('scroll', function() {
   if (window.pageYOffset > 100) {
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const sections = document.querySelectorAll('.section');
   const menuLinks = document.querySelectorAll('.menu a');
 
+  // Desplazamiento suave al hacer clic en los enlaces del menú
   function scrollToSection(e) {
     e.preventDefault();
     const targetSection = document.querySelector(this.hash);
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', scrollToSection);
   });
 
+  // Cambiar el enlace activo del menú según el desplazamiento de la página
   window.addEventListener('scroll', function () {
     const currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
     sections.forEach(function (section) {
@@ -44,8 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  const toTopLink = document.getElementById('toTop');
-
+  // Desplazamiento suave al hacer clic en el botón "ToTop"
   toTopLink.addEventListener('click', function (event) {
     event.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
@@ -75,15 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     requestAnimationFrame(animation);
   }
-
-  const grid = document.querySelector('.row');
-  const masonry = new Masonry(grid, {
-    itemSelector: '.column',
-    columnWidth: '.column',
-    percentPosition: true
-  });
 });
 
+// Configuración de los videos de YouTube
 let player;
 function onYouTubeIframeAPIReady() {
   const youtubeVideoIds = ['h7eWqTOjt4s', 'SU8Y13_IepI', 'N2GOHUJCxAQ'];
