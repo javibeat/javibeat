@@ -1,80 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN0MME937V"></script>
-    <script src="script.js"></script>
-
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>javibeat.com - International DJ</title>
-    <meta name="description" content="Javi Beat is an international DJ with more than 20 years of experience. Book now for your event.">
-    <meta name="keywords" content="DJ, International DJ, music, entertainment, event, bookings, Dubai, Beach Club, Beach Club, Attiko">
-    <meta name="author" content="Javi Beat">
-
-    <!-- Search Engine -->
-    <meta name="image" content="https://github.com/javibeat/javibeat/blob/540b87637772b8ebeb6dfa8c5f39135dfc32db98/logometa.png">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javibeat.com</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- COMMON TAGS -->
+    <meta name="description" content="International DJ with more than 20 years of experience">
+    <meta name="image" content="https://github.com/javibeat/javibeat/blob/63d3aff6f7d7d59f1114fe484324b1c98692e4a1/logob.png">
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="javibeat.com">
-    <meta itemprop="description" content="Javi Beat - International DJ">
-    <meta itemprop="image" content="https://github.com/javibeat/javibeat/blob/540b87637772b8ebeb6dfa8c5f39135dfc32db98/logometa.png">
-
+    <meta itemprop="description" content="International DJ with more than 20 years of experience">
+    <meta itemprop="image" content="https://github.com/javibeat/javibeat/blob/63d3aff6f7d7d59f1114fe484324b1c98692e4a1/logob.png">
     <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta property="og:title" content="javibeat.com">
-    <meta property="og:description" content="Javi Beat - International DJ">
-    <meta property="og:image" content="https://github.com/javibeat/javibeat/blob/540b87637772b8ebeb6dfa8c5f39135dfc32db98/logometa.png">
+    <meta property="og:description" content="International DJ with more than 20 years of experience">
+    <meta property="og:image" content="https://github.com/javibeat/javibeat/blob/63d3aff6f7d7d59f1114fe484324b1c98692e4a1/logob.png">
+    <meta property="og:url" content="https://javibeat.com">
+    <meta property="og:site_name" content="javibeat.com">
     <meta property="og:type" content="website">
-
-    <!-- BoxIcons v2.1.2 -->
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
-
-    <!-- Montserrat Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
-        <nav class="navbar">
-            <div id="top"><img src="favicon.png" alt="logo" width="60%"></div>
-            <ul class="nav-links">
-              <input type="checkbox" id="checkbox_toggle" />
-              <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-              <div class="menu">
+        <nav>
+            <div class="logo">
+                <img src="favicon.png" alt="Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="#home">HOME</a></li>
                 <li><a href="#gallery">GALLERY</a></li>
                 <li><a href="#gigs">GIGS</a></li>
-                <li><a href="#video">VIDEO</a></li>
-                <li><a href="#mixtapes">MIXTAPES</a></li>
-                <li><a href="#press">PRESS KIT</a></li>
-              </div>
+                <li><a href="#media">MEDIA</a></li>
+                <li><a href="#presskit">PRESS KIT</a></li>
             </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         </nav>
     </header>
-
-    <section id="home">
-        <div class="home">
-            <img class="brand" src="logo.png" alt="javibeat logo">
-            <div class="intro">
-                <h1>CURRENTLY IN DUBAI – UAE</h1>
-                <p>From PALMA DE MALLORCA, SPAIN</p>
-                <p>(+34) 678 255 497 · bookings@javibeat.com</p>
-                <br>
-                <p class="texto">DJ with more than 20 years of experience in the sector.<br>
-                    Resident DJ in Drift Beach Club Dubai.<br>
-                    He has shared DJ booth with the most prestigious DJs in the world at Provocateur Dubai<br>
-                    such as Solomun, Roger Sánchez, Black Coffee, Martinez Brothers, Kiko Navarro …</p>
-                <br>
-                <p class="social">
-                    <a href="https://soundcloud.com/javibeat/tracks"><i class='bx bxl-soundcloud'></i></a>
-                    <a href="https://www.instagram.com/javibeat/"><i class='bx bxl-instagram'></i></a>
-                    <a href="https://www.facebook.com/javibeatdj"><i class='bx bxl-facebook-circle'></i></a>
-                    <a href="https://www.tiktok.com/@javibeatdxb"><i class='bx bxl-tiktok'></i></a>
-                </p>
-            </div>
+    
+    <section id="home" class="section">
+        <div class="background-image"></div>
+        <div class="content">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>CURRENTLY IN DUBAI – UAE</h1>
+            <p>From PALMA DE MALLORCA, SPAIN</p>
+            <p>(+34) 678 255 497 · bookings@javibeat.com</p>
+            <p>DJ with more than 20 years of experience in the sector.</p>
+            <p>Resident DJ in Drift Beach Club and Attiko @ Dubai.</p>
+            <p>He has shared DJ booth with the most prestigious DJs in the world at Provocateur Dubai such as Solomun, Roger Sánchez, Black Coffee, Martinez Brothers, Kiko Navarro.</p>
+            <div class="social">
+                <a href="https://instagram.com/javibeat" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://tiktok.com/javibeatdxb" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/tiktok--v2.png" alt="TikTok">
+                </a>
+                <a href="https://twitter.com/javibeat" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter">
+                </a>
+                <a href="https://soundcloud.com/javibeat" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/soundcloud.png" alt="SoundCloud">
+                </a>                  
+            </div>                  
         </div>
     </section>
 
@@ -104,97 +93,72 @@
                 <img src="cdt.jpg" alt="Casa de Tapas Dubai">
             </div>
         </div>
-    </section>
-
-    <section id="gigs">
-        <div class="container">
-            <div>
-                <h1 class="titulo" style="color: white;">GIGS</h1>
-            </div>
-            <div class="box">
-                <h3>JUNE</h3>
-                <br><br>
-                <p>Mon 13-16 @ Drift Dubai</p><br>
-                <p>Mon 17:30-21:30 @ Attiko W Hotel Dubai</p><br>
-                <p>Tue 13-17 @ Drift Dubai</p><br>
-                <p>Wed 13-17 @ Drift Dubai</p><br>
-                <p>Fri 13-18 @ Drift Dubai</p><br>
-                <p>Sat 13-19 @ Drift Dubai</p><br>
-                <p>Sun 13-19 @ Drift Dubai</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="video">
-        <div>
-            <h1 class="titulo">VIDEO</h1>
-        </div>
-        <div class="video">
-            <div class="v1">
-                <iframe class="size" src="https://www.youtube.com/embed/h7eWqTOjt4s" title="Nikki Beach Mallorca - Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="vt">
-                <h2>NIKKI BEACH</h2>
-                <p class="op">MALLORCA</p><br>
-                <p>Summer 2015. I had the pleasure to play in one of the best beach clubs around the world.</p>
-            </div>
-        </div>
-        <br>
-        <div class="video">
-            <div class="v1">
-                <iframe class="size" src="https://www.youtube.com/embed/SU8Y13_IepI" title="Casa de Tapas Dubai - Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="vt">
-                <h2>CASA DE TAPAS</h2>
-                <p class="op">DUBAI</p><br>
-                <p>I joined the Dubai Golf Team in 2017 and it was one of my best experiences in a company, playing in two venues, Casa de Tapas and Cielo Sky Lounge.</p>
-            </div>
-        </div>
-        <br>
-        <div class="video">
-            <div class="v1">
-                <iframe class="size" src="https://www.youtube.com/embed/N2GOHUJCxAQ" title="Folie Bodrum - Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="vt">
-                <h2>FOLIE</h2>
-                <p class="op">BODRUM / TURKEY</p><br>
-                <p>After many years I’m still trying to enjoy every day of my job. I enjoyed a lot playing as a resident DJ in Folie, a new concept of beach club. This summer was a unique experience in a unique spot.</p>
-            </div>
-        </div>
     </section>    
 
-    <section id="mixtapes">
-        <div>
-            <h1 class="titulo" style="color: white;">MIXTAPES</h1>
-        </div>
-        <div class="mix">
-            <a href="https://www.mixcloud.com/javibeat">
-                <img src="mixcloud.png" alt="Mixcloud" class="mixcloud-image">
-            </a>
-            <div class="but">
-                <button class="button"><a href="https://www.mixcloud.com/javibeat">MORE</a></button>
+    <section id="gigs" class="section">
+        <div class="content">
+            <h1>Gigs</h1>
+            <div class="gigs-info">
+                <div class="gigs-box">
+                    <h2>JULY</h2>
+                    <p>Tue 13-17 @ Drift Dubai</p>
+                    <p>Wed 13-17 @ Drift Dubai</p>
+                    <p>Thu 13-17 @ Drift Dubai</p>
+                    <p>Thu 17:30-21:30 @ Attiko Dubai</p>
+                    <p>Fri 13-18 @ Drift Dubai</p>
+                    <p>Sat 13-19 @ Drift Dubai</p>
+                    <p>Sun 12-17 @ Drift Dubai</p>
+                </div>
             </div>
         </div>
-    </section>    
+    </section>
 
-    <section id="press">
-        <div>
-            <h1 class="titulo">PRESS KIT</h1>
-        </div>
-        <div class="press">
-            <img src="press.jpg" alt="press kit">
-            <div class="pie">
-                <a href="presskit.pdf">DOWNLOAD Press Kit</a>
-                <br><br>
-                <a href="https://www.elcorreo.ae/articulo/ocio/javi-beat-mallorca-cielo-dubai/20181008095651094071.html">El Correo del Golfo Presskit</a>
+    <section id="media" class="section">
+        <div class="content">
+            <h1>Media</h1>
+            <div class="video-container">
+                <div id="youtube-player1"></div>
+                <div class="video-details">
+                    <h1>Nikki Beach</h1>
+                    <h3>Mallorca</h3>
+                    <p>DSummer 2015. I had the pleasure to play in one of the best beach clubs around the world.</p>
+                </div>
             </div>
+            <div class="video-container">
+                <div id="youtube-player2"></div>
+                <div class="video-details">
+                    <h1>Casa de Tapas</h1>
+                    <h3>Dubai</h3>
+                    <p>I joined the Dubai Golf Team in 2017 and it was one of my best experiences in a company, playing in two venues, Casa de Tapas and Cielo Sky Lounge.</p>
+                </div>
+            </div>
+            <div class="video-container">
+                <div id="youtube-player3"></div>
+                <div class="video-details">
+                    <h1>Folie</h1>
+                    <h3>Bodrum / Turkey</h3>
+                    <p>After many years I'm still trying to enjoy every day of my job. I enjoyed a lot playing as a resident DJ in Folie, a new concept of beach club. This summer was a unique experience in a unique spot.</p>
+                </div>
+            </div>
+        </div> 
+    </section>      
+
+    <section id="presskit" class="section">
+        <div class="content">
+            <h1>Press Kit</h1>
+            <img src="press.jpg" alt="Press Kit Image">
+            <p><a href="presskit.pdf">Download Press Kit</a></p>
+            <br><br>
+            <a href="https://www.elcorreo.ae/articulo/ocio/javi-beat-mallorca-cielo-dubai/20181008095651094071.html">El Correo del Golfo Presskit</a>
         </div>
     </section>
 
     <footer>
-        <div><a href="https://truelovecreative.es" target="_blank" style="color: black;"><i class='bx bxs-heart' style="color: red;"></i> True Love Creative</a></div>
+        <a href="https://truelovecreative.es" target="_blank">True Love Creative @ 2019</a>
     </footer>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bxs-chevrons-up'></i></button>
+    <a href="#home" id="toTop"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="script.js"></script>
 </body>
 </html>
