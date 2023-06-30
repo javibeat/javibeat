@@ -568,3 +568,8 @@ footer {
     padding: 10px;
     background-color: #E7CD01;
 }
+
+.mixcloud-image {
+    max-width: 100%;
+    height: auto;
+  }
