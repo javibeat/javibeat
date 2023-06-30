@@ -317,6 +317,8 @@ body {
     margin-bottom: 20px;
     background-color: #000;
     color: #fff;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   
   .video-container iframe {
