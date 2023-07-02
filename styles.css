@@ -209,6 +209,7 @@ body {
     align-items: center;
     text-align: center;
     height: 100vh;
+    overflow: auto;
   }
 
   .gigs-box {
@@ -422,7 +423,6 @@ body {
   padding: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  overflow: auto;
 }
 
 .image-container {
@@ -465,4 +465,19 @@ body {
   .text-container {
     order: 1;
   }
+
+  .icons-about {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .icons-about .icon {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 10px;
+  }
 }
+
+
