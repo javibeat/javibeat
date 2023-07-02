@@ -201,15 +201,14 @@ body {
   
   .content {
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     z-index: -1;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
     height: 100vh;
     overflow: auto;
   }
@@ -243,12 +242,6 @@ body {
     overflow: auto; /* Agregamos scroll si el contenido sobrepasa el tamaño de la sección */
   }
   
-  .press-content {
-    max-width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
   .press-image {
     max-width: 100%;
     height: auto;
@@ -260,15 +253,6 @@ body {
   
   .press-link {
     margin-right: 10px;
-  }
-  
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
   }
   
   .contact-container {
