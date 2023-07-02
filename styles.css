@@ -191,10 +191,12 @@ body {
     right: 0;
     bottom: 0;
     z-index: -1;
+    overflow: auto; /* Agregamos scroll si el contenido sobrepasa el tamaño de la pantalla */
   }
   
   .black .content {
     color: white;
+    overflow: auto; /* Agregamos scroll si el contenido sobrepasa el tamaño del contenedor */
   }
   
   .content {
