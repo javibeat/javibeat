@@ -422,6 +422,7 @@ body {
   padding: 20px;
   margin-left: 20px;
   margin-right: 20px;
+  overflow: auto;
 }
 
 .image-container {
@@ -439,6 +440,19 @@ body {
   flex: 1;
   text-align: justify;
   padding: 20px;
+}
+
+.icons-about {
+  display: flex;
+  justify-content: center;
+}
+
+.icons-about .icon {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  margin: 5px;
+  padding: 10px;
 }
 
 /* Estilos para la versión móvil */
