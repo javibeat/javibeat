@@ -165,10 +165,11 @@ header {
 }
 
 .home-background .content {
+  position: fixed;
   color: white;
   text-align: center;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 100px auto;
   padding: 20px;
   z-index: 5;
 }
@@ -195,12 +196,13 @@ header {
 }
 
 .black .content {
+  margin-top: 100px;
   color: white;
   overflow: auto;
 }
 
 .content {
-  position: fixed;
+  margin-top: 100px;
   left: 0;
   right: 0;
   z-index: -1;
@@ -209,7 +211,7 @@ header {
   align-items: center;
   text-align: center;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
   overflow: auto;
 }
 
