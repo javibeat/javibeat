@@ -21,7 +21,7 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #E7CD01;
+    background-color: #ffcf01;
     display: flex;
     justify-content: space-around;
     width: 300px;
@@ -43,7 +43,6 @@ body {
   .navbar a.active img {
     filter: invert(100%);
   }
-  
   
   .content {
     margin-bottom: 100px;
@@ -198,7 +197,7 @@ body {
     margin: 0 1.5rem 1.5rem 0;
     display: inline-block;
     width: 100%;
-    border: solid 2px black;
+    border: solid 2px #ffcf01;
     padding: 5px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
@@ -294,7 +293,7 @@ body {
   
   .divider {
     border: none;
-    border-top: 2px solid #000000;
+    border-top: 2px solid black;
     width: 100%;
     margin: 20px 0;
   }
@@ -303,7 +302,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin: 10px;
   }
   
   .contact-icons a {
@@ -317,7 +316,7 @@ body {
   
   .contact-icons .icon {
     display: inline-block;
-    background-color: black;
+    background-color: #ffcf01;
     border-radius: 30%;
     padding: 10px;
   }
