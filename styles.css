@@ -40,9 +40,10 @@ body {
     font-size: 12px;
   }
   
-  .navbar a.active {
-    font-weight: bold;
+  .navbar a.active img {
+    filter: invert(100%);
   }
+  
   
   .content {
     margin-bottom: 100px;
