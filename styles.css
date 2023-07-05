@@ -43,6 +43,10 @@ body {
   .navbar a.active img {
     filter: invert(100%);
   }
+
+  .navbar img {
+    max-width: 32px;
+  }
   
   .content {
     margin-bottom: 100px;
