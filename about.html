@@ -1,85 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Javi Beat - International DJ</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Search Engine -->
-  <meta name="description" content="International DJ with more than 20 years of experience, based in Dubai">
-  <meta name="keywords" content="DJ, Dubai, Music, Music curator, Event, Party, Beach Club">
-  <meta name="image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
-  <!-- Schema.org for Google -->
-  <meta itemprop="name" content="Javi Beat - International DJ">
-  <meta itemprop="description" content="International DJ with more than 20 years of experience, based in Dubai">
-  <meta itemprop="image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
-  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  <meta name="og:title" content="Javi Beat - International DJ">
-  <meta name="og:description" content="International DJ with more than 20 years of experience, based in Dubai">
-  <meta name="og:image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
-  <meta name="og:url" content="https://javibeat.com">
-  <meta name="og:type" content="website">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javi Beat - International DJ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+        <!-- Search Engine -->
+    <meta name="description" content="International DJ with more than 20 years of experience, based in Dubai">
+    <meta name="keywords" content="DJ, Dubai, Music, Music curator, Event, Party, Beach Club">
+    <meta name="image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
+        <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Javi Beat - International DJ">
+    <meta itemprop="description" content="International DJ with more than 20 years of experience, based in Dubai">
+    <meta itemprop="image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
+        <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Javi Beat - International DJ">
+    <meta name="og:description" content="International DJ with more than 20 years of experience, based in Dubai">
+    <meta name="og:image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
+    <meta name="og:url" content="https://javibeat.com">
+    <meta name="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
-
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="favicon.png" alt="javibeat Logo">
-      </div>
-      <div class="menu">
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="gallery.html">GALLERY</a></li>
-          <li><a href="gigs.html">GIGS</a></li>
-          <li><a href="presskit.html">PRESSKIT</a></li>
-          <li><a href="#.html">ABOUT ME</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-      </div>
-      <div class="menu-icon" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-    </nav>
-    <div class="menu-dropdown">
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="gallery.html">GALLERY</a></li>
-        <li><a href="gigs.html">GIGS</a></li>
-        <li><a href="presskit.html">PRESSKIT</a></li>
-        <li><a href="#.html">ABOUT ME</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-    </div>
-  </header>
+  <div class="navbar">
+    <a href="index.html"><img src="home.png" alt="Home"></a>
+    <a href="gallery.html"><img src="pic.png" alt="Gallery"></a>
+    <a href="gigs.html"><img src="gigs.png" alt="Gigs"></a>
+    <a href="presskit.html"><img src="press.png" alt="Press Kit"></a>
+    <a href="#.html" class="active"><img src="about.png" alt="About Me"></a>
+    <a href="contact.html"><img src="contact.png" alt="Contact"></a>
+  </div>
 
-  <div class="black">
-    <div class="content">
-      <h1>ABOUT ME</h1>
-      <div class="about-container">
-        <div class="image-container">
-          <img src="javibeat.jpeg" alt="javi Beat DJ">
+  <div class="content-about">
+    <div class="about">
+        <h1>ABOUT ME</h1>
+        <div class="box">
+            <div class="main-contact">
+                <div class="contact-container">
+                    <div class="contact-info">
+                      <h2>JAVI BEAT</h2>
+                    </div>
+                    <div class="contact-info">
+                      <p>Palma de Mallorca | Spain</p>
+                    </div>
+                    <hr class="divider">
+                    <div class="contact-info">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod lacinia diam ut fermentum. Sed ut est in risus rhoncus pulvinar sed id quam. Suspendisse aliquam diam id sem varius, sit amet convallis ligula feugiat. In consequat justo vel tincidunt interdum. Integer pharetra, sapien vel fringilla lacinia, quam justo scelerisque elit, sed auctor nunc arcu eu ex. Quisque volutpat eros ut libero vestibulum, in aliquet erat convallis. Fusce cursus convallis felis, ac pharetra risus condimentum eu. Sed consequat magna sed tellus tristique, sed dapibus velit aliquet. Integer dictum eros in sagittis rutrum. Vestibulum id ligula orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                      </div>
+                    <hr class="divider">
+                    <div class="contact-icons">
+                        <a href="https://www.mixcloud.com/javibeat" alt="Enlace a Mixcloud" class="icon"><i class="fab fa-mixcloud"></i></a>
+                        <a href="https://www.soundcloud.com/javibeat" alt="Enlace a SoundCloud" class="icon"><i class="fab fa-soundcloud"></i></a>
+                        <a href="https://www.youtube.com/@javibeat" alt="Enlace a YouTube" class="icon"><i class="fab fa-youtube"></i></a>
+                    </div>                
+                  </div>
+            </div> 
         </div>
-        <div class="text-container">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id eleifend nulla.
-            Sed maximus eu elit eu vehicula. Donec auctor consequat enim non dapibus.
-            Curabitur blandit ex et lectus interdum, id condimentum nulla mollis.
-            Sed dapibus turpis vel massa tempus, id pharetra lorem vulputate. Donec hendrerit finibus erat ut lacinia.</p>
-            <div class="icons-about">
-              <a href="https://www.mixcloud.com/javibeat" alt="Enlace a Mixcloud" class="icon"><i class="fab fa-mixcloud"></i></a>
-              <a href="https://www.soundcloud.com/javibeat" alt="Enlace a SoundCloud" class="icon"><i class="fab fa-soundcloud"></i></a>
-              <a href="https://www.youtube.com/@javibeat" alt="Enlace a YouTube" class="icon"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>  
-      </div>
     </div>
-  </div>  
+  </div>
 
-  <script src="script.js" defer></script>
 </body>
-
 </html>

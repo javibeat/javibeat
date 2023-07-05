@@ -1,84 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Javi Beat - International DJ</title>
-<link rel="stylesheet" href="styles.css">
-    <!-- Search Engine -->
-<meta name="description" content="International DJ with more than 20 years of experience, based in Dubai">
-<meta name="keywords" content="DJ, Dubai, Music, Music curator, Event, Party, Beach Club">
-<meta name="image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
-    <!-- Schema.org for Google -->
-<meta itemprop="name" content="Javi Beat - International DJ">
-<meta itemprop="description" content="International DJ with more than 20 years of experience, based in Dubai">
-<meta itemprop="image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
-    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-<meta name="og:title" content="Javi Beat - International DJ">
-<meta name="og:description" content="International DJ with more than 20 years of experience, based in Dubai">
-<meta name="og:image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
-<meta name="og:url" content="https://javibeat.com">
-<meta name="og:type" content="website">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javi Beat - International DJ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+        <!-- Search Engine -->
+    <meta name="description" content="International DJ with more than 20 years of experience, based in Dubai">
+    <meta name="keywords" content="DJ, Dubai, Music, Music curator, Event, Party, Beach Club">
+    <meta name="image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
+        <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Javi Beat - International DJ">
+    <meta itemprop="description" content="International DJ with more than 20 years of experience, based in Dubai">
+    <meta itemprop="image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
+        <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Javi Beat - International DJ">
+    <meta name="og:description" content="International DJ with more than 20 years of experience, based in Dubai">
+    <meta name="og:image" content="https://github.com/javibeat/javibeat/blob/024e394b947efb996865d443654d8e7baacb08b7/logob.png?raw=true">
+    <meta name="og:url" content="https://javibeat.com">
+    <meta name="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
-
 <body>
+  <div class="navbar">
+    <a href="index.html"><img src="home.png" alt="Home"></a>
+    <a href="gallery.html"><img src="pic.png" alt="Gallery"></a>
+    <a href="gigs.html"><img src="gigs.png" alt="Gigs"></a>
+    <a href="presskit.html" class="active"><img src="press.png" alt="Press Kit"></a>
+    <a href="about.html"><img src="about.png" alt="About Me"></a>
+    <a href="#.html" class="active"><img src="contact.png" alt="Contact"></a>
+  </div>
 
-    <header>
-        <nav class="navbar">
-          <div class="logo">
-            <img src="favicon.png" alt="javibeat Logo">
-          </div>
-          <div class="menu">
-            <ul>
-              <li><a href="index.html">HOME</a></li>
-              <li><a href="gallery.html">GALLERY</a></li>
-              <li><a href="gigs.html">GIGS</a></li>
-              <li><a href="presskit.html">PRESSKIT</a></li>
-              <li><a href="about.html">ABOUT ME</a></li>
-              <li><a href="#.html">CONTACT</a></li>
-            </ul>
-          </div>
-          <div class="menu-icon" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-        </nav>
-        <div class="menu-dropdown">
-          <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="gigs.html">GIGS</a></li>
-            <li><a href="presskit.html">PRESSKIT</a></li>
-            <li><a href="about.html">ABOUT ME</a></li>
-            <li><a href="#.html">CONTACT</a></li>
-          </ul>
-        </div>
-      </header>
-
-      <div class="content">
+  <div class="content-contact">
+    <div class="contact">
         <h1>CONTACT</h1>
-        <div class="contact-container">
-          <div class="contact-info">
-            <p><a href="mailto:javibeat@icloud.com">javibeat@icloud.com</a></p>
-          </div>
-          <hr class="divider">
-          <div class="contact-info">
-            <p>+971 585 32 4519</p>
-          </div>
-          <hr class="divider">
-          <div class="contact-icons">
-            <a href="https://www.instagram.com/javibeat" alt="Enlace a Instagram" class="icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com/javibeat" alt="Enlace a Twitter" class="icon"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.tiktok.com/@javibeatdxb" alt="Enlace a TikTok" class="icon"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/javibeatdj" alt="Enlace a Facebook" class="icon"><i class="fab fa-facebook"></i></a>
-          </div>                
+        <div class="box">
+            <div class="main-contact">
+                <div class="contact-container">
+                    <div class="contact-info">
+                      <p><a href="mailto:javibeat@icloud.com">javibeat@icloud.com</a></p>
+                    </div>
+                    <hr class="divider">
+                    <div class="contact-info">
+                      <p>+971 585 32 4519</p>
+                    </div>
+                    <hr class="divider">
+                    <div class="contact-icons">
+                      <a href="https://www.instagram.com/javibeat" alt="Enlace a Instagram" class="icon"><i class="fab fa-instagram"></i></a>
+                      <a href="https://www.twitter.com/javibeat" alt="Enlace a Twitter" class="icon"><i class="fab fa-twitter"></i></a>
+                      <a href="https://www.tiktok.com/@javibeatdxb" alt="Enlace a TikTok" class="icon"><i class="fab fa-tiktok"></i></a>
+                      <a href="https://www.facebook.com/javibeatdj" alt="Enlace a Facebook" class="icon"><i class="fab fa-facebook"></i></a>
+                    </div>                
+                  </div>
+            </div> 
         </div>
-      </div>      
-
-  <script src="script.js" defer></script>
+    </div>
+  </div>
 
 </body>
 </html>
