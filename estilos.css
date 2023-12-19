@@ -1,0 +1,30 @@
+/* estilos.css */
+.reproductor {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#play-button, #pause-button {
+    cursor: pointer;
+    background-color: #ff7700;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.lista-reproduccion ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-reproduccion li {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #eee;
+    margin-bottom: 2px;
+}
+
+.lista-reproduccion li.active {
+    background-color: #ddd;
+}
