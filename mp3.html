@@ -2,23 +2,28 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Reproductor Estilo SoundCloud</title>
+    <title>Reproductor de Música</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <div class="reproductor">
-        <audio id="audio-player"></audio>
-        <div id="play-button">Play</div>
-        <div id="pause-button">Pause</div>
-        <div class="lista-reproduccion">
-            <ul id="playlist">
-                <li class="active" data-src="audio1.mp3">Canción 1</li>
-                <li data-src="audio2.mp3">Canción 2</li>
-                <!-- Agrega más elementos aquí -->
-            </ul>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
+    <div class="reproductor">
+        <!-- ... -->
+        <audio id="audio-player">
+            <source src="tu-cancion.mp3" type="audio/mp3">
+            Tu navegador no soporta audio HTML5.
+        </audio>
+        <div class="controles-reproduccion">
+            <button id="play-button">Play</button>
+            <button id="pause-button">Pause</button>
+            <!-- Agrega más botones según sea necesario -->
+        </div>
+        <!-- ... -->
+    </div>
+<script src="script.js"></script>
+
 </body>
 </html>
+
+
+
