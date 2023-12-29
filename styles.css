@@ -88,28 +88,6 @@ body {
     background-color: rgba(0, 0, 0, 0.613);
     z-index: 1;
   }
-
-  .homegig {
-    background-image: url('background.jpg');
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-  }
-  
-  .homegig::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(41, 41, 41, 0.3);
-    z-index: 1;
-  }
   
   .main {
     display: flex;
