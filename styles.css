@@ -155,6 +155,10 @@ body {
   .main img {
     max-width: 300px;
   }
+
+  .flyer {
+    width: 100%;
+  }
   
   .info {
     display: flex;
