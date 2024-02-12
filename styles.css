@@ -145,6 +145,11 @@ body {
     .main {
       margin-top: 0; /* Elimina el margin-top en la versión móvil */
     }
+
+    .flyer {
+      max-width: 90%;
+      height: auto;
+    }
   }
   
   .box {
