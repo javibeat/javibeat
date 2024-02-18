@@ -1,317 +1,434 @@
-$p: 12px;
-$easeOutCubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-$easeOutExpo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
-
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    transform-style: preserve-3d;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transform-style: preserve-3d;
 }
 
 *:focus {
-    outline: none !important;
+  outline: none !important;
 }
 
 body,
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    background: #121214;
+  background: #121214;
 }
 
-
 main {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    height: 100%;
-    padding: $p;
-    perspective: 1000px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  perspective: 1000px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
-    overflow-x: hidden;
-    /* Overflow-y is optional */
-    overflow-y: hidden;
+main>div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-    >div {
-        display: flex;
-        justify-content: center;
-        width: 100%;
+main>div svg {
+  height: 100%;
+}
 
-        svg {
-            height: 100%;
-        }
+main>div:nth-child(1) {
+  opacity: 0;
+  transform: translateZ(1000px);
+  -webkit-animation: zoomFadeIn 5000ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: zoomFadeIn 5000ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  transform-origin: center center;
+}
 
-        &:nth-child(1) {
-            opacity: 0;
-            transform: translateZ(1000px);
-            animation: zoomFadeIn 5000ms $easeOutCubic forwards;
-            transform-origin: center center;
+main>div:nth-child(1) .error-1-e {
+  transform: translateX(-50%);
+  -webkit-animation: slideRight 3000ms cubic-bezier(0.215, 0.61, 0.355, 1) -500ms forwards;
+  animation: slideRight 3000ms cubic-bezier(0.215, 0.61, 0.355, 1) -500ms forwards;
+}
 
-            .error-1-e {
-                transform: translateX(-50%);
-                animation: slideRight 3000ms $easeOutCubic -500ms forwards;
-            }
+main>div:nth-child(1) .error-2-r {
+  transform: translateY(-20%);
+  -webkit-animation: slideDown 5000ms cubic-bezier(0.215, 0.61, 0.355, 1) -500ms forwards;
+  animation: slideDown 5000ms cubic-bezier(0.215, 0.61, 0.355, 1) -500ms forwards;
+}
 
-            .error-2-r {
-                transform: translateY(-20%);
-                animation: slideDown 5000ms $easeOutCubic -500ms forwards;
-            }
+main>div:nth-child(1) .error-4-o {
+  transform: translateX(10%);
+  -webkit-animation: slideLeftSmall 3000ms cubic-bezier(0.215, 0.61, 0.355, 1) -300ms forwards;
+  animation: slideLeftSmall 3000ms cubic-bezier(0.215, 0.61, 0.355, 1) -300ms forwards;
+}
 
-            .error-4-o {
-                transform: translateX(10%);
-                animation: slideLeftSmall 3000ms $easeOutCubic -300ms forwards;
-            }
+main>div:nth-child(1) .error-5-r {
+  transform: translateX(50%);
+  -webkit-animation: slideLeft 3000ms cubic-bezier(0.215, 0.61, 0.355, 1) -500ms forwards;
+  animation: slideLeft 3000ms cubic-bezier(0.215, 0.61, 0.355, 1) -500ms forwards;
+}
 
-            .error-5-r {
-                transform: translateX(50%);
-                animation: slideLeft 3000ms $easeOutCubic -500ms forwards;
-            }
+main>div:nth-child(1) .error-2-0 {
+  transform: translateY(20%);
+  -webkit-animation: slideUp 5000ms cubic-bezier(0.215, 0.61, 0.355, 1) -500ms forwards;
+  animation: slideUp 5000ms cubic-bezier(0.215, 0.61, 0.355, 1) -500ms forwards;
+}
 
-            .error-2-0 {
-                transform: translateY(20%);
-                animation: slideUp 5000ms $easeOutCubic -500ms forwards;
-            }
+main>div:nth-child(1) .error-top {
+  transform: scaleX(0);
+  transform-origin: 163px 3px;
+  -webkit-animation: scaleXIn 4500ms cubic-bezier(0.19, 1, 0.22, 1) 1500ms forwards;
+  animation: scaleXIn 4500ms cubic-bezier(0.19, 1, 0.22, 1) 1500ms forwards;
+}
 
-            .error-top {
-                transform: scaleX(0);
-                // transform-origin: center center;
-                transform-origin: 163px 3px;
+main>div:nth-child(1) .error-left {
+  transform: scaleX(0);
+  transform-origin: 75px 3px;
+  -webkit-animation: scaleXIn 4500ms cubic-bezier(0.19, 1, 0.22, 1) 1500ms forwards;
+  animation: scaleXIn 4500ms cubic-bezier(0.19, 1, 0.22, 1) 1500ms forwards;
+}
 
-                // Extending time: 4.5s - Delay: 1.5s
-                animation: scaleXIn 4500ms $easeOutExpo 1500ms forwards;
-            }
+main>div:nth-child(1) .error-right {
+  transform: scaleX(0);
+  transform-origin: 250px 3px;
+  -webkit-animation: scaleXIn 4500ms cubic-bezier(0.19, 1, 0.22, 1) 1500ms forwards;
+  animation: scaleXIn 4500ms cubic-bezier(0.19, 1, 0.22, 1) 1500ms forwards;
+}
 
-            .error-left {
-                transform: scaleX(0);
-                // transform-origin: right center;
-                transform-origin: 75px 3px;
+main>div:nth-child(2) .quote-top,
+main>div:nth-child(2) .quote-bottom {
+  opacity: 0;
+  -webkit-animation: slideUpFadeIn 1500ms cubic-bezier(0.215, 0.61, 0.355, 1) 4750ms forwards;
+  animation: slideUpFadeIn 1500ms cubic-bezier(0.215, 0.61, 0.355, 1) 4750ms forwards;
+}
 
-                // Extending time: 4.5s - Delay: 1.5s
-                animation: scaleXIn 4500ms $easeOutExpo 1500ms forwards;
-            }
+main>div:nth-child(2) .quote-bottom {
+  -webkit-animation-delay: 5750ms;
+  animation-delay: 5750ms;
+}
 
-            .error-right {
-                transform: scaleX(0);
-                // transform-origin: left center;
-                transform-origin: 250px 3px;
+main>div:nth-child(3) .link-phrase,
+main>div:nth-child(3) .link-mark {
+  opacity: 0;
+  -webkit-animation: slideUpFadeIn 1000ms cubic-bezier(0.215, 0.61, 0.355, 1) 6250ms forwards;
+  animation: slideUpFadeIn 1000ms cubic-bezier(0.215, 0.61, 0.355, 1) 6250ms forwards;
+}
 
-                // Extending time: 4.5s - Delay: 4.5s
-                animation: scaleXIn 4500ms $easeOutExpo 1500ms forwards;
-            }
-        }
+main>div:nth-child(3) .link-mark {
+  opacity: 0;
+  -webkit-animation: fadeIn 1000ms cubic-bezier(0.215, 0.61, 0.355, 1) 6750ms forwards;
+  animation: fadeIn 1000ms cubic-bezier(0.215, 0.61, 0.355, 1) 6750ms forwards;
+}
 
-        &:nth-child(2) {
+main>div:nth-child(3) a {
+  cursor: pointer;
+  transition: all 500ms ease-out;
+}
 
-            .quote-top,
-            .quote-bottom {
-                opacity: 0;
+main>div:nth-child(3) a .top use {
+  transition: all 150ms ease-out;
+}
 
-                // Extending time: 1.5s - Delay: 4.75s
-                animation: slideUpFadeIn 1500ms $easeOutCubic 4750ms forwards;
-            }
+main>div:nth-child(3) a:hover,
+main>div:nth-child(3) a:focus {
+  -webkit-animation: jitter 225ms ease-in-out 2 forwards;
+  animation: jitter 225ms ease-in-out 2 forwards;
+}
 
-            .quote-bottom {
-                animation-delay: 5750ms;
-            }
-        }
+main>div:nth-child(3) a:hover .top use,
+main>div:nth-child(3) a:focus .top use {
+  fill: white;
+}
 
-        &:nth-child(3) {
-
-            .link-phrase,
-            .link-mark {
-                opacity: 0;
-                animation: slideUpFadeIn 1000ms $easeOutCubic 6250ms forwards;
-            }
-
-            .link-mark {
-                opacity: 0;
-                animation: fadeIn 1000ms $easeOutCubic 6750ms forwards;
-            }
-
-            a {
-                cursor: pointer;
-                transition: all 500ms ease-out;
-
-                .top use {
-                    transition: all 150ms ease-out;
-                }
-
-                &:hover,
-                &:focus {
-                    animation: jitter 225ms ease-in-out 2 forwards;
-
-                    .top use {
-                        fill: white;
-                    }
-                }
-
-                &:active {
-                    .top use {
-                        fill: darken(#FF0000, 15%);
-                    }
-                }
-            }
-        }
-    }
+main>div:nth-child(3) a:active .top use {
+  fill: #b30000;
 }
 
 @-moz-document url-prefix() {
-    main {
-        >div {
-            &:nth-child(3) {
-                a {
 
-                    &:hover,
-                    &:focus {
-                        animation: none;
-                    }
-                }
-            }
-        }
-    }
+  main>div:nth-child(3) a:hover,
+  main>div:nth-child(3) a:focus {
+    animation: none;
+  }
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+    transform: translateY(-20%);
+  }
+
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes slideDown {
-    0% {
-        transform: translateY(-20%);
-    }
+  0% {
+    transform: translateY(-20%);
+  }
 
-    100% {
-        transform: none;
-    }
+  100% {
+    transform: none;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    transform: translateY(20%);
+  }
+
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes slideUp {
-    0% {
-        transform: translateY(20%);
-    }
+  0% {
+    transform: translateY(20%);
+  }
 
-    100% {
-        transform: none;
-    }
+  100% {
+    transform: none;
+  }
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes slideRight {
-    0% {
-        transform: translateX(-50%);
-    }
+  0% {
+    transform: translateX(-50%);
+  }
 
-    100% {
-        transform: none;
-    }
+  100% {
+    transform: none;
+  }
+}
+
+@-webkit-keyframes slideLeft {
+  0% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes slideLeft {
-    0% {
-        transform: translateX(50%);
-    }
+  0% {
+    transform: translateX(50%);
+  }
 
-    100% {
-        transform: none;
-    }
+  100% {
+    transform: none;
+  }
+}
+
+@-webkit-keyframes slideLeftSmall {
+  0% {
+    transform: translateX(10%);
+  }
+
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes slideLeftSmall {
-    0% {
-        transform: translateX(10%);
-    }
+  0% {
+    transform: translateX(10%);
+  }
 
-    100% {
-        transform: none;
-    }
+  100% {
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideUpFadeIn {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
 }
 
 @keyframes slideUpFadeIn {
-    0% {
-        transform: translateY(50%);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
 
-    100% {
-        transform: none;
-        opacity: 1;
-    }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleXIn {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes scaleXIn {
-    0% {
-        transform: scaleX(0);
-    }
+  0% {
+    transform: scaleX(0);
+  }
 
-    100% {
-        transform: none;
-    }
+  100% {
+    transform: none;
+  }
+}
+
+@-webkit-keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateZ(1000px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes zoomFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateZ(1000px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateZ(1000px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: none;
-    }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes jitter {
+  0% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 1;
+  }
+
+  10% {
+    transform: translateX(2px) translateY(2px);
+    opacity: 0.8;
+  }
+
+  20% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 0.47;
+  }
+
+  30% {
+    transform: translateX(0px) translateY(2px);
+    opacity: 0.3;
+  }
+
+  70% {
+    transform: translateX(-1px) translateY(1px);
+    opacity: 0.96;
+  }
+
+  80% {
+    transform: translateX(0px) translateY(-2px);
+    opacity: 0.9;
+  }
+
+  90% {
+    transform: translateX(1px) translateY(-2px);
+    opacity: 0.81;
+  }
+
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes jitter {
-    0% {
-        transform: translateX(0px) translateY(0px);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 1;
+  }
 
-    10% {
-        transform: translateX(2px) translateY(2px);
-        opacity: 0.8;
-    }
+  10% {
+    transform: translateX(2px) translateY(2px);
+    opacity: 0.8;
+  }
 
-    20% {
-        transform: translateX(0px) translateY(0px);
-        opacity: 0.47;
-    }
+  20% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 0.47;
+  }
 
-    30% {
-        transform: translateX(0px) translateY(2px);
-        opacity: 0.3;
-    }
+  30% {
+    transform: translateX(0px) translateY(2px);
+    opacity: 0.3;
+  }
 
-    70% {
-        transform: translateX(-1px) translateY(1px);
-        opacity: 0.96;
-    }
+  70% {
+    transform: translateX(-1px) translateY(1px);
+    opacity: 0.96;
+  }
 
-    80% {
-        transform: translateX(0px) translateY(-2px);
-        opacity: 0.9;
-    }
+  80% {
+    transform: translateX(0px) translateY(-2px);
+    opacity: 0.9;
+  }
 
-    90% {
-        transform: translateX(1px) translateY(-2px);
-        opacity: 0.81;
-    }
+  90% {
+    transform: translateX(1px) translateY(-2px);
+    opacity: 0.81;
+  }
 
-    100% {
-        transform: translateX(0) translateY(0);
-        opacity: 1;
-    }
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
 }
