@@ -27,7 +27,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="max-age=31536000">
   <title>JAVI BEAT - International DJ</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/styles.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <!-- Search Engine -->
   <meta name="description" content="International DJ with more than 20 years of experience, based in Dubai">
@@ -46,20 +46,14 @@
   <meta name="og:type" content="website">
 </head>
 
-<body>
+<body data-page-id="home">
+
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5LD92Z5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="navbar">
-    <a href="#.html" class="active"><img src="home.png" alt="Home"></a>
-    <a href="gallery.html"><img src="pic.png" alt="Gallery"></a>
-    <a href="gigs.html"><img src="gigs.png" alt="Gigs"></a>
-    <a href="presskit.html"><img src="press.png" alt="Press Kit"></a>
-    <a href="about.html"><img src="about.png" alt="About Me"></a>
-    <a href="contact.html"><img src="contact.png" alt="Contact"></a>
-  </div>
+  <div id="menu-placeholder"></div>
 
   <div class="content">
     <div class="home">
@@ -69,7 +63,7 @@
 
           <div class="logo">
 
-            <img src="logo.png" alt="Logo">
+            <img src="img/logo.png" alt="Logo">
 
           </div>
 
@@ -80,6 +74,22 @@
   </div>
 
   </div>
+
+  <script>
+    // Cargar el menú desde el archivo menu.html
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-placeholder').innerHTML = data;
+
+        // Marcar el enlace activo según la página actual
+        const pageId = document.body.getAttribute('data-page-id');
+        if (pageId) {
+          document.getElementById(pageId).classList.add('active');
+        }
+      });
+  </script>
+  
 </body>
 
 </html>

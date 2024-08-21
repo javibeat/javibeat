@@ -68,7 +68,7 @@ body {
   }
 
   .home {
-    background-image: url('background.jpg');
+    background-image: url('/img/background.jpg');
     position: fixed;
     top: 0;
     left: 0;
