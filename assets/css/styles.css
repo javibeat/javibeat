@@ -64,8 +64,8 @@ nav {
     padding: 10px 20px;
 }
 
-.logo h2 {
-    color: #fff;
+.logo img {
+    max-width: 120px;
 }
 
 .hamburger {
@@ -199,9 +199,8 @@ nav {
     z-index: -1;
 }
 
-.background h1 {
-    margin-bottom: 25px;
-    font-size: 5em;
+.background img {
+    margin-bottom: 45px;
 }
 
 .cta {
@@ -218,6 +217,12 @@ nav {
 .cta:hover {
     background-color: #0a0a0a;
     color: aliceblue;
+}
+
+@media (max-width: 768px) {
+    .background img {
+       width: 80%;
+    }
 }
 
 /*GIGS*/
