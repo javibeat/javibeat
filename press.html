@@ -58,38 +58,30 @@
 
     <div id="menu-placeholder"></div> <!-- Cargar el menú dinámicamente -->
 
-    <div class="content">
-    <h1 class="linea">GALLERY</h1>
-    <div class="gallery">
-        <img src="img/attiko.jpg" alt="Attiko" class="gallery-item">
-        <img src="img/cielo.jpg" alt="Cielo 1" class="gallery-item">
-        <img src="img/cielo2.jpg" alt="Cielo 2" class="gallery-item">
-        <img src="img/cielo3.jpg" alt="Cielo 3" class="gallery-item">
-        <img src="img/demence.jpg" alt="Demence" class="gallery-item">
-        <img src="img/drift.jpg" alt="Drift" class="gallery-item">
-        <img src="img/drifte.jpg" alt="Drifte" class="gallery-item">
-        <img src="img/cipri.jpg" alt="Cipri" class="gallery-item">
-        <img src="img/flyer.jpg" alt="Flyer" class="gallery-item">
-        <img src="img/folie.jpg" alt="Folie 1" class="gallery-item">
-        <img src="img/folie2.jpg" alt="Folie 2" class="gallery-item">
-        <img src="img/javibeat.jpeg" alt="Javibeat" class="gallery-item">
-        <img src="img/cdt.jpg" alt="CDT" class="gallery-item">
-        <img src="img/nikki.jpg" alt="Nikki" class="gallery-item">
-        <img src="img/taste.png" alt="Taste" class="gallery-item">
-        <img src="img/varadero.jpg" alt="Varadero 1" class="gallery-item">
-        <img src="img/varadero2.jpg" alt="Varadero 2" class="gallery-item">
-        <img src="img/yula.jpg" alt="Yula" class="gallery-item">
-    </div>
+    <section class="press-section">
+        <h1 class="linea">PRESS KIT</h1>
 
-    <!-- Lightbox container -->
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-image" src="">
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
-    </div>
+        <div class="press-container">
+            <div class="press-image">
+                <img src="img/press.jpg" alt="JAVI BEAT Press Image">
+            </div>
+            <div class="press-content">
+                <p>Download the official JAVI BEAT press kit for media inquiries, high-resolution images, and more detailed information.</p>
+                <a href="assets/javibeat_presskit.pdf" class="download-button" target="_blank">Download Press Kit</a>
+            </div>
+        </div>
 
-</div>
+        <div class="press-links">
+            <h2>Press Coverage</h2>
+            <ul>
+                <li><a href="https://tasteofdubaifestival.com/news/javi-beat/" target="_blank">TASTE Dubai Festival</a></li>
+                <li><a href="https://www.elcorreo.ae/articulo/ocio/javi-beat-mallorca-cielo-dubai/20181008095651094071.html" target="_blank">El Correo del Golfo Dubai</a></li>
+                <li><a href="https://empleandoteblog.com/2023/07/27/e101-trabajar-como-dj-en-dubai/#more-3346" target="_blank">Podcast: Empleandote en Dubai</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div> <!-- Cargar el footer dinámicamente -->
 
     <script>
         // Cargar el menú desde menu.html
@@ -99,8 +91,6 @@
                 document.getElementById('menu-placeholder').innerHTML = data;
             });
     </script>
-
-    <div id="footer-placeholder"></div>
 
     <script>
         // Cargar el footer desde footer.html
@@ -112,8 +102,6 @@
             .catch(error => console.error('Error al cargar el footer:', error));
     </script>
 
-
-    <script src="assets/js/gallery.js"></script>
     <script src="assets/js/menu.js" defer></script>
 
 </body>
