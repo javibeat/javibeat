@@ -137,6 +137,11 @@ nav {
 
 /* Menú Desplegable para Móviles */
 @media (max-width: 768px) {
+    .bar2 {
+        display: flex;
+        flex-direction: row;
+    }
+
     .hamburger {
         display: flex; /* Mostrar el icono hamburger en móviles */
     }
