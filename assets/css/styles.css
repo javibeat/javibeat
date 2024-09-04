@@ -608,6 +608,11 @@ nav {
     margin-bottom: 15px;
 }
 
+.about-content a {
+    text-decoration: none;
+    color: blue;
+}
+
 /* CONTACT SECTION */
 .contact-section {
     margin: 25px auto;
