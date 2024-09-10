@@ -1,5 +1,3 @@
-// gallery.js
-
 // Variables to hold references to lightbox elements
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
@@ -15,12 +13,23 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.style.display = 'none';
 });
 
+// Función para deshabilitar el scroll del body
+function disableScroll() {
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para habilitar el scroll del body
+function enableScroll() {
+    document.body.style.overflow = '';
+}
+
 // Open lightbox when an image is clicked
 galleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
         lightboxImage.src = item.src; // Set the image source
         lightbox.style.display = 'flex'; // Then display the lightbox
         currentIndex = index;
+        disableScroll();  // Deshabilitar el scroll al abrir el lightbox
     });
 });
 
@@ -28,12 +37,14 @@ galleryItems.forEach((item, index) => {
 closeBtn.addEventListener('click', () => {
     lightbox.style.display = 'none';
     lightboxImage.src = ''; // Clear the image source when closing
+    enableScroll();  // Habilitar el scroll al cerrar el lightbox
 });
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         lightbox.style.display = 'none';
         lightboxImage.src = ''; // Clear the image source when closing
+        enableScroll();  // Habilitar el scroll al cerrar el lightbox
     }
     if (event.key === 'ArrowRight') {
         nextImage();
@@ -64,5 +75,6 @@ lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) {
         lightbox.style.display = 'none';
         lightboxImage.src = ''; // Clear the image source when closing
+        enableScroll();  // Habilitar el scroll al cerrar el lightbox
     }
 });
