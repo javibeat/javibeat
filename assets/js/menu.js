@@ -18,4 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => console.error('Error al cargar el menú:', error));
+
+    // Cambiar el texto de h2 al mes actual
+    const monthNames = [
+        "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+    ];
+    const currentMonth = new Date().getMonth(); // Obtiene el índice del mes actual (0-11)
+    document.getElementById("current-month").textContent = monthNames[currentMonth];
 });
