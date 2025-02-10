@@ -625,6 +625,12 @@ nav {
     color: blue;
 }
 
+.about-content ol {
+    font-size: 1.2rem; /* Hace que el tamaño sea igual al del texto */
+    padding-left: 0px; /* Ajusta la alineación del texto con los números */
+    list-style-position: inside; /* Asegura que los números no sobresalgan */
+}
+
 /* CONTACT SECTION */
 .contact-section {
     margin: 25px auto;

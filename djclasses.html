@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-N5LD92Z5');</script>
+    <!-- End Google Tag Manager -->
+  
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN0MME937V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+  
+      gtag('config', 'G-GN0MME937V');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000">
+    <title>Become a True DJ: Learn with Vinyl</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Become a True DJ: Learn with Vinyl">
+    <meta property="og:description" content="Exclusive DJ classes using vinyl and turntables, with guest lessons on Ableton Live.">
+    <meta property="og:image" content="https://github.com/javibeat/javibeat/blob/main/djclasses-banner.jpg?raw=true">
+    <meta property="og:url" content="https://javibeat.com/djclasses">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="menu-placeholder"></div>
+
+    <!-- Banner Image Below Header -->
+    <div class="cabecera">
+        <img src="img/turntable.jpg" alt="Turntable" style="width: 100%; height: 400px; object-fit: cover;">
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h1 class="linea">BECOME A TRUE DJ: LEARN WITH VINYL</h1>
+        <div class="about-content">
+            <p>
+                Learn the real craft of DJing with vinyl records, just like the legends. Under the guidance of <strong>Javi Beat DJ</strong> and 
+                <strong>Sergio Trumpet & DJ</strong>, 
+                resident DJs at iconic Dubai venues such as <strong>Aura Skypool, Drift Beach Club, Azure Beach Club, Ammos Greek Restaurant, 
+                  and Attiko</strong>, you will master the skills that define a true DJ.
+            </p>
+            <p>
+                These classes also feature guest sessions with <strong>Sergio Trumpet & DJ</strong>, who will introduce the basics of Ableton Live 
+                for creating live music performances, providing a well-rounded learning experience for aspiring DJs and producers.
+            </p>
+            <p>
+                The course includes:
+            </p>
+            <ol>
+                <li>Understanding turntables and vinyl records.</li>
+                <li>Manual beatmatching and transitions.</li>
+                <li>EQ and filter techniques for smooth mixing.</li>
+                <li>Introduction to scratch techniques.</li>
+                <li>Special Ableton Live session for LIVE basics.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Enrollment Section -->
+<section class="contact-section">
+  <h1 class="linea">RESERVE YOUR SPOT</h1>
+  <div class="contact-content">
+      <p>Secure your spot before <strong>February 28</strong>. </p>
+      <p><strong style="font-size: 1.3rem; color: #d00000;">LIMITED SEATS AVAILABLE</strong></p>
+      <p><strong>Course Price:</strong> 3500 AED</p>
+      <p>For inquiries and reservations, contact us:</p>
+      <ul>
+          <li><strong>Email:</strong> <a href="mailto:bookings@javibeat.com">bookings@javibeat.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+971585324519">+971 585 32 4519</a></li>
+      </ul>
+      <p>Follow us for updates:</p>
+      <ul class="social-links">
+          <li><a href="https://www.instagram.com/javibeat" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://wa.me/971585324519" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="mailto:bookings@javibeat.com"><i class="fa fa-envelope"></i></a></li>
+      </ul>
+  </div>
+</section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+
+</html>
