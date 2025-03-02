@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 fetch("https://api.imgur.com/3/image", {
                     method: "POST",
                     headers: {
-                        "Authorization": "Client-ID TU_CLIENT_ID_AQUÍ"
+                        "Authorization": "Client-ID 40a39c4ed11b2b7"
                     },
                     body: formData
                 })
