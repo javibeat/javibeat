@@ -4,22 +4,37 @@ document.addEventListener("DOMContentLoaded", function () {
     shareButton.addEventListener("click", function (e) {
         e.preventDefault();
 
-        // Selecciona el contenedor del diseño a capturar
         const shareContainer = document.querySelector(".share-container");
 
-        // Usa html2canvas para capturar el diseño como imagen
         html2canvas(shareContainer, {
-            useCORS: true, // Para evitar problemas con imágenes externas
-            scale: 2 // Aumenta la calidad de la imagen
+            useCORS: true,
+            scale: 2
         }).then(canvas => {
             canvas.toBlob(blob => {
-                const file = new File([blob], "djclasses-story.jpg", { type: "image/jpeg" });
+                const formData = new FormData();
+                formData.append("image", blob);
 
-                // Crear un objeto URL para la imagen
-                const url = URL.createObjectURL(file);
-
-                // Abrir Instagram con el intent de compartir
-                window.location.href = `https://www.instagram.com/stories/create/?media=${url}`;
+                // Subir la imagen a Imgur
+                fetch("https://api.imgur.com/3/image", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": "Client-ID TU_CLIENT_ID_AQUÍ"
+                    },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const imageUrl = data.data.link;
+                        window.location.href = `https://www.instagram.com/stories/create/?media=${imageUrl}`;
+                    } else {
+                        alert("Error uploading image.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Upload error:", error);
+                    alert("Failed to upload image.");
+                });
             }, "image/jpeg");
         });
     });
