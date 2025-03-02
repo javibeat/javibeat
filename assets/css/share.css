@@ -8,6 +8,8 @@ body {
     margin: 0;
     font-family: 'Oswald', sans-serif;
     text-align: center;
+    padding: 20px 0; /* Ajusta el padding en desktop */
+    overflow: hidden; /* Evita el scroll innecesario */
 }
 
 /* Contenedor Principal */
@@ -18,6 +20,7 @@ body {
     background: #f4c20d;
     border-radius: 25px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -31,40 +34,21 @@ body {
     text-align: center;
     color: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-height: 90vh; /* Asegura que no sea más alto que la pantalla */
+    overflow: hidden; /* Evita que el contenido cree scroll */
 }
 
 /* Imagen Principal */
 .share-image {
     width: 100%;
     border-radius: 15px;
+    max-height: 250px; /* Reduce el tamaño de la imagen en desktop */
+    object-fit: cover; /* Mantiene el aspecto sin deformar */
 }
 
 /* Contenido de la Tarjeta */
 .share-content {
     padding: 15px;
-}
-
-/* Título con icono */
-.share-content h2 {
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.share-content h2::before {
-    content: "🎧";
-    font-size: 22px;
-}
-
-/* Texto Descriptivo */
-.share-content p {
-    font-size: 14px;
-    color: #bbb;
-    line-height: 1.4;
 }
 
 /* Botón CTA */
@@ -93,6 +77,48 @@ body {
     color: #bbb;
 }
 
+/* Contenedor del botón para compartir en Instagram */
+.share-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Botón para compartir en Instagram */
+.share-instagram {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 12px;
+    padding: 8px 15px;
+    background: #1DB954;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Ajustes para evitar que se corte en escritorio */
+@media (min-width: 1024px) {
+    body {
+        padding: 30px 0; /* Ajusta el espacio arriba y abajo en desktop */
+    }
+    
+    .share-image {
+        max-height: 380px; /* Reduce más la imagen en desktop */
+    }
+
+    .share-card {
+        max-height: 85vh; /* Reduce la altura máxima */
+    }
+
+    .share-instagram {
+        margin-bottom: 25px; /* Asegura que haya más espacio debajo del botón */
+    }
+}
+
 /* Asegurar que el diseño se adapta bien en móviles */
 @media (max-width: 768px) {
     .share-container {
@@ -109,5 +135,9 @@ body {
 
     .cta-button {
         font-size: 12px;
+    }
+
+    .share-button-container {
+        margin-top: 10px;
     }
 }
