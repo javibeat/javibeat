@@ -10,32 +10,30 @@ document.addEventListener("DOMContentLoaded", function () {
             useCORS: true,
             scale: 2
         }).then(canvas => {
-            canvas.toBlob(blob => {
-                const formData = new FormData();
-                formData.append("image", blob);
+            const imageData = canvas.toDataURL("image/jpeg").split(',')[1]; // Convertir a Base64
 
-                // Subir la imagen a Imgur
-                fetch("https://api.imgur.com/3/image", {
-                    method: "POST",
-                    headers: {
-                        "Authorization": "Client-ID 40a39c4ed11b2b7"
-                    },
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        const imageUrl = data.data.link;
-                        window.location.href = `https://www.instagram.com/stories/create/?media=${imageUrl}`;
-                    } else {
-                        alert("Error uploading image.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Upload error:", error);
-                    alert("Failed to upload image.");
-                });
-            }, "image/jpeg");
+            fetch("https://api.imgur.com/3/image", {
+                method: "POST",
+                headers: {
+                    "Authorization": "Client-ID 40a39c4ed11b2b7",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ image: imageData })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // Para depurar en la consola
+                if (data.success) {
+                    const imageUrl = data.data.link;
+                    window.location.href = `https://www.instagram.com/stories/create/?media=${imageUrl}`;
+                } else {
+                    alert("Error uploading image.");
+                }
+            })
+            .catch(error => {
+                console.error("Upload error:", error);
+                alert("Failed to upload image.");
+            });
         });
     });
 });
