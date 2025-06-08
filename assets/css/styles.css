@@ -191,6 +191,9 @@ nav {
     color: #fff;
     position: relative;
     z-index: 1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease;
 }
 
 .background::before {
