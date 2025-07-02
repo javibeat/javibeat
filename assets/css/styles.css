@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 /* Reset básico */
 * {
     margin: 0;
@@ -66,6 +68,16 @@ nav {
 
 .logo img {
     max-width: 120px;
+}
+
+.logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1;
 }
 
 .hamburger {
