@@ -21,6 +21,24 @@
     100% {
         background-position: 200% 0;
     }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
 * {
@@ -33,9 +51,17 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Hace que el cuerpo del documento siempre tenga al menos el tamaño de la ventana */
     margin: 0;
     font-family: 'Oswald', sans-serif;
+}
+
+/* Utility classes for responsive visibility */
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
 }
 
 header {
@@ -87,6 +113,22 @@ header {
 .social-media a:hover {
     color: #ffcf01;
     /* Color al pasar el mouse */
+}
+
+.contact-info .separator {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+}
+
+.contact-info .social-link {
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 8px;
+    transition: color 0.3s ease;
+}
+
+.contact-info .social-link:hover {
+    color: #ffcf01;
 }
 
 nav {
@@ -213,24 +255,36 @@ nav:hover {
 
 /* Menú Desplegable para Móviles */
 @media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+
     .bar2 {
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
 
     .hamburger {
         display: flex;
-        /* Mostrar el icono hamburger en móviles */
-    }
-
-    .top-bar .logo {
-        display: none;
     }
 
     nav {
         width: calc(100% - 40px);
-        justify-content: flex-end;
-        /* Keep hamburger on the right */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav .logo {
+        display: block;
+    }
+
+    nav .logo .logo-text {
+        font-size: 1.5rem;
     }
 
     .nav-links {
@@ -239,9 +293,9 @@ nav:hover {
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(10, 10, 10, 0.9);
-        backdrop-filter: blur(50px) saturate(250%);
-        -webkit-backdrop-filter: blur(50px) saturate(250%);
+        background: rgba(0, 0, 0, 1);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -398,29 +452,30 @@ nav:hover {
     border: 2px solid #000;
     border-radius: 50px;
     width: 100%;
-    /* Hacer que ocupe el 100% del contenedor padre */
     max-width: 200px;
-    /* Ajustar según tus necesidades */
     background-color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Oswald', sans-serif;
+    transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
 }
 
 .custom-button:hover {
     background-color: #faf9f9;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-button:active {
+    transform: scale(0.96);
 }
 
 /* Button text */
 .button-text {
     flex-grow: 1;
-    /* Ocupa todo el espacio disponible */
     text-align: left;
-    /* Alinea el texto a la izquierda */
-    padding: 0 15px 0 15px;
-    /* Espacio entre el texto y el círculo */
+    padding: 0 15px 0 20px;
     font-weight: 500;
     color: #000;
 }
@@ -435,7 +490,7 @@ nav:hover {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .icon-circle .arrow {
@@ -445,6 +500,7 @@ nav:hover {
 .custom-button:hover .icon-circle {
     background-color: #ffcf01;
     color: #000;
+    transform: rotate(45deg);
 }
 
 @media (max-width: 768px) {
@@ -1061,11 +1117,13 @@ footer {
 .footer-social a {
     color: #fff;
     font-size: 1.5rem;
-    transition: color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1), color 0.3s ease;
+    display: inline-block;
 }
 
 .footer-social a:hover {
     color: #ffcf01;
+    transform: scale(1.2) rotate(5deg);
 }
 
 .footer-copyright p {
@@ -1162,14 +1220,17 @@ footer {
     font-size: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 2000;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.3s ease;
     text-decoration: none;
+    animation: pulse-green 2s infinite;
 }
 
 .floating-whatsapp:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(15deg);
     background-color: #128c7e;
     color: #fff;
+    animation: none;
+    /* Pause pulse on hover */
 }
 
 @media (max-width: 768px) {
