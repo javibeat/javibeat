@@ -93,14 +93,7 @@
 
   <div id="footer-placeholder"></div> <!-- Cargar el footer dinámicamente -->
 
-  <script>
-    // Cargar el menú desde menu.html
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu-placeholder').innerHTML = data;
-      });
-  </script>
+  <script src="assets/js/menu.js" defer></script>
 
   <script>
     // Cargar el footer desde footer.html

@@ -136,13 +136,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu-placeholder').innerHTML = data;
-            });
-    </script>
+    <script src="assets/js/menu.js" defer></script>
 
     <script>
         fetch('footer.html')
