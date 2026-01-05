@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* Reset básico */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -32,11 +54,14 @@ header {
 .bar2 {
     max-width: 1200px;
     margin: 0 auto;
-    /* Centrar el nav dentro del contenedor */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+}
+
+.top-bar .logo {
+    display: block;
 }
 
 .social-media a {
@@ -65,16 +90,15 @@ header {
 }
 
 nav {
-    max-width: 1200px;
-    width: calc(100% - 40px);
-    margin: 20px auto;
+    width: fit-content;
+    margin: 10px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: rgba(10, 10, 10, 0.45);
     backdrop-filter: blur(40px) saturate(210%);
     -webkit-backdrop-filter: blur(40px) saturate(210%);
-    padding: 6px 25px;
+    padding: 8px 4px;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
@@ -164,13 +188,21 @@ nav:hover {
     font-size: 1.1rem;
     padding: 8px 18px;
     border-radius: 20px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1), background 0.3s ease, color 0.3s ease;
     display: inline-block;
 }
 
 .nav-links a:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #ffcf01;
+    transform: scale(1.05);
+}
+
+.nav-links a:active {
+    transform: scale(1.1, 0.85);
+    /* Squash & Stretch effect */
+    background: rgba(255, 255, 255, 0.2);
+    transition: transform 0.1s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .nav-links a.active {
@@ -191,22 +223,39 @@ nav:hover {
         /* Mostrar el icono hamburger en móviles */
     }
 
+    .top-bar .logo {
+        display: none;
+    }
+
+    nav {
+        width: calc(100% - 40px);
+        justify-content: flex-end;
+        /* Keep hamburger on the right */
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(10, 10, 10, 0.85);
-        backdrop-filter: blur(40px) saturate(210%);
-        -webkit-backdrop-filter: blur(40px) saturate(210%);
+        width: 100vw;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: blur(50px) saturate(250%);
+        -webkit-backdrop-filter: blur(50px) saturate(250%);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         opacity: 0;
         pointer-events: none;
-        transform: translateY(-100%);
-        transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s ease;
+        transform: scale(1.1);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+        z-index: 1500;
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
     }
 
     .nav-links.open {
@@ -256,14 +305,21 @@ nav:hover {
 }
 
 .intro-box {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(45px) saturate(220%);
-    -webkit-backdrop-filter: blur(45px) saturate(220%);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(255, 255, 255, 0.21);
     padding: 50px;
     border-radius: 32px;
     margin-bottom: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.8s ease;
+    animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.intro-box:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
 }
 
 .main-title {
@@ -400,7 +456,7 @@ nav:hover {
 /*GIGS*/
 
 .gigs-section {
-    margin: 100px 0;
+    margin: 120px 0 100px;
     padding: 20px;
     flex: 1;
 }
@@ -434,12 +490,29 @@ nav:hover {
     padding: 30px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+    animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.gigs-container div:nth-child(1) .gig-card {
+    animation-delay: 0.1s;
+}
+
+.gigs-container div:nth-child(2) .gig-card {
+    animation-delay: 0.2s;
+}
+
+.gigs-container div:nth-child(3) .gig-card {
+    animation-delay: 0.3s;
+}
+
+.gigs-container div:nth-child(4) .gig-card {
+    animation-delay: 0.4s;
 }
 
 .gig-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
 .gig-card img {
@@ -479,7 +552,7 @@ nav:hover {
 /*GALLERY*/
 
 .content {
-    margin-top: 120px;
+    margin-top: 140px;
 }
 
 .content h1 {
@@ -505,12 +578,21 @@ nav:hover {
     break-inside: avoid;
     border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+    animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.gallery-item:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.gallery-item:nth-child(even) {
+    animation-delay: 0.2s;
 }
 
 .gallery-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
 }
 
 .gallery-item img {
@@ -573,12 +655,20 @@ nav:hover {
 
 .close {
     position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
+    top: 20px;
+    right: 30px;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 .close:hover,
@@ -594,34 +684,43 @@ nav:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    /* Centra verticalmente */
-    width: auto;
-    padding: 16px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
+    font-size: 24px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Fondo transparente para mejor visibilidad */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    /* Hacer los botones redondos */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .prev {
-    left: 10px;
-    /* Asegura que el botón esté pegado al lado izquierdo */
+    left: 20px;
 }
 
 .next {
-    right: 10px;
-    /* Asegura que el botón esté pegado al lado derecho */
+    right: 20px;
 }
 
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Efecto hover para destacar */
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.prev:active,
+.next:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 /* Responsividad adicional */
@@ -658,7 +757,7 @@ nav:hover {
 
 /* PRESS SECTION */
 .press-section {
-    margin: 100px auto;
+    margin: 120px auto 100px;
     max-width: 1200px;
     padding: 20px;
     text-align: center;
@@ -672,13 +771,21 @@ nav:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: 0.2s;
 }
 
 .press-image img {
     width: 70%;
     border-radius: 24px;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+}
+
+.press-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
 .press-content {
@@ -723,11 +830,13 @@ nav:hover {
 }
 
 .press-links {
-    margin-top: 40px;
+    margin-top: 50px;
     text-align: center;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation-delay: 0.4s;
 }
 
 .press-links h2 {
@@ -764,7 +873,7 @@ nav:hover {
 
 /* ABOUT SECTION */
 .about-section {
-    margin: 100px auto 0;
+    margin: 120px auto 0;
     max-width: 800px;
     padding: 20px 20px 0;
     text-align: justify;
