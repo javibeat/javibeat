@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /directorio-no-deseado/
 Allow: /
 
 Sitemap: https://javibeat.com/sitemap.xml

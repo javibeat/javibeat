@@ -10,7 +10,8 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Hace que el cuerpo del documento siempre tenga al menos el tamaño de la ventana */
+    min-height: 100vh;
+    /* Hace que el cuerpo del documento siempre tenga al menos el tamaño de la ventana */
     margin: 0;
     font-family: 'Oswald', sans-serif;
 }
@@ -30,7 +31,8 @@ header {
 
 .bar2 {
     max-width: 1200px;
-    margin: 0 auto; /* Centrar el nav dentro del contenedor */
+    margin: 0 auto;
+    /* Centrar el nav dentro del contenedor */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,27 +40,35 @@ header {
 }
 
 .social-media a {
-    color: #fff; /* Color de los iconos */
-    font-size: 1rem; /* Tamaño de los iconos */
-    margin-right: 15px; /* Espacio entre iconos */
-    text-decoration: none; /* Sin subrayado */
+    color: #fff;
+    /* Color de los iconos */
+    font-size: 1rem;
+    /* Tamaño de los iconos */
+    margin-right: 15px;
+    /* Espacio entre iconos */
+    text-decoration: none;
+    /* Sin subrayado */
     transition: color 0.3s ease;
 }
 
 .contact-info a {
-    color: #fff; /* Color del texto */
-    text-decoration: none; /* Sin subrayado */
+    color: #fff;
+    /* Color del texto */
+    text-decoration: none;
+    /* Sin subrayado */
     transition: color 0.3s ease;
 }
 
 .social-media a:hover {
-    color: #ffcf01; /* Color al pasar el mouse */
+    color: #ffcf01;
+    /* Color al pasar el mouse */
 }
 
 nav {
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto; /* Centrar el nav dentro del contenedor */
+    margin: 0 auto;
+    /* Centrar el nav dentro del contenedor */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +91,8 @@ nav {
 }
 
 .hamburger {
-    display: none; /* El icono hamburger solo se muestra en móviles */
+    display: none;
+    /* El icono hamburger solo se muestra en móviles */
     flex-direction: column;
     cursor: pointer;
     position: relative;
@@ -139,12 +150,15 @@ nav {
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.4rem; /* Tamaño de fuente normal para escritorio */
+    font-size: 1.4rem;
+    /* Tamaño de fuente normal para escritorio */
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: #ffcf01;
+    border-bottom: 2px solid #ffcf01;
 }
 
 /* Menú Desplegable para Móviles */
@@ -155,7 +169,8 @@ nav {
     }
 
     .hamburger {
-        display: flex; /* Mostrar el icono hamburger en móviles */
+        display: flex;
+        /* Mostrar el icono hamburger en móviles */
     }
 
     .nav-links {
@@ -185,7 +200,8 @@ nav {
     }
 
     .nav-links a {
-        font-size: 2rem; /* Aumentar el tamaño de la fuente en móviles */
+        font-size: 2rem;
+        /* Aumentar el tamaño de la fuente en móviles */
     }
 }
 
@@ -196,7 +212,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('/img/background.jpg');
+    background-image: url('../../img/background.webp');
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -206,9 +222,52 @@ nav {
     background-repeat: no-repeat;
     background-attachment: fixed;
     transition: background-image 0.5s ease;
-    object-fit: cover;
-    will-change: background-image;
     overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.intro-box {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.main-desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #eee;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.hero-buttons a {
+    width: 100%;
+    max-width: 200px;
 }
 
 /* Seguridad para el lightbox */
@@ -239,7 +298,8 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Esto añade una capa oscura con opacidad del 60% */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Esto añade una capa oscura con opacidad del 60% */
     z-index: -1;
 }
 
@@ -257,34 +317,39 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px ;
+    padding: 5px;
     border: 2px solid #000;
     border-radius: 50px;
-    width: 100%; /* Hacer que ocupe el 100% del contenedor padre */
-    max-width: 200px; /* Ajustar según tus necesidades */
+    width: 100%;
+    /* Hacer que ocupe el 100% del contenedor padre */
+    max-width: 200px;
+    /* Ajustar según tus necesidades */
     background-color: #fff;
     font-family: 'Arial', sans-serif;
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'Oswald', sans-serif;
-  }
-  
-  .custom-button:hover {
+}
+
+.custom-button:hover {
     background-color: #faf9f9;
-  }
-  
-  /* Button text */
-  .button-text {
-    flex-grow: 1; /* Ocupa todo el espacio disponible */
-    text-align: left; /* Alinea el texto a la izquierda */
-    padding: 0 15px 0 15px; /* Espacio entre el texto y el círculo */
+}
+
+/* Button text */
+.button-text {
+    flex-grow: 1;
+    /* Ocupa todo el espacio disponible */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    padding: 0 15px 0 15px;
+    /* Espacio entre el texto y el círculo */
     font-weight: 500;
     color: #000;
-  }
-  
-  /* Circle with arrow */
-  .icon-circle {
+}
+
+/* Circle with arrow */
+.icon-circle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,20 +359,20 @@ nav {
     width: 50px;
     height: 50px;
     transition: background-color 0.3s ease;
-  }
-  
-  .icon-circle .arrow {
+}
+
+.icon-circle .arrow {
     font-size: 20px;
-  }
-  
-  .custom-button:hover .icon-circle {
+}
+
+.custom-button:hover .icon-circle {
     background-color: #ffcf01;
     color: #000;
-  }
+}
 
 @media (max-width: 768px) {
     .background img {
-       width: 80%;
+        width: 80%;
     }
 }
 
@@ -335,7 +400,8 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    justify-content: center; /* Centra las columnas si hay menos de 4 */
+    justify-content: center;
+    /* Centra las columnas si hay menos de 4 */
     max-width: 1200px;
     margin: 35px auto;
 }
@@ -388,6 +454,7 @@ nav {
 .content {
     margin-top: 120px;
 }
+
 .content h1 {
     font-size: 2.2rem;
     text-align: center;
@@ -396,8 +463,10 @@ nav {
 
 /* Gallery Section */
 .gallery {
-    column-count: 4; /* Number of columns in the grid */
-    column-gap: 15px; /* Spacing between columns */
+    column-count: 4;
+    /* Number of columns in the grid */
+    column-gap: 15px;
+    /* Spacing between columns */
     margin: 20px auto;
     max-width: 1200px;
 }
@@ -406,7 +475,8 @@ nav {
     width: 100%;
     margin-bottom: 15px;
     display: block;
-    break-inside: avoid; /* Prevents image break across columns */
+    break-inside: avoid;
+    /* Prevents image break across columns */
 }
 
 .gallery-item:hover {
@@ -423,7 +493,8 @@ nav {
 @media (max-width: 1024px) {
     .gallery {
         margin: 10px 15px 20px;
-        column-count: 3; /* Reduce the number of columns on medium screens */
+        column-count: 3;
+        /* Reduce the number of columns on medium screens */
     }
 }
 
@@ -431,13 +502,15 @@ nav {
 
     .gallery {
         margin: 15px 15px 0;
-        column-count: 2; /* Reduce the number of columns on smaller screens */
+        column-count: 2;
+        /* Reduce the number of columns on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .gallery {
-        column-count: 1; /* Single column on very small screens */
+        column-count: 1;
+        /* Single column on very small screens */
     }
 }
 
@@ -451,18 +524,21 @@ nav {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Cambiado de "auto" a "hidden" para evitar scroll */
+    overflow: hidden;
+    /* Cambiado de "auto" a "hidden" para evitar scroll */
     background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
 }
 
 .lightbox-content {
-    max-width: 90%; /* Ajustar para que sea responsivo */
+    max-width: 90%;
+    /* Ajustar para que sea responsivo */
     max-height: 90%;
     width: auto;
     height: auto;
-    object-fit: contain; /* Para mantener la proporción de la imagen */
+    object-fit: contain;
+    /* Para mantener la proporción de la imagen */
 }
 
 .close {
@@ -482,11 +558,13 @@ nav {
     cursor: pointer;
 }
 
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%); /* Centra verticalmente */
+    transform: translateY(-50%);
+    /* Centra verticalmente */
     width: auto;
     padding: 16px;
     color: white;
@@ -494,44 +572,55 @@ nav {
     font-size: 20px;
     transition: 0.6s ease;
     user-select: none;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente para mejor visibilidad */
-    border-radius: 50%; /* Hacer los botones redondos */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo transparente para mejor visibilidad */
+    border-radius: 50%;
+    /* Hacer los botones redondos */
 }
 
 .prev {
-    left: 10px; /* Asegura que el botón esté pegado al lado izquierdo */
+    left: 10px;
+    /* Asegura que el botón esté pegado al lado izquierdo */
 }
 
 .next {
-    right: 10px; /* Asegura que el botón esté pegado al lado derecho */
+    right: 10px;
+    /* Asegura que el botón esté pegado al lado derecho */
 }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Efecto hover para destacar */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Efecto hover para destacar */
 }
 
 /* Responsividad adicional */
 @media (max-width: 768px) {
     .lightbox-content {
         max-width: 95%;
-        max-height: 80%; /* Ajustar altura en móviles */
+        max-height: 80%;
+        /* Ajustar altura en móviles */
     }
 
-    .prev, .next {
+    .prev,
+    .next {
         font-size: 18px;
         padding: 12px;
     }
 
     .prev {
-        left: 5px; /* Reducimos la distancia del borde en móvil */
+        left: 5px;
+        /* Reducimos la distancia del borde en móvil */
     }
 
     .next {
-        right: 5px; /* Reducimos la distancia del borde en móvil */
+        right: 5px;
+        /* Reducimos la distancia del borde en móvil */
     }
 
     .close {
-        font-size: 30px; /* Reducir tamaño del botón cerrar en móviles */
+        font-size: 30px;
+        /* Reducir tamaño del botón cerrar en móviles */
     }
 }
 
@@ -614,7 +703,8 @@ nav {
 .press-links h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    text-align: center; /* Centra el título de los enlaces de prensa */
+    text-align: center;
+    /* Centra el título de los enlaces de prensa */
     color: #333;
 }
 
@@ -630,12 +720,14 @@ nav {
 .press-links a {
     text-decoration: none;
     font-size: 1.2rem;
-    color: #007BFF; /* Color del enlace */
+    color: #007BFF;
+    /* Color del enlace */
     transition: color 0.3s ease;
 }
 
 .press-links a:hover {
-    color: #0056b3; /* Color del enlace al pasar el mouse */
+    color: #0056b3;
+    /* Color del enlace al pasar el mouse */
 }
 
 /*ABOUT & CONTACT*/
@@ -665,9 +757,12 @@ nav {
 }
 
 .about-content ol {
-    font-size: 1.2rem; /* Hace que el tamaño sea igual al del texto */
-    padding-left: 0px; /* Ajusta la alineación del texto con los números */
-    list-style-position: inside; /* Asegura que los números no sobresalgan */
+    font-size: 1.2rem;
+    /* Hace que el tamaño sea igual al del texto */
+    padding-left: 0px;
+    /* Ajusta la alineación del texto con los números */
+    list-style-position: inside;
+    /* Asegura que los números no sobresalgan */
 }
 
 /* CONTACT SECTION */
@@ -726,40 +821,53 @@ nav {
     font-size: 1.5rem;
     color: #fbf8f8;
     background-color: #000;
-    padding: 15px; /* Aumenta el padding para que los iconos sean más grandes */
+    padding: 15px;
+    /* Aumenta el padding para que los iconos sean más grandes */
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 50px; /* Ancho igual a la altura para que sean cuadrados */
-    height: 50px; /* Altura igual al ancho para asegurar el círculo perfecto */
+    width: 50px;
+    /* Ancho igual a la altura para que sean cuadrados */
+    height: 50px;
+    /* Altura igual al ancho para asegurar el círculo perfecto */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
-    background-color: #ffcf01; /* Cambia el color de fondo al hacer hover */
-    color: #000; /* Cambia el color del icono al hacer hover */
+    background-color: #ffcf01;
+    /* Cambia el color de fondo al hacer hover */
+    color: #000;
+    /* Cambia el color del icono al hacer hover */
 }
 
 /*LINEA H1*/
 
 .linea {
     position: relative;
-    font-size: 2.5rem; /* Ajusta el tamaño de la fuente según sea necesario */
+    font-size: 2.5rem;
+    /* Ajusta el tamaño de la fuente según sea necesario */
     margin-bottom: 40px;
-    color: #333; /* Color del texto */
-    text-align: center; /* Alinea el texto al centro */
+    color: #333;
+    /* Color del texto */
+    text-align: center;
+    /* Alinea el texto al centro */
 }
 
 .linea::after {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: -10px; /* Ajusta la distancia entre el texto y la línea */
-    transform: translateX(-50%); /* Centra la línea debajo del texto */
-    width: 60px; /* Ancho de la línea */
-    height: 4px; /* Grosor de la línea */
-    background-color: #ffcf01; /* Color de la línea */
+    bottom: -10px;
+    /* Ajusta la distancia entre el texto y la línea */
+    transform: translateX(-50%);
+    /* Centra la línea debajo del texto */
+    width: 60px;
+    /* Ancho de la línea */
+    height: 4px;
+    /* Grosor de la línea */
+    background-color: #ffcf01;
+    /* Color de la línea */
 }
 
 /* Footer */
@@ -769,7 +877,8 @@ footer {
     padding: 40px 20px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    margin-top: auto; /* Empuja el footer al final de la página */
+    margin-top: auto;
+    /* Empuja el footer al final de la página */
 }
 
 .footer-container {
@@ -840,8 +949,92 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .footer-links {
         flex-direction: column;
+    }
+}
+
+/* HOME CONTACT SECTION */
+.home-contact {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.home-contact h2 {
+    margin-bottom: 40px;
+}
+
+.home-contact p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    color: #555;
+    font-family: 'Oswald', sans-serif;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.contact-item i {
+    color: #ffcf01;
+    font-size: 1.5rem;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #ffcf01;
+}
+
+/* FLOATING WHATSAPP */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .floating-whatsapp {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
     }
 }

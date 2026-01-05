@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Implementar CSP
     const cspMeta = document.createElement('meta');
     cspMeta.httpEquiv = 'Content-Security-Policy';
@@ -22,21 +22,31 @@ document.addEventListener('DOMContentLoaded', function() {
             const parser = new DOMParser();
             const doc = parser.parseFromString(data, 'text/html');
             document.getElementById('menu-placeholder').innerHTML = doc.body.innerHTML;
-            
+
             // Implementar seguridad para el menú
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('nav-links');
             if (hamburger && navLinks) {
                 let lastClickTime = 0;
                 const CLICK_THRESHOLD = 500; // 500ms
-                
+
                 hamburger.addEventListener('click', () => {
                     const now = Date.now();
                     if (now - lastClickTime < CLICK_THRESHOLD) return;
                     lastClickTime = now;
-                    
+
                     navLinks.classList.toggle('open');
                     hamburger.classList.toggle('open');
+                });
+
+                // Mark current page as active
+                const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+                const links = navLinks.querySelectorAll('a');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === currentPath) {
+                        link.classList.add('active');
+                    }
                 });
             }
         })
@@ -55,5 +65,17 @@ document.addEventListener('DOMContentLoaded', function() {
         "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
     ];
     const currentMonth = new Date().getMonth();
-    document.getElementById("current-month").textContent = monthNames[currentMonth];
+    const monthElement = document.getElementById("current-month");
+    if (monthElement) {
+        monthElement.textContent = monthNames[currentMonth];
+    }
+
+    // Add floating WhatsApp button
+    const waButton = document.createElement('a');
+    waButton.href = 'https://wa.me/971585324519';
+    waButton.className = 'floating-whatsapp';
+    waButton.target = '_blank';
+    waButton.setAttribute('aria-label', 'Contact Javi Beat on WhatsApp');
+    waButton.innerHTML = '<i class="fab fa-whatsapp"></i>';
+    document.body.appendChild(waButton);
 });
