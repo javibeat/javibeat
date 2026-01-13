@@ -28,9 +28,23 @@
   <meta http-equiv="Cache-Control" content="max-age=31536000">
 
   <title>Javi Beat - DJ Gigs & Residencies in Dubai</title>
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Fonts - async loading -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
 
   <!-- SEO Meta Tags -->
   <meta name="description"
@@ -68,7 +82,13 @@
   <meta name="twitter:description" content="Latest DJ schedule for Javi Beat at top Dubai venues.">
   <meta name="twitter:image" content="https://javibeat.com/img/logo.webp">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Font Awesome - deferred loading -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </noscript>
 </head>
 
 <body>
@@ -87,7 +107,7 @@
 
       <!-- Card 1 -->
       <div class="gig-card">
-        <img src="img/driftb.webp" alt="Drift Beach Club Dubai">
+        <img src="img/driftb.webp" alt="Drift Beach Club Dubai" width="400" height="267" loading="lazy">
         <h3>DRIFT Beach Club</h3>
         <p>One&Only Royal Mirage</p>
         <p>Mondays and Wednesdays</p>
@@ -103,7 +123,7 @@
 
       <!-- Card 2 -->
       <div class="gig-card">
-        <img src="img/Aura.webp" alt="Aura Skypool Dubai">
+        <img src="img/Aura.webp" alt="Aura Skypool Dubai" width="400" height="267" loading="lazy">
         <h3>AURA Skypool</h3>
         <p>St. Regis The Palm</p>
         <p>Tuesdays, Saturday nights and Sundays</p>
@@ -119,7 +139,7 @@
 
       <!-- Card 3 -->
       <div class="gig-card">
-        <img src="img/azure.webp" alt="Azure Beach Club Dubai">
+        <img src="img/azure.webp" alt="Azure Beach Club Dubai" width="400" height="267" loading="lazy">
         <h3>AZURE Beach Club</h3>
         <p>Rixos Premium JBR</p>
         <p>Thursdays</p>

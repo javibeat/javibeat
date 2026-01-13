@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Bebas Neue - loaded via HTML preload for performance */
+/* font-display: swap ensures text remains visible during webfont load */
 
 /* Reset básico */
 @keyframes fadeInUp {

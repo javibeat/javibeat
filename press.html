@@ -25,10 +25,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="max-age=31536000">
+
   <title>Javi Beat - International DJ</title>
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Fonts - async loading -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+  </noscript>
   <!-- SEO Meta Tags -->
   <meta name="description"
     content="Download the Javi Beat official Press Kit. Featured in Taste of Dubai, El Correo del Golfo, and more. International DJ based in Dubai.">
@@ -60,7 +76,13 @@
   <meta name="twitter:title" content="Javi Beat Press Kit">
   <meta name="twitter:description" content="Official press resources for Javi Beat, International DJ in Dubai.">
   <meta name="twitter:image" content="https://javibeat.com/img/logo.webp">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Font Awesome - deferred loading -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </noscript>
 </head>
 
 <body>
@@ -77,7 +99,7 @@
 
     <div class="press-container">
       <div class="press-image">
-        <img src="img/press.webp" alt="JAVI BEAT Press Image">
+        <img src="img/press.webp" alt="JAVI BEAT Press Image" loading="lazy">
       </div>
       <div class="press-content">
         <p>Download the official JAVI BEAT press kit for more detailed information.</p>
@@ -118,8 +140,6 @@
       })
       .catch(error => console.error('Error al cargar el footer:', error));
   </script>
-
-  <script src="assets/js/menu.js" defer></script>
 
 </body>
 

@@ -51,10 +51,39 @@
     <meta http-equiv="Cache-Control" content="max-age=31536000">
 
     <title>JAVI BEAT - Top International DJ in Dubai | 20+ Years Experience</title>
+
+    <!-- Preconnect to external domains for faster resource loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- Preload critical LCP image -->
+    <link rel="preload" as="image" href="img/background.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="img/logo.webp" fetchpriority="high">
+
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts with display=swap for non-blocking render -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Font Awesome - deferred loading -->
+    <link rel="preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
 
     <!-- SEO Meta Tags -->
     <meta name="description"
@@ -120,8 +149,8 @@
 
     <div class="background">
         <div class="hero-content">
-            <img src="img/logo.webp" alt="Javi Beat - International DJ Logo in Dubai" width="320" height="auto"
-                loading="eager" decoding="async">
+            <img src="img/logo.webp" alt="Javi Beat - International DJ Logo in Dubai" width="320" height="195"
+                loading="eager" decoding="async" fetchpriority="high">
 
             <div class="intro-box">
                 <h1 class="main-title">BEST INTERNATIONAL DJ IN DUBAI & MUSIC CURATOR</h1>
