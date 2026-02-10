@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# AI Crawler optimization
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://javibeat.com/sitemap.xml

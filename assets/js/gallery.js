@@ -1,80 +1,59 @@
-// Variables to hold references to lightbox elements
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightbox-image');
-const closeBtn = document.querySelector('.close');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const galleryItems = document.querySelectorAll('.gallery-item');
-
-let currentIndex = 0;
-
-// Ensure the lightbox is hidden when the page loads
+/* Obsidian Noir - Fixed Gallery Logic */
 document.addEventListener('DOMContentLoaded', () => {
-    lightbox.style.display = 'none';
-});
+    // We use a small delay to ensure elements are loaded by interactions.js loader
+    setTimeout(() => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeBtn = document.querySelector('.close');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const galleryItems = document.querySelectorAll('.gallery-item img');
 
-// Función para deshabilitar el scroll del body
-function disableScroll() {
-    document.body.style.overflow = 'hidden';
-}
+        if (!lightbox) return;
 
-// Función para habilitar el scroll del body
-function enableScroll() {
-    document.body.style.overflow = '';
-}
+        let currentIndex = 0;
 
-// Open lightbox when an image is clicked
-galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        lightboxImage.src = item.src; // Set the image source
-        lightbox.style.display = 'flex'; // Then display the lightbox
-        currentIndex = index;
-        disableScroll();  // Deshabilitar el scroll al abrir el lightbox
-    });
-});
+        const openLightbox = (index) => {
+            currentIndex = index;
+            lightboxImage.src = galleryItems[currentIndex].src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        };
 
-// Close lightbox when the close button is clicked or ESC key is pressed
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-    lightboxImage.src = ''; // Clear the image source when closing
-    enableScroll();  // Habilitar el scroll al cerrar el lightbox
-});
+        const closeLightbox = () => {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = '';
+        };
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        lightbox.style.display = 'none';
-        lightboxImage.src = ''; // Clear the image source when closing
-        enableScroll();  // Habilitar el scroll al cerrar el lightbox
-    }
-    if (event.key === 'ArrowRight') {
-        nextImage();
-    }
-    if (event.key === 'ArrowLeft') {
-        prevImage();
-    }
-});
+        const nextImage = () => {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            lightboxImage.src = galleryItems[currentIndex].src;
+        };
 
-// Navigate to the next image
-nextBtn.addEventListener('click', nextImage);
+        const prevImage = () => {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            lightboxImage.src = galleryItems[currentIndex].src;
+        };
 
-function nextImage() {
-    currentIndex = (currentIndex + 1) % galleryItems.length;
-    lightboxImage.src = galleryItems[currentIndex].src;
-}
+        galleryItems.forEach((item, index) => {
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', () => openLightbox(index));
+        });
 
-// Navigate to the previous image
-prevBtn.addEventListener('click', prevImage);
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (nextBtn) nextBtn.addEventListener('click', nextImage);
+        if (prevBtn) prevBtn.addEventListener('click', prevImage);
 
-function prevImage() {
-    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-    lightboxImage.src = galleryItems[currentIndex].src;
-}
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
 
-// Close lightbox when clicking outside of the image
-lightbox.addEventListener('click', (event) => {
-    if (event.target === lightbox) {
-        lightbox.style.display = 'none';
-        lightboxImage.src = ''; // Clear the image source when closing
-        enableScroll();  // Habilitar el scroll al cerrar el lightbox
-    }
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            }
+        });
+    }, 500);
 });

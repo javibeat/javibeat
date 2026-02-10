@@ -13,185 +13,131 @@
         })(window, document, 'script', 'dataLayer', 'GTM-N5LD92Z5');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Google tag (gtag.js) -->
-    <script>
-        // Inicializar analytics con consentimiento
-        function initializeAnalytics() {
-            const consentGiven = localStorage.getItem('analytics_consent') === 'true';
-            if (consentGiven) {
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-GN0MME937V');
-            }
-        }
-
-        // Mostrar banner de consentimiento si no se ha dado
-        document.addEventListener("DOMContentLoaded", function () {
-            if (!localStorage.getItem('analytics_consent')) {
-                const consentBanner = document.createElement('div');
-                consentBanner.style.cssText = 'position: fixed; bottom: 0; left: 0; width: 100%; background: #000; color: #fff; padding: 1rem; text-align: center; z-index: 9999;';
-                consentBanner.innerHTML = `
-                    <p>We use cookies to enhance your experience. <a href="#" onclick="localStorage.setItem('analytics_consent', 'true'); this.parentElement.parentNode.remove(); initializeAnalytics();">Accept</a> or <a href="#" onclick="localStorage.setItem('analytics_consent', 'false'); this.parentElement.parentNode.remove();">Reject</a></p>
-                `;
-                document.body.appendChild(consentBanner);
-            } else {
-                initializeAnalytics();
-            }
-        });
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Seguridad -->
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Cache-Control" content="max-age=31536000">
+    <title>JAVI BEAT - International DJ | Dubai Residencies: Drift Beach & AURA Skypool</title>
 
-    <title>JAVI BEAT - Top International DJ in Dubai | 20+ Years Experience</title>
-
-    <!-- Preconnect to external domains for faster resource loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Preload critical LCP image -->
-    <link rel="preload" as="image" href="img/background.webp" fetchpriority="high">
-    <link rel="preload" as="image" href="img/logo.webp" fetchpriority="high">
-
-    <!-- Critical CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Google Fonts with display=swap for non-blocking render -->
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-    </noscript>
-
-    <!-- Font Awesome - deferred loading -->
-    <link rel="preload" as="style"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </noscript>
-
-    <!-- SEO Meta Tags -->
+    <!-- PERFECT AI SEO & SEO OPTIMIZATION -->
     <meta name="description"
-        content="JAVI BEAT - The premier choice for Luxury Event DJ hire in Dubai. Over 20 years experience holding residencies at iconic venues: Drift Beach Club and AURA Skypool (Sunset Hospitality Group). Book the best international DJ in Dubai today.">
+        content="JAVI BEAT - Premier International DJ in Dubai. Luxury residencies at Drift Beach Club and AURA Skypool. 25+ years experience in musical curation, vinyl mastery, and elite event soundtracks. Available for global bookings.">
     <meta name="keywords"
-        content="DJ hire Dubai, Luxury Event DJ Dubai, Wedding DJ Dubai Marina, Best DJ in Dubai, Corporate Event DJ DIFC, Beach Club DJ Jumeirah, International DJ hire UAE, Javi Beat DJ">
-    <meta name="image" content="https://javibeat.com/img/logo.webp">
+        content="DJ Dubai, International DJ, Luxury Events Dubai, Drift Beach Club, Aura Skypool, Vinyl DJ, Music Curator Dubai">
+    <meta name="ai-content-summary"
+        content="Javi Beat is a high-end international DJ based in Dubai with 25 years of experience. He holds elite residencies at Drift Beach Club and AURA Skypool. Specialist in vinyl mixing and luxury event curation.">
 
-    <!-- Schema.org (JSON-LD) - Person & FAQPage for AI SEO -->
+    <!-- Semantic JSON-LD for AI Search Engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Person",
-          "@id": "https://javibeat.com/#person",
+          "@type": "ProfessionalService",
           "name": "Javi Beat",
-          "jobTitle": "International DJ & Music Curator",
-          "description": "Premium International DJ in Dubai specializing in luxury beach clubs, corporate events, and private parties with over 20 years of experience.",
-          "url": "https://javibeat.com",
           "image": "https://javibeat.com/img/logo.webp",
+          "@id": "https://javibeat.com",
+          "url": "https://javibeat.com",
+          "telephone": "+971585324519",
+          "priceRange": "$$$",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Dubai Marina",
             "addressLocality": "Dubai",
             "addressCountry": "AE"
           },
-          "sameAs": [
-            "https://www.instagram.com/javibeat",
-            "https://wa.me/971585324519",
-            "https://www.linkedin.com/in/javibeat"
-          ]
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 25.0777,
+            "longitude": 55.1332
+          }
+        },
+        {
+          "@type": "Person",
+          "name": "Javi Beat",
+          "jobTitle": "International DJ & Music Curator",
+          "description": "Expert in vinyl DJing and luxury atmosphere creation for beach clubs and corporate events.",
+          "knowsAbout": ["Music Curation", "Vinyl Remixing", "Nightlife Entertainment", "Dubai Luxury Scene"]
         }
       ]
     }
     </script>
-
-    <meta name="google-site-verification" content="D6ysb0NgWPrwEEUAm0Ehg_dDI2dwIzzzQEuQHENxY40" />
-
-    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-    <meta property="og:title" content="Javi Beat - International DJ in Dubai">
-    <meta property="og:description"
-        content="International DJ with more than 20 years of experience, specializing in Beach Clubs and Corporate Events in Dubai.">
-    <meta property="og:image" content="https://javibeat.com/img/logo.webp">
-    <meta property="og:url" content="https://javibeat.com">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Javi Beat - International DJ in Dubai">
-    <meta name="twitter:description"
-        content="International DJ based in Dubai. 20+ years experience in the music industry.">
-    <meta name="twitter:image" content="https://javibeat.com/img/logo.webp">
 </head>
 
 <body>
-
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5LD92Z5" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <div id="menu-placeholder"></div>
 
-    <div class="background">
-        <div class="hero-content">
-            <img src="img/logo.webp" alt="Javi Beat - International DJ Logo in Dubai" width="320" height="195"
-                loading="eager" decoding="async" fetchpriority="high">
-
-            <div class="intro-box">
-                <h1 class="main-title">BEST INTERNATIONAL DJ IN DUBAI & MUSIC CURATOR</h1>
-                <p class="main-desc">Javi Beat is a premier International DJ in Dubai with over 20 years of experience,
-                    holding residencies at iconic venues like Drift Beach Club and AURA Skypool (Sunset Hospitality
-                    Group).
-                    Specializing in luxury events and exclusive music curation.</p>
+    <main>
+        <section class="hero">
+            <div class="hero-bg-media">
+                <img src="img/background.webp" style="width: 100%; height: 100%; object-fit: cover;" alt="">
             </div>
-
-
-        </div>
-    </div>
-
-
-    <!-- New Home Contact Section -->
-    <section class="home-contact">
-        <div class="container">
-            <h2 class="linea">GET IN TOUCH</h2>
-            <p>Ready to elevate your event with world-class music?</p>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:bookings@javibeat.com">bookings@javibeat.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <a href="https://wa.me/971585324519">+971 585 32 4519</a>
+            <div class="container">
+                <div class="reveal">
+                    <!-- <img src="img/logo.webp" alt="Javi Beat Logo"
+                        style="width: 150px; margin-bottom: 40px; filter: invert(1);"> -->
+                    <h1 class="huge-title">JAVI<br>BEAT</h1>
+                    <div style="margin-top: 40px; max-width: 600px;">
+                        <p class="section-desc"
+                            style="font-size: 1.25rem; line-height: 1.4; color: var(--text-primary);">
+                            International DJ & Music Curator based in Dubai.
+                            Crafting sonic identities for the world's most exclusive venues.
+                        </p>
+                        <div style="margin-top: 40px;">
+                            <a href="gigs.html" class="btn-noir">See Gigs</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="bento-section">
+            <div class="container">
+                <div class="bento-grid">
+                    <div class="bento-item reveal" style="grid-column: span 8; grid-row: span 2;">
+                        <h2 class="section-title">RESIDENCIES</h2>
+                        <div style="display: flex; flex-direction: column; gap: 30px; margin-top: 40px;">
+                            <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;">
+                                <h3 style="font-size: 1.5rem; color: var(--accent);">DRIFT BEACH CLUB</h3>
+                                <p style="color: var(--text-secondary);">One&Only Royal Mirage</p>
+                            </div>
+                            <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;">
+                                <h3 style="font-size: 1.5rem; color: var(--accent);">AURA SKYPOOL</h3>
+                                <p style="color: var(--text-secondary);">St. Regis The Palm</p>
+                            </div>
+                            <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;">
+                                <h3 style="font-size: 1.5rem; color: var(--accent);">AZURE BEACH</h3>
+                                <p style="color: var(--text-secondary);">Rixos Premium JBR</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-item reveal" style="grid-column: span 4;">
+                        <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 15px;">EXPERIENCE</h3>
+                        <p style="font-size: 2.5rem; font-weight: 800; font-family: var(--font-heading);">25+ YRS</p>
+                    </div>
+
+                    <div class="bento-item reveal"
+                        style="grid-column: span 4; background: var(--accent); color: var(--bg-pure);">
+                        <h3 style="font-size: 14px; margin-bottom: 15px;">BOOKINGS</h3>
+                        <p style="font-weight: 700;">Global availability for luxury events.</p>
+                        <a href="mailto:bookings@javibeat.com"
+                            style="display: block; margin-top: 20px; font-weight: 800; text-decoration: underline;">SECURE
+                            DATE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <div id="footer-placeholder"></div>
-    <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-    </script>
-    <script src="assets/js/menu.js" defer></script>
+
+    <script src="assets/js/interactions.js"></script>
 </body>
 
 </html>
