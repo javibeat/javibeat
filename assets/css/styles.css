@@ -7,7 +7,6 @@
     --bg-surface: #0a0a0a;
     --bg-card: #0f0f0f;
     --accent: #ffffff;
-    /* High contrast white/silver accent */
     --accent-dim: rgba(255, 255, 255, 0.6);
     --accent-glass: rgba(255, 255, 255, 0.05);
 
@@ -23,7 +22,6 @@
     --space-hero: 160px;
     --space-section: 120px;
     --container-max: 1400px;
-    /* Wider for premium feel */
 
     /* Typography */
     --font-heading: 'Syne', sans-serif;
@@ -37,7 +35,6 @@
     padding: 0;
     box-sizing: border-box;
     cursor: none;
-    /* We'll add a custom cursor for that wow effect */
 }
 
 html {
@@ -120,7 +117,6 @@ section {
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
     border-radius: 2px;
-    /* Brutalist modern sharp corners */
     padding: 40px;
 }
 
@@ -148,20 +144,23 @@ section {
     transform: scale(1.1);
 }
 
-/* Navigation - Immersive Floating Dock (Top) */
+/* ============================
+   NAVIGATION - Desktop Floating Dock
+   ============================ */
 nav {
     position: fixed;
     top: 40px;
-    /* Moved to top */
     left: 50%;
     transform: translateX(-50%);
     background: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--border-subtle);
     padding: 8px;
     border-radius: 100px;
-    z-index: 1000;
+    z-index: 2000;
     display: flex;
+    align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
 }
@@ -171,13 +170,119 @@ nav:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
+.nav-container {
+    display: flex;
+    gap: 5px;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-family: var(--font-alt);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent);
+    background: var(--accent-glass);
+}
+
+/* Hamburger Toggle (hidden on desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2100;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: center;
+}
+
 /* Footer Refinement */
 footer {
     padding-bottom: 80px;
-    /* Added significant bottom margin */
 }
 
-/* Masonry Gallery Implementation */
+/* ============================
+   BENTO GRID SYSTEM
+   ============================ */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+
+.bento-item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    padding: 40px;
+    transition: border-color 0.3s ease;
+}
+
+.bento-item:hover {
+    border-color: var(--border-active);
+}
+
+/* ============================
+   BUTTONS
+   ============================ */
+.btn-noir {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 20px 40px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.btn-noir:hover {
+    background: var(--accent);
+    color: var(--bg-pure);
+}
+
+/* ============================
+   REVEAL ANIMATIONS
+   ============================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================
+   MASONRY GALLERY
+   ============================ */
 .gallery {
     column-count: 3;
     column-gap: 20px;
@@ -203,7 +308,9 @@ footer {
     filter: grayscale(0%);
 }
 
-/* Global Image Hover (Bento Items, Hero, etc.) */
+/* ============================
+   GLOBAL IMAGE HOVER
+   ============================ */
 img {
     transition: filter 0.5s ease, opacity 0.5s ease;
 }
@@ -218,114 +325,12 @@ img {
     filter: grayscale(0%);
 }
 
-@media (max-width: 900px) {
-    .gallery {
-        column-count: 2;
-    }
-}
-
-@media (max-width: 600px) {
-    .gallery {
-        column-count: 1;
-    }
-}
-
-.nav-link {
-    color: var(--text-secondary);
-    font-family: var(--font-alt);
-    font-size: 13px;
-    font-weight: 500;
-    padding: 12px 24px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--accent);
-    background: var(--accent-glass);
-}
-
-/* Buttons - Brutalist Modern */
-.btn-noir {
-    display: inline-flex;
-    align-items: center;
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 20px 40px;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 14px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-noir:hover {
-    background: var(--accent);
-    color: var(--bg-pure);
-}
-
-/* Bento Grid System */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 20px;
-}
-
-.bento-item {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    padding: 40px;
-    transition: border-color 0.3s ease;
-}
-
-.bento-item:hover {
-    border-color: var(--border-active);
-}
-
-/* Reveal Animations */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .huge-title {
-        font-size: 4rem;
-    }
-
-    nav {
-        bottom: 20px;
-        width: 90vw;
-        justify-content: space-around;
-        padding: 5px;
-    }
-
-    .nav-link {
-        padding: 10px 15px;
-        font-size: 11px;
-    }
-
-    section {
-        padding: 80px 0;
-    }
-}
-
-/* Floating elements */
+/* ============================
+   FLOATING ELEMENTS
+   ============================ */
 .floating-wa {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1500;
 }
 
 .floating-wa:hover {
@@ -334,7 +339,243 @@ img {
     color: var(--bg-pure);
 }
 
-/* Scroll reveal defaults */
-body {
-    background-color: var(--bg-pure);
+/* ============================
+   RESPONSIVE - TABLET (≤ 900px)
+   ============================ */
+@media (max-width: 900px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+/* ============================
+   RESPONSIVE - MOBILE (≤ 768px)
+   ============================ */
+@media (max-width: 768px) {
+
+    /* --- Spacing & Typography --- */
+    :root {
+        --space-section: 80px;
+    }
+
+    .huge-title {
+        font-size: clamp(3.5rem, 14vw, 6rem);
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: 30px;
+    }
+
+    .container {
+        padding: 0 6vw;
+    }
+
+    /* --- Hero --- */
+    .hero {
+        height: auto;
+        min-height: 85vh;
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    /* --- Bento Grid: Stack Vertically --- */
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        padding: 30px 25px;
+    }
+
+    /* Force nested inline grids/flexes to stack */
+    .bento-item>div[style*="grid-template-columns: 1fr 1fr"],
+    .bento-item>div[style*="display: grid"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+    }
+
+    .dj-details-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+    }
+
+    .bento-item img {
+        height: 220px !important;
+        object-fit: cover;
+    }
+
+    /* --- Buttons full-width on mobile --- */
+    .btn-noir {
+        width: 100%;
+        justify-content: center;
+        padding: 18px 30px;
+    }
+
+    /* --- Gallery single column --- */
+    .gallery {
+        column-count: 1;
+    }
+
+    /* --- Glass panels (press page) --- */
+    .glass-panel {
+        padding: 25px;
+    }
+
+    /* --- Footer bento stacks --- */
+    footer .bento-item {
+        padding: 25px 20px;
+    }
+
+    footer .huge-title {
+        font-size: 2.5rem;
+    }
+
+    /* --- Navigation: Hamburger Menu --- */
+    nav {
+        top: 20px;
+        right: 20px;
+        left: auto;
+        transform: none;
+        padding: 14px 18px;
+        border-radius: 50px;
+        gap: 0;
+    }
+
+    nav:hover {
+        box-shadow: none;
+    }
+
+    .nav-container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav.is-open {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        border-radius: 0;
+        padding: 0;
+        background: rgba(0, 0, 0, 0.97);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav.is-open .nav-container {
+        display: flex;
+        gap: 15px;
+    }
+
+    nav.is-open .nav-link {
+        font-size: 2rem;
+        font-family: var(--font-heading);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        padding: 10px 20px;
+        border-radius: 0;
+    }
+
+    nav.is-open .nav-link:hover,
+    nav.is-open .nav-link.active {
+        background: transparent;
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Position toggle top-right when menu is open */
+    nav.is-open .menu-toggle {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+    }
+
+    /* Hamburger → X animation */
+    nav.is-open .menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    nav.is-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    nav.is-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- Lightbox mobile adjustments --- */
+    #lightbox .close {
+        top: 20px !important;
+        right: 20px !important;
+    }
+
+    #lightbox .prev {
+        left: 15px !important;
+    }
+
+    #lightbox .next {
+        right: 15px !important;
+    }
+
+    /* --- WhatsApp button smaller on mobile --- */
+    .floating-wa {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+    }
+
+    /* --- Hide custom cursor on touch --- */
+    .custom-cursor,
+    .custom-cursor-dot {
+        display: none;
+    }
+
+    /* Reset cursor on touch devices */
+    * {
+        cursor: auto;
+    }
+}
+
+/* ============================
+   RESPONSIVE - SMALL PHONES (≤ 480px)
+   ============================ */
+@media (max-width: 480px) {
+    .huge-title {
+        font-size: clamp(3rem, 13vw, 4.5rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+
+    .bento-item {
+        padding: 25px 20px;
+    }
+
+    nav.is-open .nav-link {
+        font-size: 1.6rem;
+    }
 }

@@ -71,6 +71,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         updateInteractiveElements(); // Re-bind hover for dynamic menu
+        initMenuToggle(); // Initialize hamburger toggle
+    };
+
+    const initMenuToggle = () => {
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        const links = document.querySelectorAll('.nav-link');
+
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('is-open');
+                // Lock/unlock body scroll
+                if (nav.classList.contains('is-open')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close menu when clicking a link
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
     };
 
     // 4. Global UI Logic
