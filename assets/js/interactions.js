@@ -123,9 +123,17 @@ document.addEventListener('DOMContentLoaded', () => {
             wa.className = 'floating-wa';
             wa.target = '_blank';
             wa.innerHTML = '<i class="fab fa-whatsapp"></i>';
-            wa.style.cssText = 'position:fixed; bottom:40px; right:40px; width:60px; height:60px; background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:100px; display:flex; align-items:center; justify-content:center; color:white; font-size:24px; z-index:900; backdrop-filter:blur(20px); transition:all 0.3s ease;';
-            wa.addEventListener('mouseenter', () => wa.style.borderColor = 'var(--accent)');
-            wa.addEventListener('mouseleave', () => wa.style.borderColor = 'var(--border-subtle)');
+            wa.style.cssText = 'position:fixed; bottom:40px; right:40px; width:60px; height:60px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:100px; display:flex; align-items:center; justify-content:center; color:white; font-size:28px; z-index:2000; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:all 0.3s ease; text-decoration:none;';
+            wa.addEventListener('mouseenter', () => {
+                wa.style.background = 'var(--accent)';
+                wa.style.color = 'var(--bg-pure)';
+                wa.style.transform = 'translateY(-5px) scale(1.1)';
+            });
+            wa.addEventListener('mouseleave', () => {
+                wa.style.background = 'rgba(255,255,255,0.1)';
+                wa.style.color = 'white';
+                wa.style.transform = 'translateY(0) scale(1)';
+            });
             document.body.appendChild(wa);
         }
     };
