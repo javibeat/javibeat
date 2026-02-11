@@ -104,6 +104,8 @@ h4 {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 5vw;
+    position: relative;
+    z-index: 10;
 }
 
 section {
@@ -129,20 +131,20 @@ section {
     padding-top: 100px;
     position: relative;
     overflow: hidden;
+    background: #000;
+    /* Ensure base is black */
 }
 
 .hero-bg-media {
     position: absolute;
     inset: 0;
-    z-index: -1;
-    opacity: 0.4;
-    filter: grayscale(100%) contrast(120%);
-    transition: transform 10s ease;
+    z-index: 0;
+    opacity: 0.45;
+    filter: grayscale(100%) contrast(110%);
+    transition: none;
+    /* Remove transform transition for zoom */
 }
 
-.hero:hover .hero-bg-media {
-    transform: scale(1.1);
-}
 
 /* ============================
    NAVIGATION - Desktop Floating Dock
@@ -274,11 +276,29 @@ footer {
     opacity: 0;
     transform: translateY(30px);
     transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: opacity, transform;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* CSS-First Reveal for Hero/Critical Content */
+@keyframes revealFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-init {
+    animation: revealFadeIn 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 /* ============================
@@ -296,13 +316,18 @@ footer {
     break-inside: avoid;
     margin-bottom: 20px;
     width: 100%;
+    background: var(--bg-card);
+    /* Placeholder while loading */
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .gallery-item img {
     filter: grayscale(100%);
-    transition: filter 0.5s ease, transform 0.5s ease;
+    transition: filter 0.5s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     width: 100%;
     display: block;
+    aspect-ratio: auto;
 }
 
 .gallery-item:hover img {

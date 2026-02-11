@@ -32,15 +32,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // 2. Scroll Reveal
+    // 2. Scroll Reveal (IntersectionObserver upgrade)
     const reveal = () => {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
         const reveals = document.querySelectorAll('.reveal');
         reveals.forEach(el => {
-            const windowHeight = window.innerHeight;
-            const revealTop = el.getBoundingClientRect().top;
-            const revealPoint = 100;
-            if (revealTop < windowHeight - revealPoint) {
+            // Force active if already in viewport or near top
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
                 el.classList.add('active');
+            } else {
+                observer.observe(el);
             }
         });
     };
@@ -122,7 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
             wa.href = 'https://wa.me/971585324519';
             wa.className = 'floating-wa';
             wa.target = '_blank';
-            wa.innerHTML = '<i class="fab fa-whatsapp"></i>';
+            wa.setAttribute('aria-label', 'Chat with Javi Beat on WhatsApp');
+            wa.innerHTML = '<i class="fab fa-whatsapp" aria-hidden="true"></i>';
             wa.style.cssText = 'position:fixed; bottom:40px; right:40px; width:60px; height:60px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:100px; display:flex; align-items:center; justify-content:center; color:white; font-size:28px; z-index:2000; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:all 0.3s ease; text-decoration:none;';
             wa.addEventListener('mouseenter', () => {
                 wa.style.background = 'var(--accent)';
@@ -139,11 +155,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Execution Sequence
-    window.addEventListener('scroll', reveal);
     loadComponent('menu.html', 'menu-placeholder');
-    loadComponent('footer.html', 'footer-placeholder').then(() => updateInteractiveElements());
+    loadComponent('footer.html', 'footer-placeholder').then(() => {
+        updateInteractiveElements();
+        reveal(); // Reveal after footer loads
+    });
 
     initGlobal();
-    reveal();
+    reveal(); // Initial viewport check
     updateInteractiveElements();
 });
