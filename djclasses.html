@@ -19,14 +19,9 @@
 
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Non-render blocking CSS & Fonts -->
-    <link rel="stylesheet" href="assets/css/styles.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </noscript>
+    <!-- Render-blocking CSS (Preferred over print hack for low CLS) -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- PERFECT AI SEO & SEO OPTIMIZATION -->
     <meta name="description"
@@ -104,7 +99,7 @@
                 </div>
             </div>
             <div style="width: 100%; height: 60vh; margin-top: 60px; overflow: hidden;">
-                <img src="img/turntable.webp" alt="Vinyl Turntable"
+                <img src="img/turntable.webp" alt="Vinyl Turntable" width="1200" height="800"
                     style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </section>
