@@ -74,26 +74,33 @@ document.addEventListener('DOMContentLoaded', () => {
         initMenuToggle(); // Initialize hamburger toggle
     };
 
+    let menuInitialized = false;
     const initMenuToggle = () => {
+        if (menuInitialized) return; // Prevent double-binding
         const toggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
         const links = document.querySelectorAll('.nav-link');
 
         if (toggle && nav) {
+            menuInitialized = true;
             toggle.addEventListener('click', () => {
-                nav.classList.toggle('is-open');
-                // Lock/unlock body scroll
                 if (nav.classList.contains('is-open')) {
-                    document.body.style.overflow = 'hidden';
+                    // Smooth close: play exit animation, then remove classes
+                    nav.classList.add('is-closing');
+                    setTimeout(() => {
+                        nav.classList.remove('is-open', 'is-closing');
+                        document.body.style.overflow = '';
+                    }, 350);
                 } else {
-                    document.body.style.overflow = '';
+                    nav.classList.add('is-open');
+                    document.body.style.overflow = 'hidden';
                 }
             });
 
             // Close menu when clicking a link
             links.forEach(link => {
                 link.addEventListener('click', () => {
-                    nav.classList.remove('is-open');
+                    nav.classList.remove('is-open', 'is-closing');
                     document.body.style.overflow = '';
                 });
             });
@@ -125,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Execution Sequence
     window.addEventListener('scroll', reveal);
-    loadComponent('menu.html', 'menu-placeholder').then(() => markActiveLink());
+    loadComponent('menu.html', 'menu-placeholder');
     loadComponent('footer.html', 'footer-placeholder').then(() => updateInteractiveElements());
 
     initGlobal();

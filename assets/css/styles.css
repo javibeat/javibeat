@@ -211,7 +211,8 @@ nav:hover {
     height: 2px;
     background-color: var(--accent);
     border-radius: 2px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease;
     transform-origin: center;
 }
 
@@ -435,7 +436,13 @@ img {
         font-size: 2.5rem;
     }
 
-    /* --- Navigation: Hamburger Menu --- */
+    /* =========================================
+       MOBILE MENU — Clean rewrite
+       Toggle stays inside the pill, never moves.
+       Fullscreen overlay via nav-container.
+       ========================================= */
+
+    /* Pill: small capsule, top-right */
     nav {
         top: 20px;
         right: 20px;
@@ -444,31 +451,55 @@ img {
         padding: 14px 18px;
         border-radius: 50px;
         gap: 0;
-        overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        /* Remove backdrop-filter so position:fixed children
+           reference the viewport, not the pill */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     nav:hover {
         box-shadow: none;
     }
 
+    /* Hide links by default */
     .nav-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
+        display: none;
     }
 
-    /* Nav links: hidden by default, ready for stagger reveal */
-    .nav-container .nav-link {
+    /* Show hamburger */
+    .menu-toggle {
+        display: flex;
+        z-index: 10;
+    }
+
+    /* ---- OPEN STATE ---- */
+
+    /* Dark fullscreen overlay behind links */
+    nav.is-open::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.97);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        z-index: 1;
+        animation: menuFadeIn 0.3s ease forwards;
+    }
+
+    /* Links: fullscreen, centered */
+    nav.is-open .nav-container {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        z-index: 2;
+        animation: menuFadeIn 0.3s ease forwards;
+    }
+
+    nav.is-open .nav-container .nav-link {
         font-size: 2rem;
         font-family: var(--font-heading);
         font-weight: 700;
@@ -476,67 +507,31 @@ img {
         letter-spacing: -0.02em;
         padding: 10px 20px;
         border-radius: 0;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), color 0.2s ease, background 0.2s ease;
-    }
-
-    /* --- Fullscreen open state --- */
-    nav.is-open {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100vw;
-        height: 100vh;
-        height: 100dvh;
-        border-radius: 0;
-        padding: 0;
-        overflow: visible;
-        background: rgba(0, 0, 0, 0.97);
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
-        border: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    nav.is-open .nav-container {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-
-    /* Staggered link reveal */
-    nav.is-open .nav-container .nav-link {
-        opacity: 1;
-        transform: translateY(0);
+        animation: linkSlideUp 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
     }
 
     nav.is-open .nav-container .nav-link:nth-child(1) {
-        transition-delay: 0.08s;
+        animation-delay: 0.06s;
     }
 
     nav.is-open .nav-container .nav-link:nth-child(2) {
-        transition-delay: 0.14s;
+        animation-delay: 0.12s;
     }
 
     nav.is-open .nav-container .nav-link:nth-child(3) {
-        transition-delay: 0.20s;
+        animation-delay: 0.18s;
     }
 
     nav.is-open .nav-container .nav-link:nth-child(4) {
-        transition-delay: 0.26s;
+        animation-delay: 0.24s;
     }
 
     nav.is-open .nav-container .nav-link:nth-child(5) {
-        transition-delay: 0.32s;
+        animation-delay: 0.30s;
     }
 
     nav.is-open .nav-container .nav-link:nth-child(6) {
-        transition-delay: 0.38s;
+        animation-delay: 0.36s;
     }
 
     nav.is-open .nav-link:hover,
@@ -547,18 +542,20 @@ img {
         text-underline-offset: 6px;
     }
 
-    .menu-toggle {
-        display: flex;
+    /* Close animation */
+    nav.is-open.is-closing::before {
+        animation: menuFadeOut 0.3s ease forwards;
     }
 
-    /* Position toggle top-right when menu is open */
-    nav.is-open .menu-toggle {
-        position: absolute;
-        top: 30px;
-        right: 25px;
+    nav.is-open.is-closing .nav-container {
+        animation: menuFadeOut 0.3s ease forwards;
     }
 
-    /* Hamburger → X animation */
+    nav.is-open.is-closing .nav-container .nav-link {
+        animation: linkSlideDown 0.2s ease forwards;
+    }
+
+    /* Hamburger → X morph (in place, inside the pill) */
     nav.is-open .menu-toggle span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
@@ -569,6 +566,16 @@ img {
 
     nav.is-open .menu-toggle span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Reverse morph on close */
+    nav.is-open.is-closing .menu-toggle span:nth-child(1),
+    nav.is-open.is-closing .menu-toggle span:nth-child(3) {
+        transform: translateY(0) rotate(0);
+    }
+
+    nav.is-open.is-closing .menu-toggle span:nth-child(2) {
+        opacity: 1;
     }
 
     /* --- Lightbox mobile adjustments --- */
@@ -624,5 +631,52 @@ img {
 
     nav.is-open .nav-link {
         font-size: 1.6rem;
+    }
+}
+
+/* ============================
+   MENU ANIMATIONS (Keyframes)
+   ============================ */
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menuFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes linkSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes linkSlideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
     }
 }
