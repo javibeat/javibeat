@@ -17,14 +17,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAVI BEAT - International DJ | Dubai Residencies: Drift Beach & AURA Skypool</title>
 
-    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
 
     <!-- Preload LCP Image -->
     <link rel="preload" href="img/drift.webp" as="image" fetchpriority="high">
 
-    <!-- Render-blocking CSS (Preferred over print hack for low CLS) -->
+    <!-- Optimized Font Loading -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical CSS (Minimum for Hero) -->
+    <style>
+        :root {
+            --bg-pure: #000;
+            --text-hero: #fff;
+            --font-heading: 'Syne', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background: var(--bg-pure);
+            margin: 0;
+            color: #fff;
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .huge-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 10vw, 6rem);
+            text-transform: uppercase;
+            line-height: 0.9;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .hero-bg-media {
+            position: absolute;
+            inset: 0;
+            opacity: 0.45;
+            filter: grayscale(100%);
+        }
+
+        .reveal-init {
+            opacity: 0;
+            animation: revealFadeIn 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        @keyframes revealFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Deferred non-critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
 
     <!-- PERFECT AI SEO & SEO OPTIMIZATION -->
     <meta name="description"

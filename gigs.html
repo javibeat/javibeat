@@ -17,12 +17,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GIGS & RESIDENCIES - JAVI BEAT | Dubai DJ Schedule</title>
 
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
 
-  <!-- Non-render blocking CSS & Fonts -->
-  <!-- Render-blocking CSS (Preferred over print hack for low CLS) -->
+  <!-- Optimized Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Deferred non-critical CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </noscript>
 
   <!-- PERFECT AI SEO & SEO OPTIMIZATION -->
   <meta name="description"
@@ -70,7 +82,7 @@
         <div class="bento-grid">
           <!-- Drift -->
           <div class="bento-item reveal" style="grid-column: span 6;">
-            <img src="img/driftb.webp" alt="Drift Beach Club"
+            <img src="img/driftb.webp" alt="Drift Beach Club" loading="lazy"
               style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 30px;">
             <h3 style="font-size: 2rem; margin-bottom: 10px;">DRIFT BEACH CLUB</h3>
             <p style="color: var(--text-secondary); margin-bottom: 30px;">One&Only Royal Mirage<br>Mondays and
@@ -81,7 +93,7 @@
 
           <!-- Aura -->
           <div class="bento-item reveal" style="grid-column: span 6;">
-            <img src="img/Aura.webp" alt="Aura Skypool"
+            <img src="img/Aura.webp" alt="Aura Skypool" loading="lazy"
               style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 30px;">
             <h3 style="font-size: 2rem; margin-bottom: 10px;">AURA SKYPOOL</h3>
             <p style="color: var(--text-secondary); margin-bottom: 30px;">St. Regis The Palm<br>Tuesdays, Saturday
@@ -93,7 +105,8 @@
           <!-- Azure -->
           <div class="bento-item reveal" style="grid-column: span 12;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-              <img src="img/azure.webp" alt="Azure Beach Club" style="width: 100%; height: 400px; object-fit: cover;">
+              <img src="img/azure.webp" alt="Azure Beach Club" loading="lazy"
+                style="width: 100%; height: 400px; object-fit: cover;">
               <div>
                 <h3 style="font-size: 3rem; margin-bottom: 10px;">AZURE BEACH CLUB</h3>
                 <p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 1.25rem;">Rixos Premium
