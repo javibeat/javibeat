@@ -98,6 +98,11 @@ h4 {
     color: var(--text-hero);
 }
 
+footer .huge-title {
+    font-size: clamp(3rem, 5vw, 4rem);
+    line-height: 1;
+}
+
 .section-title {
     font-size: clamp(2.5rem, 8vw, 5rem);
     margin-bottom: 40px;
