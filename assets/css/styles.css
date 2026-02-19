@@ -137,7 +137,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 100px;
     position: relative;
     overflow: hidden;
     background: #000;
@@ -271,10 +270,16 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 14px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: background 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+        color 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+        border-color 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     overflow: hidden;
     text-decoration: none;
+    /* Prevent sub-pixel flickering on 1px borders */
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: perspective(1px) translateZ(0);
 }
 
 .btn-noir:hover {
@@ -412,9 +417,8 @@ img {
 
     /* --- Hero --- */
     .hero {
-        height: auto;
-        min-height: 85vh;
-        padding-top: 120px;
+        height: 100vh;
+        padding-top: 0;
         padding-bottom: 60px;
     }
 
@@ -731,7 +735,6 @@ img {
 
 /* Performance Placeholders */
 #menu-placeholder {
-    min-height: 100px;
     display: block;
 }
 
@@ -742,10 +745,6 @@ img {
 }
 
 @media (max-width: 768px) {
-    #menu-placeholder {
-        min-height: 80px;
-    }
-
     #footer-placeholder {
         min-height: 600px;
     }
