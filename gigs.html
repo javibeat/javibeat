@@ -75,48 +75,49 @@
           <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">CALENDAR</h4>
           <h1 class="section-title">GIGS & <br>RESIDENCIES</h1>
           <p id="current-month"
-            style="font-size: 2rem; font-family: var(--font-heading); font-weight: 800; color: var(--accent); margin-bottom: 60px;">
-            LOADING...</p>
+            style="font-size: 2.5rem; font-family: var(--font-heading); font-weight: 800; color: var(--accent); margin-bottom: 60px; text-transform: uppercase;">
+          </p>
+          <script>
+            const now = new Date();
+            document.getElementById('current-month').textContent = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+          </script>
         </div>
 
-        <div class="reveal" style="margin-bottom: 60px;">
-          <h2
-            style="font-size: 1.5rem; margin-bottom: 30px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 15px;">
-            UPCOMING GIGS (LIVE DATA)</h2>
-          <div id="dynamic-gigs-container"
-            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
-            <p style="color: var(--text-secondary);">Loading upcoming dates...</p>
-          </div>
-        </div>
-
-        <h2
-          style="font-size: 1.5rem; margin-bottom: 30px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 15px;">
-          REGULAR RESIDENCIES</h2>
         <div class="bento-grid">
           <!-- Drift -->
-          <div class="bento-item reveal" style="grid-column: span 6;">
+          <div id="card-drift" class="bento-item reveal" style="grid-column: span 6;">
             <img src="img/driftb.webp" alt="Drift Beach Club" loading="lazy"
               style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 30px;">
             <h3 style="font-size: 2rem; margin-bottom: 10px;">DRIFT BEACH CLUB</h3>
             <p style="color: var(--text-secondary); margin-bottom: 30px;">One&Only Royal Mirage<br>Mondays and
               Wednesdays</p>
+
+            <!-- Dynamic Injection Point for Drift -->
+            <div id="gigs-drift"
+              style="margin-top: 20px; border-top: 1px solid var(--border-subtle); padding-top: 20px;"></div>
+
             <a href="https://driftbeachdubai.com" target="_blank" class="btn-noir"
-              style="width: 100%; justify-content: center;">RESERVE</a>
+              style="width: 100%; justify-content: center; margin-top: 30px;">RESERVE</a>
           </div>
 
           <!-- Aura -->
-          <div class="bento-item reveal" style="grid-column: span 6;">
+          <div id="card-aura" class="bento-item reveal" style="grid-column: span 6;">
             <img src="img/Aura.webp" alt="Aura Skypool" loading="lazy"
               style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 30px;">
             <h3 style="font-size: 2rem; margin-bottom: 10px;">AURA SKYPOOL</h3>
             <p style="color: var(--text-secondary); margin-bottom: 30px;">St. Regis The Palm<br>Tuesdays, Saturday
               nights and Sundays</p>
+
+            <!-- Dynamic Injection Point for Aura -->
+            <div id="gigs-aura"
+              style="margin-top: 20px; border-top: 1px solid var(--border-subtle); padding-top: 20px;"></div>
+
             <a href="https://auraskypool.com/experiences/" target="_blank" class="btn-noir"
-              style="width: 100%; justify-content: center;">RESERVE</a>
+              style="width: 100%; justify-content: center; margin-top: 30px;">RESERVE</a>
           </div>
 
           <!-- Azure -->
-          <div class="bento-item reveal" style="grid-column: span 12;">
+          <div id="card-azure" class="bento-item reveal" style="grid-column: span 12;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
               <img src="img/azure.webp" alt="Azure Beach Club" loading="lazy"
                 style="width: 100%; height: 400px; object-fit: cover;">
@@ -124,6 +125,11 @@
                 <h3 style="font-size: 3rem; margin-bottom: 10px;">AZURE BEACH CLUB</h3>
                 <p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 1.25rem;">Rixos Premium
                   JBR<br>Thursdays</p>
+
+                <!-- Dynamic Injection Point for Azure -->
+                <div id="gigs-azure"
+                  style="margin-bottom: 30px; border-top: 1px solid var(--border-subtle); padding-top: 20px;"></div>
+
                 <a href="https://www.azure-beach.com/dubai/experiences/" target="_blank" class="btn-noir">BOOK TABLE</a>
               </div>
             </div>
@@ -135,36 +141,74 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Logic to fetch gigs from the Railway app API (once endpoint is created)
-      const gigsContainer = document.getElementById('dynamic-gigs-container');
-      const apiURL = 'https://sunsetdjsnew-production.up.railway.app/api/gigs?dj=javi';
+      const apiURL = 'https://sunsetdjsnew-production.up.railway.app/api/gigs/?dj=javi';
+
+      const containers = {
+        'DRIFT': {
+          list: document.getElementById('gigs-drift'),
+          card: document.getElementById('card-drift')
+        },
+        'AURA': {
+          list: document.getElementById('gigs-aura'),
+          card: document.getElementById('card-aura')
+        },
+        'AZURE': {
+          list: document.getElementById('gigs-azure'),
+          card: document.getElementById('card-azure')
+        }
+      };
+
+      function formatDate(dateString) {
+        const options = { weekday: 'short', month: 'short', day: 'numeric' };
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', options);
+      }
+
+      console.log("Gigs system initialized. Fetching:", apiURL);
 
       fetch(apiURL)
         .then(response => {
-          if (!response.ok) throw new Error("API not ready yet");
+          if (!response.ok) throw new Error("API Connection Error: " + response.status);
           return response.json();
         })
         .then(data => {
+          console.log("Live Gigs Data:", data);
           if (data && data.length > 0) {
-            gigsContainer.innerHTML = ''; // Clear loading text
             data.forEach(gig => {
-              const gigCard = document.createElement('div');
-              gigCard.style.cssText = 'padding: 20px; border: 1px solid var(--border-subtle); background: var(--bg-surface);';
-              gigCard.innerHTML = `
-                <h4 style="color: var(--accent); margin-bottom: 5px; font-size: 1.2rem;">${gig.venue}</h4>
-                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 10px;">${gig.date}</p>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">${gig.time || ''}</p>
-              `;
-              gigsContainer.appendChild(gigCard);
+              const venueName = (gig.venue || "").toUpperCase().trim();
+
+              let target = null;
+              for (const key in containers) {
+                if (venueName.includes(key)) {
+                  target = containers[key];
+                  break;
+                }
+              }
+
+              if (target && target.list) {
+                const gigElement = document.createElement('div');
+                gigElement.style.cssText = 'margin-top: 12px; border-left: 2px solid var(--accent); padding-left: 15px; background: rgba(255,255,255,0.03); padding: 10px 15px; border-radius: 2px;';
+
+                const eventBadge = gig.is_event ? `<span style="background: var(--accent); color: var(--bg-pure); padding: 2px 6px; font-size: 9px; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 5px;">SPECIAL EVENT</span> ` : '';
+                const commentText = gig.comment ? `<span style="color: var(--accent); font-size: 11px; display: block; font-style: italic; margin-top: 4px;">${gig.comment}</span>` : '';
+
+                gigElement.innerHTML = `
+                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                    <span style="font-weight: 700; font-size: 13px; color: var(--text-primary);">${formatDate(gig.date)}</span>
+                    <span style="font-size: 11px; color: var(--text-muted);">${gig.time || ''}</span>
+                  </div>
+                  ${eventBadge}
+                  ${commentText}
+                `;
+                target.list.appendChild(gigElement);
+                console.log("Matched & Added gig for:", venueName);
+              }
             });
-          } else {
-            gigsContainer.innerHTML = '<p style="color: var(--text-secondary);">No upcoming dates found at this moment.</p>';
           }
         })
         .catch(error => {
-          console.log("Waiting for backend API to be implemented on Railway:", error);
-          // Failsafe: if the API isn't built yet, we just show a graceful message
-          gigsContainer.innerHTML = '<p style="color: var(--text-secondary);">Live calendar sync is currently being initialized.</p>';
+          console.error("Gigs Fetch Error:", error);
+          // Cards remain visible with static content even if API fails
         });
     });
   </script>
