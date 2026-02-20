@@ -169,9 +169,12 @@
           return response.json();
         })
         .then(data => {
-          console.log("Live Gigs Data:", data);
-          if (data && data.length > 0) {
-            data.forEach(gig => {
+          console.log("Live Gigs Response:", data);
+          const gigs = data.gigs || [];
+          console.log("Server thinks today is:", data.server_date);
+
+          if (gigs && gigs.length > 0) {
+            gigs.forEach(gig => {
               const venueName = (gig.venue || "").toUpperCase().trim();
 
               let target = null;
