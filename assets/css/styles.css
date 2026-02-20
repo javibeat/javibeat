@@ -140,7 +140,38 @@ section {
     position: relative;
     overflow: hidden;
     background: #000;
-    /* Ensure base is black */
+}
+
+.huge-title {
+    font-size: clamp(4rem, 10vw, 6rem);
+    font-weight: 800;
+    color: var(--text-hero);
+    line-height: 0.9;
+}
+
+.hero-content {
+    margin-top: 40px;
+    max-width: 700px;
+}
+
+.section-desc {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+}
+
+.hero-intro {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .hero-bg-media {
@@ -417,9 +448,41 @@ img {
 
     /* --- Hero --- */
     .hero {
-        height: 100vh;
-        padding-top: 0;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
         padding-bottom: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .huge-title {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+        line-height: 1;
+        margin-bottom: 20px;
+        word-break: break-word;
+    }
+
+    .hero-content {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .section-desc {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .hero-intro {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .hero-actions {
+        gap: 15px;
     }
 
     /* --- Bento Grid: Stack Vertically --- */
