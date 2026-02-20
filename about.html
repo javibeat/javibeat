@@ -38,9 +38,9 @@
 
   <!-- PERFECT AI SEO & SEO OPTIMIZATION -->
   <meta name="description"
-    content="Discover the journey of Javi Beat, Dubai's premier sonic architect. 25 years of experience crafting soundtracks for elite venues like AURA and Drift. Professional biography and legacy.">
+    content="Discover the journey of Javi Beat, Dubai's premier sonic architect. 25 years of experience starting from Hip-Hop and Scratch to crafting high-end digital soundtracks for elite venues like AURA and Drift.">
   <meta name="ai-content-summary"
-    content="Biography of Javi Beat, an international DJ with 25 years of history. Details his career trajectory, current prestigious residencies in Dubai, and his reputation as a musical architect for luxury hospitality.">
+    content="Biography of Javi Beat, an international DJ with 25 years of history. Steeped in the sounds of the '80s and rooted in Hip-hop and Scratch culture since 1999, now a meticulously curated digital DJ. Details his career trajectory, current prestigious residencies in Dubai, and his reputation as a musical architect for luxury hospitality.">
 
   <script type="application/ld+json">
   {
@@ -49,11 +49,42 @@
     "mainEntity": {
       "@type": "Person",
       "name": "Javi Beat",
-      "description": "DJ and Music Curator with 25 years of international experience.",
+      "description": "DJ and Music Curator with 25 years of international experience, specializing in luxury digital sets.",
       "sameAs": [
-        "https://www.instagram.com/javibeat"
+        "https://www.instagram.com/javibeat",
+        "https://www.mixcloud.com/javibeat/"
       ]
     }
+  }
+  </script>
+
+  <!-- FAQ Schema for AEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What music genres does Javi Beat specialize in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I specialize in House, Deep House, Nu-Disco, and eclectic styles, tailoring the atmosphere to luxury beach clubs and exclusive events."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Do you travel internationally for events and weddings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, I am available worldwide for luxury corporate events, premium weddings, and private parties, bringing the authentic Dubai beach club experience to any location."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What is your musical background?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I began my career in 1999, with a musical identity steeped in the sounds of the '80s and deeply rooted in Hip-hop and Scratch culture. Collecting vinyl records built my foundation for the meticulously curated, luxury digital sets I perform today in Dubai."
+      }
+    }]
   }
   </script>
 </head>
@@ -76,17 +107,14 @@
         <div class="bento-grid" style="margin-top: 60px;">
           <div class="bento-item reveal" style="grid-column: span 7;">
             <p style="font-size: 1.5rem; line-height: 1.4; color: var(--text-primary); margin-bottom: 40px;">
-              Javi Beat is a versatile DJ with over 25 years of experience, currently based in Dubai.
-              As a resident DJ at Drift Beach Club and AURA Skypool, both part of Sunset Hospitality Group,
-              Javi brings a fresh and dynamic energy to every set.
+              Javi Beat is a versatile international DJ currently based in Dubai. Beginning his journey in 1999, his
+              roots are deeply embedded in the sounds of the '80s and the analog warmth of Hip-Hop and Scratch culture.
             </p>
             <p style="color: var(--text-secondary); margin-bottom: 40px;">
-              Known for his adaptability, Javi can effortlessly switch between different musical genres to suit the vibe
-              of any event,
-              always delivering a perfectly curated experience. Having built a solid reputation in Dubai's luxury
-              venues,
-              Javi Beat has become a sought-after DJ for high-end beach clubs, private events, and exclusive parties
-              across the UAE.
+              Years of collecting vinyl records built a pristine foundation for his craft. Today, he translates that
+              analog sensibility into meticulously curated, high-end digital sets. As a resident DJ at Drift Beach Club
+              and AURA Skypool, he brings a refined, dynamic energy to every performance, effortlessly switching genres
+              to elevate the atmosphere of luxury beach clubs and exclusive events.
             </p>
           </div>
 
@@ -97,12 +125,55 @@
           </div>
 
           <div class="bento-item reveal" style="grid-column: span 12;">
-            <p style="color: var(--text-secondary); font-size: 1.25rem;">
-              As a key figure at Drift Beach Club and other renowned venues, Javi's performances are known for their
-              energy,
-              professionalism, and ability to elevate any event. With his deep understanding of the local scene,
-              Javi Beat continues to push the boundaries of music, leaving a lasting impact on every audience.
-            </p>
+            <h3
+              style="font-size: 1.5rem; margin-bottom: 30px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 15px;">
+              FREQUENTLY ASKED QUESTIONS</h3>
+
+            <div class="faq-item"
+              style="border-bottom: 1px solid var(--border-subtle); padding: 20px 0; cursor: pointer;"
+              onclick="this.querySelector('.faq-answer').style.display = this.querySelector('.faq-answer').style.display === 'block' ? 'none' : 'block'; this.querySelector('.faq-icon').style.transform = this.querySelector('.faq-answer').style.display === 'block' ? 'rotate(45deg)' : 'rotate(0deg)';">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="font-size: 1.2rem; margin: 0; font-family: var(--font-body); font-weight: 600;">What music
+                  genres does Javi Beat specialize in?</h4>
+                <i class="fas fa-plus faq-icon" style="transition: transform 0.3s ease; color: var(--accent);"></i>
+              </div>
+              <p class="faq-answer"
+                style="display: none; margin-top: 15px; color: var(--text-secondary); line-height: 1.6; font-size: 1rem;">
+                I specialize in House, Deep House, Nu-Disco, and eclectic styles, tailoring the atmosphere to luxury
+                beach clubs and exclusive events.
+              </p>
+            </div>
+
+            <div class="faq-item"
+              style="border-bottom: 1px solid var(--border-subtle); padding: 20px 0; cursor: pointer;"
+              onclick="this.querySelector('.faq-answer').style.display = this.querySelector('.faq-answer').style.display === 'block' ? 'none' : 'block'; this.querySelector('.faq-icon').style.transform = this.querySelector('.faq-answer').style.display === 'block' ? 'rotate(45deg)' : 'rotate(0deg)';">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="font-size: 1.2rem; margin: 0; font-family: var(--font-body); font-weight: 600;">Do you travel
+                  internationally for events and weddings?</h4>
+                <i class="fas fa-plus faq-icon" style="transition: transform 0.3s ease; color: var(--accent);"></i>
+              </div>
+              <p class="faq-answer"
+                style="display: none; margin-top: 15px; color: var(--text-secondary); line-height: 1.6; font-size: 1rem;">
+                Yes, I am available worldwide for luxury corporate events, premium weddings, and private parties,
+                bringing the authentic Dubai beach club experience to any location.
+              </p>
+            </div>
+
+            <div class="faq-item" style="padding: 20px 0; cursor: pointer;"
+              onclick="this.querySelector('.faq-answer').style.display = this.querySelector('.faq-answer').style.display === 'block' ? 'none' : 'block'; this.querySelector('.faq-icon').style.transform = this.querySelector('.faq-answer').style.display === 'block' ? 'rotate(45deg)' : 'rotate(0deg)';">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="font-size: 1.2rem; margin: 0; font-family: var(--font-body); font-weight: 600;">What is your
+                  musical background?</h4>
+                <i class="fas fa-plus faq-icon" style="transition: transform 0.3s ease; color: var(--accent);"></i>
+              </div>
+              <p class="faq-answer"
+                style="display: none; margin-top: 15px; color: var(--text-secondary); line-height: 1.6; font-size: 1rem;">
+                I began my career in 1999, with a musical identity steeped in the sounds of the '80s and deeply rooted
+                in Hip-hop and Scratch culture. Collecting vinyl records built my foundation for the meticulously
+                curated, luxury digital sets I perform today in Dubai.
+              </p>
+            </div>
+
           </div>
         </div>
       </div>

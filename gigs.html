@@ -79,6 +79,19 @@
             LOADING...</p>
         </div>
 
+        <div class="reveal" style="margin-bottom: 60px;">
+          <h2
+            style="font-size: 1.5rem; margin-bottom: 30px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 15px;">
+            UPCOMING GIGS (LIVE DATA)</h2>
+          <div id="dynamic-gigs-container"
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+            <p style="color: var(--text-secondary);">Loading upcoming dates...</p>
+          </div>
+        </div>
+
+        <h2
+          style="font-size: 1.5rem; margin-bottom: 30px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 15px;">
+          REGULAR RESIDENCIES</h2>
         <div class="bento-grid">
           <!-- Drift -->
           <div class="bento-item reveal" style="grid-column: span 6;">
@@ -119,6 +132,42 @@
       </div>
     </section>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Logic to fetch gigs from the Railway app API (once endpoint is created)
+      const gigsContainer = document.getElementById('dynamic-gigs-container');
+      const apiURL = 'https://sunsetdjsnew-production.up.railway.app/api/gigs?dj=javi';
+
+      fetch(apiURL)
+        .then(response => {
+          if (!response.ok) throw new Error("API not ready yet");
+          return response.json();
+        })
+        .then(data => {
+          if (data && data.length > 0) {
+            gigsContainer.innerHTML = ''; // Clear loading text
+            data.forEach(gig => {
+              const gigCard = document.createElement('div');
+              gigCard.style.cssText = 'padding: 20px; border: 1px solid var(--border-subtle); background: var(--bg-surface);';
+              gigCard.innerHTML = `
+                <h4 style="color: var(--accent); margin-bottom: 5px; font-size: 1.2rem;">${gig.venue}</h4>
+                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 10px;">${gig.date}</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">${gig.time || ''}</p>
+              `;
+              gigsContainer.appendChild(gigCard);
+            });
+          } else {
+            gigsContainer.innerHTML = '<p style="color: var(--text-secondary);">No upcoming dates found at this moment.</p>';
+          }
+        })
+        .catch(error => {
+          console.log("Waiting for backend API to be implemented on Railway:", error);
+          // Failsafe: if the API isn't built yet, we just show a graceful message
+          gigsContainer.innerHTML = '<p style="color: var(--text-secondary);">Live calendar sync is currently being initialized.</p>';
+        });
+    });
+  </script>
 
   <div id="footer-placeholder"></div>
 
