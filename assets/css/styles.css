@@ -337,7 +337,7 @@ nav:hover {
 .nav-link.active {
     color: var(--accent);
     background: var(--accent-glass);
-    box-shadow: 0 2px 0 0 var(--accent-rebel);
+    text-shadow: -2px -1px 0 cyan, 2px 1px 0 #e63226;
 }
 
 /* Hamburger Toggle (hidden on desktop) */
@@ -834,6 +834,16 @@ img {
     /* Reset cursor on touch devices */
     * {
         cursor: auto;
+    }
+
+    /* --- Disable expensive effects on mobile --- */
+    body::after {
+        display: none;
+    }
+
+    .glitch::before,
+    .glitch::after {
+        animation-duration: 6s;
     }
 }
 
