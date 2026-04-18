@@ -19,12 +19,14 @@
 
   <link rel="icon" type="image/png" href="img/favicon.png">
 
-  <!-- Optimized Font Loading -->
+  <!-- Preconnect to external origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@800&family=Inter:wght@400&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@800&family=Inter:wght@400&display=swap"></noscript>
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -86,7 +88,7 @@
         <div class="bento-grid">
           <!-- Drift -->
           <div id="card-drift" class="bento-item reveal" style="grid-column: span 6;">
-            <img src="img/driftb.webp" alt="Drift Beach Club" loading="lazy"
+            <img src="img/driftb.webp" alt="Drift Beach Club" width="800" height="533" loading="lazy"
               style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 30px;">
             <h3 style="font-size: 2rem; margin-bottom: 10px;">DRIFT BEACH CLUB</h3>
             <p style="color: var(--text-secondary); margin-bottom: 30px;">One&Only Royal Mirage</p>
@@ -101,7 +103,7 @@
 
           <!-- Aura -->
           <div id="card-aura" class="bento-item reveal" style="grid-column: span 6;">
-            <img src="img/Aura.webp" alt="Aura Skypool" loading="lazy"
+            <img src="img/Aura.webp" alt="Aura Skypool" width="474" height="316" loading="lazy"
               style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 30px;">
             <h3 style="font-size: 2rem; margin-bottom: 10px;">AURA SKYPOOL</h3>
             <p style="color: var(--text-secondary); margin-bottom: 30px;">St. Regis The Palm</p>
@@ -117,7 +119,7 @@
           <!-- Azure -->
           <div id="card-azure" class="bento-item reveal" style="grid-column: span 12;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-              <img src="img/azure.webp" alt="Azure Beach Club" loading="lazy"
+              <img src="img/azure.webp" alt="Azure Beach Club" width="640" height="430" loading="lazy"
                 style="width: 100%; height: 400px; object-fit: cover;">
               <div>
                 <h3 style="font-size: 3rem; margin-bottom: 10px;">AZURE BEACH CLUB</h3>

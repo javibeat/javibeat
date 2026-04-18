@@ -13,6 +13,7 @@
     --accent: #ffffff;
     --accent-dim: rgba(255, 255, 255, 0.6);
     --accent-glass: rgba(255, 255, 255, 0.05);
+    --accent-rebel: #e63226;
 
     --text-hero: #ffffff;
     --text-primary: #f0f0f0;
@@ -70,14 +71,28 @@ body {
 }
 
 .custom-cursor-dot {
-    width: 4px;
-    height: 4px;
-    background: var(--accent);
+    width: 5px;
+    height: 5px;
+    background: var(--accent-rebel);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 6px var(--accent-rebel);
+}
+
+/* Noise Grain Overlay */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
 }
 
 /* Typography Overhaul */
@@ -147,6 +162,97 @@ section {
     font-weight: 800;
     color: var(--text-hero);
     line-height: 0.9;
+    position: relative;
+}
+
+/* Glitch hover on huge titles */
+.huge-title:hover {
+    animation: glitch 0.3s ease;
+}
+
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); text-shadow: -2px 0 var(--accent-rebel), 2px 0 cyan; }
+    60% { transform: translate(-1px, -1px); }
+    80% { transform: translate(1px, 2px); text-shadow: none; }
+}
+
+/* RGB Split / Chromatic Aberration — bursts every ~4s */
+.glitch {
+    animation: glitch-skew 4s infinite step-end;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    overflow: hidden;
+}
+
+.glitch::before {
+    color: cyan;
+    z-index: -1;
+    animation: glitch-cyan 4s infinite step-end;
+}
+
+.glitch::after {
+    color: #e63226;
+    z-index: -1;
+    animation: glitch-red 4s infinite step-end;
+}
+
+/* Idle = static offset visible, burst 85-97% = animated glitch */
+@keyframes glitch-cyan {
+    0%, 85% { clip-path: inset(0 0 0 0); transform: translate(-3px, -1px); }
+    86% { clip-path: inset(8% 0 62% 0); transform: translate(-8px, -3px); }
+    87% { clip-path: inset(72% 0 5% 0); transform: translate(6px, 2px); }
+    88% { clip-path: inset(20% 0 45% 0); transform: translate(-10px, -1px); }
+    89% { clip-path: inset(55% 0 15% 0); transform: translate(7px, 3px); }
+    90% { clip-path: inset(5% 0 70% 0); transform: translate(-6px, -2px); }
+    91% { clip-path: inset(40% 0 30% 0); transform: translate(9px, 1px); }
+    92% { clip-path: inset(80% 0 2% 0); transform: translate(-7px, 2px); }
+    93% { clip-path: inset(15% 0 55% 0); transform: translate(5px, -3px); }
+    94% { clip-path: inset(65% 0 10% 0); transform: translate(-8px, 1px); }
+    95% { clip-path: inset(30% 0 40% 0); transform: translate(6px, -2px); }
+    96% { clip-path: inset(50% 0 25% 0); transform: translate(-4px, 2px); }
+    97%, 100% { clip-path: inset(0 0 0 0); transform: translate(-3px, -1px); }
+}
+
+@keyframes glitch-red {
+    0%, 85% { clip-path: inset(0 0 0 0); transform: translate(3px, 1px); }
+    86% { clip-path: inset(60% 0 10% 0); transform: translate(8px, 2px); }
+    87% { clip-path: inset(10% 0 65% 0); transform: translate(-7px, -2px); }
+    88% { clip-path: inset(45% 0 25% 0); transform: translate(10px, 1px); }
+    89% { clip-path: inset(18% 0 52% 0); transform: translate(-6px, -3px); }
+    90% { clip-path: inset(75% 0 3% 0); transform: translate(8px, 2px); }
+    91% { clip-path: inset(25% 0 48% 0); transform: translate(-9px, -1px); }
+    92% { clip-path: inset(52% 0 20% 0); transform: translate(7px, 3px); }
+    93% { clip-path: inset(3% 0 75% 0); transform: translate(-5px, -2px); }
+    94% { clip-path: inset(38% 0 35% 0); transform: translate(8px, 1px); }
+    95% { clip-path: inset(68% 0 8% 0); transform: translate(-6px, 2px); }
+    96% { clip-path: inset(22% 0 50% 0); transform: translate(4px, -1px); }
+    97%, 100% { clip-path: inset(0 0 0 0); transform: translate(3px, 1px); }
+}
+
+@keyframes glitch-skew {
+    0%, 85% { transform: skew(0deg); }
+    88% { transform: skew(3deg); }
+    89% { transform: skew(-2deg); }
+    90% { transform: skew(4deg); }
+    92% { transform: skew(-1deg); }
+    94% { transform: skew(2deg); }
+    97%, 100% { transform: skew(0deg); }
 }
 
 .hero-content {
@@ -231,6 +337,7 @@ nav:hover {
 .nav-link.active {
     color: var(--accent);
     background: var(--accent-glass);
+    box-shadow: 0 2px 0 0 var(--accent-rebel);
 }
 
 /* Hamburger Toggle (hidden on desktop) */
@@ -284,6 +391,7 @@ footer {
 
 .bento-item:hover {
     border-color: var(--border-active);
+    border-top-color: var(--accent-rebel);
 }
 
 /* ============================
@@ -316,6 +424,7 @@ footer {
 .btn-noir:hover {
     background: var(--accent);
     color: var(--bg-pure);
+    box-shadow: 0 3px 0 0 var(--accent-rebel);
 }
 
 /* ============================

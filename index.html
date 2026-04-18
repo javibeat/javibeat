@@ -28,10 +28,11 @@
     <!-- Preload LCP Image -->
     <link rel="preload" href="img/drift.webp" as="image" fetchpriority="high">
 
-    <!-- Optimized Font Loading -->
+    <!-- Optimized Font Loading (deferred, critical CSS above handles initial render) -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@800&family=Inter:wght@400&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@800&family=Inter:wght@400&display=swap"></noscript>
 
     <!-- Critical CSS (Minimum for Hero) -->
     <style>
@@ -187,7 +188,7 @@
             </div>
             <div class="container">
                 <div class="reveal-init">
-                    <h1 class="huge-title">JAVI BEAT</h1>
+                    <h1 class="huge-title glitch" data-text="JAVI BEAT">JAVI BEAT</h1>
                     <div class="hero-content">
                         <p class="section-desc">
                             Javi Beat is a premier <strong>international DJ in Dubai</strong> with over 25 years of
