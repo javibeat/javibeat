@@ -337,7 +337,6 @@ nav:hover {
 .nav-link.active {
     color: var(--accent);
     background: var(--accent-glass);
-    box-shadow: 0 2px 0 0 var(--accent);
 }
 
 /* Hamburger Toggle (hidden on desktop) */
