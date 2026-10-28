@@ -81,14 +81,7 @@
       <div class="container">
         <div class="reveal">
           <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">CALENDAR</h4>
-          <h1 class="section-title">UPCOMING<br>GIGS</h1>
-          <p id="current-month"
-            style="font-size: 2.5rem; font-family: var(--font-heading); font-weight: 800; color: var(--accent); margin-bottom: 60px; text-transform: uppercase;">
-          </p>
-          <script>
-            const now = new Date();
-            document.getElementById('current-month').textContent = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-          </script>
+          <h1 class="section-title" style="margin-bottom: 60px;">UPCOMING<br>GIGS</h1>
         </div>
 
         <div class="bento-grid">
@@ -302,7 +295,12 @@
         return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
       }
 
+      function monthLabel(dateString) {
+        return new Date(dateString + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      }
+
       const today = todayISO();
+      const lastMonth = {};
       const gigs = GIGS
         .filter(g => g.venue && g.date >= today)
         .sort((a, b) => a.date.localeCompare(b.date));
@@ -314,6 +312,16 @@
           if (venueName.includes(key)) { list = containers[key]; break; }
         }
         if (!list) return;
+
+        // Month heading whenever the month changes within a venue's list
+        const month = monthLabel(gig.date);
+        if (lastMonth[list.id] !== month) {
+          lastMonth[list.id] = month;
+          const heading = document.createElement('h4');
+          heading.style.cssText = 'margin-top: 28px; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-secondary);';
+          heading.textContent = month;
+          list.appendChild(heading);
+        }
 
         const el = document.createElement('div');
         el.style.cssText = 'margin-top: 12px; border-left: 2px solid var(--accent); background: rgba(255,255,255,0.03); padding: 10px 15px; border-radius: 2px;';
