@@ -123,6 +123,12 @@ footer .huge-title {
     font-weight: 700;
 }
 
+/* Titles inside bento cards scale to the card, not the whole screen */
+.bento-item .section-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    overflow-wrap: break-word;
+}
+
 /* Layout */
 .container {
     max-width: var(--container-max);

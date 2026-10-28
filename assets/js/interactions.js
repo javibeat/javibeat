@@ -157,6 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Execution Sequence
     loadComponent('menu.html', 'menu-placeholder');
     loadComponent('footer.html', 'footer-placeholder').then(() => {
+        const yearEl = document.getElementById('footer-year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
         updateInteractiveElements();
         reveal(); // Reveal after footer loads
     });

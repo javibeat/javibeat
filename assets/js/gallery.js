@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const lightbox = document.getElementById('lightbox');
         const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCaption = document.getElementById('lightbox-caption');
         const closeBtn = document.querySelector('.close');
         const prevBtn = document.querySelector('.prev');
         const nextBtn = document.querySelector('.next');
@@ -13,9 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentIndex = 0;
 
+        const showImage = () => {
+            const item = galleryItems[currentIndex];
+            lightboxImage.src = item.src;
+            lightboxImage.alt = item.alt;
+            if (lightboxCaption) lightboxCaption.textContent = item.dataset.caption || '';
+        };
+
         const openLightbox = (index) => {
             currentIndex = index;
-            lightboxImage.src = galleryItems[currentIndex].src;
+            showImage();
             lightbox.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         };
@@ -27,12 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const nextImage = () => {
             currentIndex = (currentIndex + 1) % galleryItems.length;
-            lightboxImage.src = galleryItems[currentIndex].src;
+            showImage();
         };
 
         const prevImage = () => {
             currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-            lightboxImage.src = galleryItems[currentIndex].src;
+            showImage();
         };
 
         galleryItems.forEach((item, index) => {
