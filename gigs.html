@@ -119,7 +119,6 @@
 
             <div id="gigs-lola"
               style="margin-top: 20px; border-top: 1px solid var(--border-subtle); padding-top: 8px;">
-              <p style="color: var(--text-muted); font-size: 12px; margin-top: 12px; text-transform: uppercase; letter-spacing: 2px;">Coming soon</p>
             </div>
 
             <a href="https://www.lolataberna.com" target="_blank" class="btn-noir"
@@ -268,9 +267,18 @@
         '2026-09-11', '2026-09-13', '2026-09-14', '2026-09-15',
       ];
 
+      // Lola Taberna Dubai: every Saturday from Oct 31 to Dec 26 2026
+      const LOLA_SATURDAYS = [];
+      for (let d = new Date('2026-10-31T12:00:00'); d <= new Date('2026-12-31T12:00:00'); d.setDate(d.getDate() + 7)) {
+        LOLA_SATURDAYS.push(d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'));
+      }
+
       const GIGS = NIKKI_DATES.map(function (d) {
         return { venue: 'Nikki Beach Mallorca', date: d, time: '12:00 PM \u2013 6:30 PM', comment: '', isEvent: false };
-      }).concat([
+      }).concat(LOLA_SATURDAYS.map(function (d) {
+        return { venue: 'Lola Taberna Dubai', date: d, time: '2:00 PM \u2013 5:00 PM', comment: 'Brunch', isEvent: false };
+      })).concat([
+        { venue: 'Lola Taberna Dubai', date: '2026-12-31', time: 'From 8:00 PM', comment: 'NYE', isEvent: true },
         { venue: 'Nikki Beach Mallorca', date: '2026-09-12', time: '12:00 PM \u2013 6:30 PM', comment: 'Red Party', isEvent: true },
         // One-off gigs go here, e.g.:
         // { venue: 'Nikki Beach Mallorca', date: '2026-08-15', time: '12:00 PM \u2013 6:30 PM', comment: 'White Party', isEvent: true },
