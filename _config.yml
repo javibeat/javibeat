@@ -1,0 +1,4 @@
+exclude:
+  - CLAUDE.md
+  - research
+  - skills-lock.json
